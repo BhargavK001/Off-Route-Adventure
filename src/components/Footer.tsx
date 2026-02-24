@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Mountain, Mail, Phone, MapPin, Instagram } from "lucide-react";
 import { COMPANY_INFO, NAV_LINKS } from "@/lib/constants";
 
@@ -10,7 +11,13 @@ export default function Footer() {
           {/* Brand */}
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <Mountain className="h-8 w-8 text-green-500" />
+              <Image
+                src="/Off-Route-Logo.png"
+                alt="Off Route Adventure Logo"
+                width={50}
+                height={50}
+                className="object-contain rounded-full bg-white"
+              />
               <span className="text-xl font-bold">{COMPANY_INFO.name}</span>
             </div>
             <p className="text-gray-400">
