@@ -1,13 +1,9 @@
-import React from "react";
 import type { Metadata } from "next";
-import dynamic from "next/dynamic";
 import "./globals.css";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import PageTransition from "@/components/PageTransition";
-
-// Dynamically import Footer with SSR enabled for SEO
-const Footer = dynamic(() => import('@/components/Footer'), { ssr: true });
 
 export const metadata: Metadata = {
   title: {
@@ -63,7 +59,6 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://offrouteadventure.com"),
 };
 
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -82,3 +77,4 @@ export default function RootLayout({
     </html>
   );
 }
+
