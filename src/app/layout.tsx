@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import PageTransition from "@/components/PageTransition";
 
 export const metadata: Metadata = {
   title: {
@@ -67,7 +68,9 @@ export default function RootLayout({
     <html lang="en">
       <body className="antialiased font-sans">
         <Header />
-        <main className="pt-16">{children}</main>
+        <main className="pt-16">
+          <PageTransition>{children}</PageTransition>
+        </main>
         <Footer />
         <WhatsAppButton />
       </body>

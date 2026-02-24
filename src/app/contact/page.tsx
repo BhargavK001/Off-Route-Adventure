@@ -10,8 +10,8 @@ import {
   CheckCircle,
   AlertCircle,
   MessageCircle,
-  Instagram,
 } from "lucide-react";
+import { InstagramColorIcon, WhatsAppColorIcon } from "@/components/SocialIcons";
 import { COMPANY_INFO } from "@/lib/constants";
 
 interface ContactFormData {
@@ -198,19 +198,19 @@ export default function ContactPage() {
                       href={COMPANY_INFO.whatsappLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white hover:bg-green-600 transition-colors"
+                      className="hover:opacity-90 transition-opacity"
                       aria-label="WhatsApp"
                     >
-                      <MessageCircle className="h-6 w-6" />
+                      <WhatsAppColorIcon className="h-12 w-12 drop-shadow-sm" />
                     </a>
                     <a
                       href={COMPANY_INFO.instagram}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-12 h-12 bg-gradient-to-br from-purple-600 to-pink-500 rounded-full flex items-center justify-center text-white hover:opacity-90 transition-opacity"
+                      className="hover:opacity-90 transition-opacity"
                       aria-label="Instagram"
                     >
-                      <Instagram className="h-6 w-6" />
+                      <InstagramColorIcon className="h-12 w-12 drop-shadow-sm" />
                     </a>
                   </div>
                 </div>
@@ -329,11 +329,10 @@ export default function ContactPage() {
                   {[...Array(5)].map((_, i) => (
                     <Star
                       key={i}
-                      className={`h-4 w-4 ${
-                        i < review.rating
-                          ? "text-yellow-400 fill-current"
-                          : "text-gray-300"
-                      }`}
+                      className={`h-4 w-4 ${i < review.rating
+                        ? "text-yellow-400 fill-current"
+                        : "text-gray-300"
+                        }`}
                     />
                   ))}
                 </div>
@@ -393,11 +392,10 @@ export default function ContactPage() {
                       className="p-1"
                     >
                       <Star
-                        className={`h-8 w-8 ${
-                          star <= selectedRating
-                            ? "text-yellow-400 fill-current"
-                            : "text-gray-300"
-                        }`}
+                        className={`h-8 w-8 ${star <= selectedRating
+                          ? "text-yellow-400 fill-current"
+                          : "text-gray-300"
+                          }`}
                       />
                     </button>
                   ))}
