@@ -1,8 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { Menu, X, Mountain } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { NAV_LINKS } from "@/lib/constants";
 
 export default function Header() {
@@ -14,7 +15,13 @@ export default function Header() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <Mountain className="h-8 w-8 text-green-600" />
+            <Image
+              src="/Off-Route-Logo.png"
+              alt="Off Route Adventure Logo"
+              width={50}
+              height={50}
+              className="object-contain rounded-full"
+            />
             <span className="text-xl font-bold text-gray-900">Off Route Adventure</span>
           </Link>
 
