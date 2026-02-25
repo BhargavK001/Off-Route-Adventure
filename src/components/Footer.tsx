@@ -1,5 +1,7 @@
 import Link from "next/link";
-import { Mountain, Mail, Phone, MapPin, Instagram } from "lucide-react";
+import Image from "next/image";
+import { Mail, Phone, MapPin } from "lucide-react";
+import { InstagramColorIcon, WhatsAppColorIcon } from "./SocialIcons";
 import { COMPANY_INFO, NAV_LINKS } from "@/lib/constants";
 
 export default function Footer() {
@@ -10,7 +12,13 @@ export default function Footer() {
           {/* Brand */}
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <Mountain className="h-8 w-8 text-green-500" />
+              <Image
+                src="/Off-Route-Logo.png"
+                alt="Off Route Adventure Logo"
+                width={50}
+                height={50}
+                className="object-contain rounded-full bg-white"
+              />
               <span className="text-xl font-bold">{COMPANY_INFO.name}</span>
             </div>
             <p className="text-gray-400">
@@ -66,19 +74,19 @@ export default function Footer() {
                 href={COMPANY_INFO.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 bg-gray-800 rounded-full hover:bg-green-600 transition-colors"
+                className="hover:opacity-80 transition-opacity"
                 aria-label="Instagram"
               >
-                <Instagram className="h-6 w-6" />
+                <InstagramColorIcon className="h-10 w-10" />
               </a>
               <a
                 href={COMPANY_INFO.whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 bg-gray-800 rounded-full hover:bg-green-600 transition-colors"
+                className="hover:opacity-80 transition-opacity"
                 aria-label="WhatsApp"
               >
-                <Phone className="h-6 w-6" />
+                <WhatsAppColorIcon className="h-10 w-10" />
               </a>
             </div>
           </div>
