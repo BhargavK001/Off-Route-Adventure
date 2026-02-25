@@ -10,10 +10,10 @@ export const metadata: Metadata = {
 };
 
 const categories = [
-  { title: "Forts & History", count: 8, icon: <Castle className="h-6 w-6" />, color: "from-amber-500 to-orange-600" },
-  { title: "Waterfalls", count: 3, icon: <Waves className="h-6 w-6" />, color: "from-blue-500 to-cyan-600" },
-  { title: "Mountains & Peaks", count: 4, icon: <Mountain className="h-6 w-6" />, color: "from-green-500 to-emerald-600" },
-  { title: "Lakes & Camping", count: 3, icon: <TreePine className="h-6 w-6" />, color: "from-purple-500 to-pink-600" },
+  { title: "Forts & History", count: 8, icon: <Castle className="h-6 w-6" /> },
+  { title: "Waterfalls", count: 3, icon: <Waves className="h-6 w-6" /> },
+  { title: "Mountains & Peaks", count: 4, icon: <Mountain className="h-6 w-6" /> },
+  { title: "Lakes & Camping", count: 3, icon: <TreePine className="h-6 w-6" /> },
 ];
 
 export default function ExplorePage() {
@@ -40,22 +40,31 @@ export default function ExplorePage() {
       </section>
 
       {/* Destination Categories */}
-      <section className="py-16 bg-gray-50 border-b border-gray-200">
+      <section className="py-14 bg-gray-50 border-b border-gray-100">
         <div className="container mx-auto px-4">
           <div className="text-center mb-10">
-            <h2 className="text-2xl font-bold text-gray-900">Browse by Category</h2>
+            <span className="inline-block px-4 py-1.5 rounded-full bg-green-100 text-green-700 text-sm font-semibold mb-3">
+              Browse by Category
+            </span>
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 tracking-tight">
+              Find Your{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-500">
+                Adventure
+              </span>
+            </h2>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
             {categories.map((category, index) => (
               <div
                 key={index}
-                className={`group bg-gradient-to-br ${category.color} rounded-2xl p-5 text-white cursor-pointer hover:scale-105 transition-transform duration-200 shadow-md`}
+                className="group bg-white p-5 rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1 cursor-pointer transition-all duration-300"
               >
-                <div className="w-10 h-10 bg-white/15 rounded-xl flex items-center justify-center mb-3">
+                <div className="w-11 h-11 bg-green-50 rounded-xl flex items-center justify-center text-green-600 mb-3 group-hover:bg-green-100 group-hover:scale-110 transition-all duration-300">
                   {category.icon}
                 </div>
-                <h3 className="font-bold text-sm mb-1">{category.title}</h3>
-                <p className="text-white/75 text-xs">{category.count} destinations</p>
+                <h3 className="font-bold text-sm text-gray-900 mb-1">{category.title}</h3>
+                <p className="text-gray-400 text-xs">{category.count} destinations</p>
+                <div className="mt-3 h-0.5 w-0 group-hover:w-full bg-gradient-to-r from-green-400 to-emerald-500 rounded-full transition-all duration-500" />
               </div>
             ))}
           </div>

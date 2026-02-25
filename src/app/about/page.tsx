@@ -72,7 +72,7 @@ export default function AboutPage() {
             <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-green-200 text-sm font-medium mb-6">
               🏔️ Our Journey
             </span>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight whitespace-nowrap">
               About{" "}
               <span className="text-green-300">Off Route Adventure</span>
             </h1>
@@ -176,11 +176,11 @@ export default function AboutPage() {
               The principles that guide everything we do at Off Route Adventure.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto items-stretch">
             {values.map((value, index) => (
               <div
                 key={index}
-                className="group bg-white p-7 rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                className="group bg-white p-7 rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col"
               >
                 <div className="flex items-center justify-between mb-5">
                   <div className="w-13 h-13 w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center text-green-600 group-hover:bg-green-100 group-hover:scale-110 transition-all duration-300">
@@ -191,7 +191,7 @@ export default function AboutPage() {
                   </span>
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">{value.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{value.description}</p>
+                <p className="text-gray-500 text-sm leading-relaxed flex-1">{value.description}</p>
                 <div className="mt-5 h-0.5 w-0 group-hover:w-full bg-gradient-to-r from-green-400 to-emerald-500 rounded-full transition-all duration-500" />
               </div>
             ))}

@@ -48,8 +48,8 @@ export const SERVICES = [
     icon: "Bus",
   },
   {
-    title: "Hotel Stays",
-    description: "Quality accommodations at handpicked locations.",
+    title: "Hotels & Camping",
+    description: "From quality hotel stays to thrilling bonfire campsites — we arrange the perfect overnight experience for your trek.",
     icon: "Hotel",
   },
   {
@@ -66,6 +66,11 @@ export const SERVICES = [
     title: "Corporate Events",
     description: "Customized team building and corporate retreat packages.",
     icon: "Building",
+  },
+  {
+    title: "Meals & Nutrition",
+    description: "Wholesome home-cooked meals and snacks included on selected treks to keep you energised.",
+    icon: "UtensilsCrossed",
   },
 ];
 
