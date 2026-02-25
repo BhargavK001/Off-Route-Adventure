@@ -2,11 +2,51 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { Mountain, Star, Clock, MapPin, CheckCircle, XCircle, ArrowRight } from "lucide-react";
 import { destinations } from "@/data/destinations";
+import { BreadcrumbSchema, TouristTripSchema } from "@/components/JsonLd";
+
+const BASE_URL = "https://www.offrouteadventure.in";
 
 export const metadata: Metadata = {
-  title: "All Plans",
+  title: "All Tour Packages – Trekking & Camping Packages from ₹799",
   description:
-    "View all our adventure tour packages - from day trips to multi-day expeditions. Affordable treks, camping, and travel experiences across India.",
+    "Browse all adventure tour packages by Off Route Adventure — day treks from ₹799, camping from ₹1,199, multi-day expeditions to Hampi, Manali, Dudhsagar & more. Affordable trekking packages in Maharashtra with experienced leaders.",
+  keywords: [
+    "trekking packages Maharashtra",
+    "affordable trek packages Pune",
+    "fort camping Maharashtra",
+    "budget trekking packages",
+    "overnight camping Maharashtra",
+    "guided trekking tours Maharashtra",
+    "Hampi tour package",
+    "Manali tour package",
+    "Dudhsagar trip",
+    "weekend trek packages Pune Mumbai",
+    "adventure tour packages India",
+  ],
+  alternates: {
+    canonical: `${BASE_URL}/plans`,
+  },
+  openGraph: {
+    title: "All Tour Packages – Treks & Camping from ₹799 | Off Route Adventure",
+    description:
+      "Day treks from ₹799, camping from ₹1,199, multi-day trips to Hampi, Manali & Dudhsagar. Affordable Maharashtra trekking packages. Book now!",
+    url: `${BASE_URL}/plans`,
+    images: [
+      {
+        url: `${BASE_URL}/Off-Route-Logo.png`,
+        width: 800,
+        height: 600,
+        alt: "Tour Packages – Off Route Adventure",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Trekking & Camping Packages from ₹799",
+    description:
+      "Browse affordable treks, camping & multi-day tours in Maharashtra. 16+ destinations starting ₹799.",
+  },
 };
 
 const included = [
@@ -30,7 +70,22 @@ const notIncluded = [
 export default function PlansPage() {
   return (
     <>
-      {/* Hero Section */}
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", href: "/" },
+          { name: "All Tour Packages", href: "/plans" },
+        ]}
+      />
+      {destinations.map((dest) => (
+        <TouristTripSchema
+          key={dest.id}
+          name={dest.name}
+          description={dest.description}
+          price={dest.price}
+          duration={dest.duration}
+          highlights={dest.highlights}
+        />
+      ))}
       <section className="py-24 bg-gradient-to-br from-green-900 via-green-800 to-green-700 text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(255,255,255,0.08),_transparent_60%)]" />
         <div className="container mx-auto px-4 relative">
@@ -58,8 +113,8 @@ export default function PlansPage() {
               <button
                 key={i}
                 className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${i === 0
-                    ? "bg-green-600 text-white shadow-sm"
-                    : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                  ? "bg-green-600 text-white shadow-sm"
+                  : "bg-gray-100 text-gray-600 hover:bg-gray-200"
                   }`}
               >
                 {filter}
