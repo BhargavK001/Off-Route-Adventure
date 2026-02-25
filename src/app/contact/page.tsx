@@ -10,8 +10,8 @@ import {
   CheckCircle,
   AlertCircle,
   MessageCircle,
-  Instagram,
 } from "lucide-react";
+import { InstagramColorIcon, WhatsAppColorIcon } from "@/components/SocialIcons";
 import { COMPANY_INFO } from "@/lib/constants";
 
 interface ContactFormData {
@@ -126,11 +126,15 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-green-900 via-green-800 to-green-700 text-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Contact Us</h1>
-            <p className="text-xl text-green-100">
+      <section className="py-24 bg-gradient-to-br from-green-900 via-green-800 to-green-700 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(255,255,255,0.08),_transparent_60%)]" />
+        <div className="container mx-auto px-4 relative">
+          <div className="max-w-3xl mx-auto text-center">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-green-200 text-sm font-medium mb-6">
+              💬 We&apos;d Love to Hear From You
+            </span>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">Contact <span className="text-green-300">Us</span></h1>
+            <p className="text-xl text-green-100 leading-relaxed">
               Have questions? We&apos;re here to help. Reach out to us through any of
               the channels below.
             </p>
@@ -145,79 +149,70 @@ export default function ContactPage() {
             <div className="grid md:grid-cols-2 gap-12">
               {/* Contact Info */}
               <div>
+                <span className="inline-block px-4 py-1.5 rounded-full bg-green-100 text-green-700 text-sm font-semibold mb-4">
+                  Reach Out
+                </span>
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">
                   Get in Touch
                 </h2>
-                <div className="space-y-6">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Mail className="h-6 w-6 text-green-600" />
+                <div className="space-y-4">
+                  <a href={`mailto:${COMPANY_INFO.email}`} className="group flex items-start gap-4 p-4 rounded-xl border border-gray-100 hover:border-green-200 hover:bg-green-50 transition-all">
+                    <div className="w-11 h-11 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-green-200 transition-colors">
+                      <Mail className="h-5 w-5 text-green-600" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-gray-900">Email</h3>
-                      <a
-                        href={`mailto:${COMPANY_INFO.email}`}
-                        className="text-gray-600 hover:text-green-600 transition-colors"
-                      >
-                        {COMPANY_INFO.email}
-                      </a>
+                      <p className="text-xs text-gray-500 mb-0.5">Email Us</p>
+                      <p className="font-medium text-gray-900 group-hover:text-green-700 transition-colors">{COMPANY_INFO.email}</p>
                     </div>
-                  </div>
-
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Phone className="h-6 w-6 text-green-600" />
+                  </a>
+                  <a href={`tel:+91${COMPANY_INFO.phone}`} className="group flex items-start gap-4 p-4 rounded-xl border border-gray-100 hover:border-green-200 hover:bg-green-50 transition-all">
+                    <div className="w-11 h-11 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-green-200 transition-colors">
+                      <Phone className="h-5 w-5 text-green-600" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-gray-900">Phone</h3>
-                      <a
-                        href={`tel:+91${COMPANY_INFO.phone}`}
-                        className="text-gray-600 hover:text-green-600 transition-colors"
-                      >
-                        {COMPANY_INFO.phoneFormatted}
-                      </a>
+                      <p className="text-xs text-gray-500 mb-0.5">Call Us</p>
+                      <p className="font-medium text-gray-900 group-hover:text-green-700 transition-colors">{COMPANY_INFO.phoneFormatted}</p>
                     </div>
-                  </div>
-
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <MapPin className="h-6 w-6 text-green-600" />
+                  </a>
+                  <div className="flex items-start gap-4 p-4 rounded-xl border border-gray-100">
+                    <div className="w-11 h-11 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <MapPin className="h-5 w-5 text-green-600" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-gray-900">Location</h3>
-                      <p className="text-gray-600">Pune, Maharashtra, India</p>
+                      <p className="text-xs text-gray-500 mb-0.5">Location</p>
+                      <p className="font-medium text-gray-900">Pune, Maharashtra, India</p>
                     </div>
                   </div>
                 </div>
 
                 {/* Social Links */}
-                <div className="mt-8">
-                  <h3 className="font-semibold text-gray-900 mb-4">Follow Us</h3>
-                  <div className="flex gap-4">
+                <div className="mt-6">
+                  <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">Follow Us</h3>
+                  <div className="flex gap-3">
                     <a
                       href={COMPANY_INFO.whatsappLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white hover:bg-green-600 transition-colors"
+                      className="hover:scale-110 transition-transform duration-200"
                       aria-label="WhatsApp"
                     >
-                      <MessageCircle className="h-6 w-6" />
+                      <WhatsAppColorIcon className="h-11 w-11 drop-shadow-sm" />
                     </a>
                     <a
                       href={COMPANY_INFO.instagram}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-12 h-12 bg-gradient-to-br from-purple-600 to-pink-500 rounded-full flex items-center justify-center text-white hover:opacity-90 transition-opacity"
+                      className="hover:scale-110 transition-transform duration-200"
                       aria-label="Instagram"
                     >
-                      <Instagram className="h-6 w-6" />
+                      <InstagramColorIcon className="h-11 w-11 drop-shadow-sm" />
                     </a>
                   </div>
                 </div>
               </div>
 
               {/* Contact Form */}
-              <div className="bg-gray-50 rounded-2xl p-8">
+              <div className="bg-gray-50 border border-gray-100 rounded-2xl p-8">
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">
                   Send us a Message
                 </h2>
@@ -299,7 +294,7 @@ export default function ContactPage() {
                   <button
                     type="submit"
                     disabled={contactSubmitting}
-                    className="w-full py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors disabled:opacity-50"
+                    className="w-full py-3 bg-gradient-to-r from-green-600 to-emerald-600 text-white font-semibold rounded-xl hover:from-green-500 hover:to-emerald-500 transition-all disabled:opacity-50 shadow-sm"
                   >
                     {contactSubmitting ? "Sending..." : "Send Message"}
                   </button>
@@ -314,40 +309,51 @@ export default function ContactPage() {
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              What Our Travelers Say
+            <span className="inline-block px-4 py-1.5 rounded-full bg-green-100 text-green-700 text-sm font-semibold mb-4">
+              Traveler Stories
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3 tracking-tight">
+              What Our{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-500">
+                Travelers Say
+              </span>
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-gray-500 text-lg max-w-2xl mx-auto">
               Read reviews from adventurers who have explored with us.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mb-16">
             {testimonials.map((review, index) => (
-              <div key={index} className="bg-white rounded-xl p-6 shadow-sm">
+              <div key={index} className="group bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                <div className="text-3xl text-green-200 font-serif leading-none mb-2">&ldquo;</div>
                 <div className="flex gap-1 mb-3">
                   {[...Array(5)].map((_, i) => (
                     <Star
                       key={i}
-                      className={`h-4 w-4 ${
-                        i < review.rating
-                          ? "text-yellow-400 fill-current"
-                          : "text-gray-300"
-                      }`}
+                      className={`h-4 w-4 ${i < review.rating
+                        ? "text-yellow-400 fill-current"
+                        : "text-gray-200 fill-current"
+                        }`}
                     />
                   ))}
                 </div>
-                <p className="text-gray-600 text-sm mb-4">&quot;{review.feedback}&quot;</p>
-                <div>
-                  <p className="font-semibold text-gray-900">{review.name}</p>
-                  <p className="text-green-600 text-sm">{review.destination}</p>
+                <p className="text-gray-600 text-sm mb-4 leading-relaxed">{review.feedback}</p>
+                <div className="flex items-center gap-3 pt-3 border-t border-gray-50">
+                  <div className="w-8 h-8 rounded-full bg-gradient-to-br from-green-400 to-emerald-600 flex items-center justify-center text-white text-xs font-bold">
+                    {review.name.charAt(0)}
+                  </div>
+                  <div>
+                    <p className="font-semibold text-gray-900 text-sm">{review.name}</p>
+                    <p className="text-green-600 text-xs">{review.destination}</p>
+                  </div>
                 </div>
               </div>
             ))}
           </div>
 
           {/* Review Form */}
-          <div className="max-w-2xl mx-auto bg-white rounded-2xl p-8 shadow-sm">
+          <div className="max-w-2xl mx-auto bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
             <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
               Share Your Experience
             </h3>
@@ -393,11 +399,10 @@ export default function ContactPage() {
                       className="p-1"
                     >
                       <Star
-                        className={`h-8 w-8 ${
-                          star <= selectedRating
-                            ? "text-yellow-400 fill-current"
-                            : "text-gray-300"
-                        }`}
+                        className={`h-8 w-8 ${star <= selectedRating
+                          ? "text-yellow-400 fill-current"
+                          : "text-gray-300"
+                          }`}
                       />
                     </button>
                   ))}
@@ -441,7 +446,7 @@ export default function ContactPage() {
               <button
                 type="submit"
                 disabled={reviewSubmitting}
-                className="w-full py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors disabled:opacity-50"
+                className="w-full py-3 bg-gradient-to-r from-green-600 to-emerald-600 text-white font-semibold rounded-xl hover:from-green-500 hover:to-emerald-500 transition-all disabled:opacity-50 shadow-sm"
               >
                 {reviewSubmitting ? "Submitting..." : "Submit Review"}
               </button>
