@@ -48,10 +48,10 @@ export default function DestinationsSection() {
                                         </span>
                                     </div>
                                     <Link
-                                        href={`/book?destination=${destination.id}`}
+                                        href={`/treks/${destination.id}`}
                                         className="px-4 py-2 bg-green-600 text-white rounded-full text-sm font-medium hover:bg-green-700 transition-colors"
                                     >
-                                        Book
+                                        View Details
                                     </Link>
                                 </div>
                             </div>
