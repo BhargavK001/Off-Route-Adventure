@@ -182,10 +182,10 @@ export default function PlansPage() {
                   </div>
 
                   <Link
-                    href={`/book?destination=${destination.id}`}
+                    href={`/treks/${destination.id}`}
                     className="flex items-center justify-center gap-2 w-full py-2.5 bg-gradient-to-r from-green-600 to-emerald-600 text-white text-sm text-center rounded-xl font-semibold hover:from-green-500 hover:to-emerald-500 transition-all group-hover:shadow-md group-hover:shadow-green-200"
                   >
-                    Book Now <ArrowRight className="h-4 w-4" />
+                    View Details <ArrowRight className="h-4 w-4" />
                   </Link>
                 </div>
               </div>
