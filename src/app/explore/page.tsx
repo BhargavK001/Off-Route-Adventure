@@ -2,11 +2,50 @@ import { Metadata } from "next";
 import { MapPin, Mountain, Waves, TreePine, Castle, ArrowRight } from "lucide-react";
 import { galleryImages } from "@/data/destinations";
 import Link from "next/link";
+import { BreadcrumbSchema } from "@/components/JsonLd";
+
+const BASE_URL = "https://www.offrouteadventure.in";
 
 export const metadata: Metadata = {
-  title: "Explore",
+  title: "Explore Destinations – Forts, Waterfalls & Mountains in Maharashtra",
   description:
-    "Explore stunning destinations across India - from historic forts to majestic waterfalls and serene mountains. View our gallery of adventure locations.",
+    "Discover trekking destinations across Maharashtra — historic forts like Harishchandragad, Rajmachi, Lohagad, Sinhagad; waterfalls like Kalu & Dudhsagar; peaks like Kalsubai. Browse our gallery of 16+ adventure locations.",
+  keywords: [
+    "trekking destinations Maharashtra",
+    "forts in Maharashtra trek",
+    "Kalsubai trek",
+    "Harishchandragad trek",
+    "Rajmachi fort trek",
+    "waterfalls Maharashtra",
+    "mountains Maharashtra trekking",
+    "weekend treks from Pune",
+    "adventure destinations India",
+    "Sahyadri Western Ghats treks",
+  ],
+  alternates: {
+    canonical: `${BASE_URL}/explore`,
+  },
+  openGraph: {
+    title: "Explore Trekking Destinations in Maharashtra | Off Route Adventure",
+    description:
+      "Browse 16+ handpicked adventure destinations — forts, waterfalls, mountains & lakes across Maharashtra. Harishchandragad, Kalsubai, Rajmachi & more.",
+    url: `${BASE_URL}/explore`,
+    images: [
+      {
+        url: `${BASE_URL}/Off-Route-Logo.png`,
+        width: 800,
+        height: 600,
+        alt: "Trek Destinations in Maharashtra – Off Route Adventure",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Explore Trekking Destinations in Maharashtra",
+    description:
+      "16+ destinations — forts, waterfalls, mountains & more. Harishchandragad, Kalsubai, Rajmachi. Browse now!",
+  },
 };
 
 const categories = [
@@ -19,7 +58,12 @@ const categories = [
 export default function ExplorePage() {
   return (
     <>
-      {/* Hero Section */}
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Explore Destinations", href: "/explore" },
+        ]}
+      />
       <section className="py-24 bg-gradient-to-br from-green-900 via-green-800 to-green-700 text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(255,255,255,0.08),_transparent_60%)]" />
         <div className="container mx-auto px-4 relative">

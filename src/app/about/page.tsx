@@ -1,11 +1,47 @@
 import { Metadata } from "next";
 import { Mountain, Shield, Users, Award, Heart, Target, CheckCircle } from "lucide-react";
 import Link from "next/link";
+import { BreadcrumbSchema } from "@/components/JsonLd";
+
+const BASE_URL = "https://www.offrouteadventure.in";
 
 export const metadata: Metadata = {
-  title: "About Us",
+  title: "About Us – Trekking Company in Pune, Maharashtra",
   description:
-    "Learn about Off Route Adventure - a rapidly growing trekking organization with certified expertise, experienced trek leaders, and a safety-first approach.",
+    "Learn about Off Route Adventure — a rapidly growing trekking organization in Pune with certified trek leaders, 500+ happy travelers, and a safety-first approach. Specializing in Sahyadri treks, fort expeditions, and adventure tours across Maharashtra & India.",
+  keywords: [
+    "trekking company Pune",
+    "adventure travel company India",
+    "certified trek leaders Maharashtra",
+    "safe trekking organization India",
+    "about Off Route Adventure",
+    "Sahyadri trekking experts",
+    "corporate retreat adventure Pune",
+  ],
+  alternates: {
+    canonical: `${BASE_URL}/about`,
+  },
+  openGraph: {
+    title: "About Off Route Adventure – Pune's Trusted Trekking Company",
+    description:
+      "500+ happy travelers, 50+ treks completed, 4.8★ rating. Certified trek leaders, safety-first approach. Explore Maharashtra with us.",
+    url: `${BASE_URL}/about`,
+    images: [
+      {
+        url: `${BASE_URL}/Off-Route-Logo.png`,
+        width: 800,
+        height: 600,
+        alt: "About Off Route Adventure – Trekking Company Pune",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Off Route Adventure – Trekking Company Pune",
+    description:
+      "500+ happy travelers, 50+ treks, 4.8★ rating. Certified trek leaders with a safety-first approach.",
+  },
 };
 
 const values = [
@@ -64,7 +100,12 @@ const storyPoints = [
 export default function AboutPage() {
   return (
     <>
-      {/* Hero Section */}
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", href: "/" },
+          { name: "About Us", href: "/about" },
+        ]}
+      />
       <section className="py-24 bg-gradient-to-br from-green-900 via-green-800 to-green-700 text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(255,255,255,0.08),_transparent_60%)]" />
         <div className="container mx-auto px-4 relative">

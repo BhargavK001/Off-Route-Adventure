@@ -1,0 +1,270 @@
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
+import Image from "next/image";
+import Link from "next/link";
+import { Clock, MapPin, IndianRupee, Mountain, ArrowRight, CheckCircle } from "lucide-react";
+import { destinations } from "@/data/destinations";
+import { BreadcrumbSchema, TouristTripSchema, FAQSchema } from "@/components/JsonLd";
+
+const BASE_URL = "https://www.offrouteadventure.in";
+
+interface PageProps {
+    params: Promise<{ id: string }>;
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+    const resolvedParams = await params;
+    const trek = destinations.find((d) => d.id === resolvedParams.id);
+
+    if (!trek) return { title: "Trek Not Found" };
+
+    let customTitle = `${trek.name} Package – ${trek.duration} | Off Route Adventure`;
+    let customDesc = trek.description;
+    let customKeywords: string[] = [];
+
+    if (trek.id === "vasota") {
+        customTitle = "Vasota Trek & Camping | Bamnoli Jungle Safari | Off Route Adventure";
+        customDesc = "Experience the thrilling Vasota trek and lakeside camping. Book your Bamnoli Vasota jungle trek from Pune and Mumbai with Off Route Adventure. Safe and guided.";
+        customKeywords = [
+            "Vasota trek",
+            "Vasota Fort trek",
+            "Vasota trek Pune",
+            "Bamnoli Vasota trek",
+            "Vasota trek camping",
+            "Koyna Wildlife Sanctuary trek",
+            "Vasota jungle trek",
+            "Vasota trek itinerary",
+        ];
+    } else if (trek.id === "kalsubai") {
+        customTitle = "Kalsubai Trek – Highest Peak in Maharashtra | Off Route Adventure";
+        customDesc = "Conquer Kalsubai, the highest peak in Maharashtra. Book your Kalsubai day or night trek from Pune/Mumbai. Expert guides and safe trekking experience.";
+        customKeywords = [
+            "Kalsubai Trek",
+            "Kalsubai Peak",
+            "Highest peak in Maharashtra",
+            "Kalsubai night trek",
+            "Kalsubai trek difficulty",
+            "Best time for Kalsubai trek",
+            "Bari village Kalsubai",
+            "Kalsubai monsoon trek",
+        ];
+    } else {
+        customKeywords = [
+            `${trek.name} trek`,
+            `${trek.name} tour package`,
+            `trekking ${trek.name}`,
+        ];
+    }
+
+    return {
+        title: customTitle,
+        description: customDesc,
+        keywords: customKeywords,
+        alternates: {
+            canonical: `${BASE_URL}/treks/${trek.id}`,
+        },
+        openGraph: {
+            title: customTitle,
+            description: customDesc,
+            url: `${BASE_URL}/treks/${trek.id}`,
+            images: [
+                {
+                    url: `${BASE_URL}${trek.image}`,
+                    width: 1200,
+                    height: 630,
+                    alt: trek.name,
+                },
+            ],
+            type: "website",
+        },
+    };
+}
+
+// Generate static params for all destinations
+export async function generateStaticParams() {
+    return destinations.map((dest) => ({
+        id: dest.id,
+    }));
+}
+
+export default async function TrekPage({ params }: PageProps) {
+    const resolvedParams = await params;
+    const trek = destinations.find((d) => d.id === resolvedParams.id);
+
+    if (!trek) {
+        notFound();
+    }
+
+    // Pre-configured FAQs for GEO
+    const defaultFaqs = [
+        {
+            question: `Is the ${trek.name} trek safe for beginners?`,
+            answer: `Yes, our guided ${trek.name} trek is safe. We provide experienced trek leaders, first aid support, and ensure all safety protocols are followed.`,
+        },
+        {
+            question: `What should I pack for the ${trek.name} adventure?`,
+            answer: "We recommend comfortable trekking shoes, a water bottle (minimum 2L), personal medications, comfortable clothing, and a light jacket.",
+        },
+        {
+            question: `How do I book the ${trek.name} package?`,
+            answer: "You can book directly through our website by clicking the 'Book Now' button and filling out the registration form. Our team will contact you to confirm.",
+        }
+    ];
+
+    if (trek.id === 'vasota') {
+        defaultFaqs.push({
+            question: "What is the difficulty level of the Vasota Trek?",
+            answer: "The Vasota Trek is considered moderate. It is a scenic jungle trek through the Koyna Wildlife Sanctuary followed by a climb to the fort, manageable by beginners with basic fitness."
+        });
+    }
+
+    if (trek.id === 'kalsubai') {
+        defaultFaqs.push({
+            question: "Which is the highest peak in Maharashtra?",
+            answer: "Kalsubai is the highest peak in Maharashtra, standing at an elevation of 1,646 meters (5,400 feet). It offers spectacular panoramic views of the Sahyadri mountains."
+        });
+    }
+
+    return (
+        <>
+            <BreadcrumbSchema
+                items={[
+                    { name: "Home", href: "/" },
+                    { name: "All Plans", href: "/plans" },
+                    { name: trek.name, href: `/treks/${trek.id}` },
+                ]}
+            />
+            <TouristTripSchema
+                name={trek.name}
+                description={trek.description}
+                price={trek.price}
+                duration={trek.duration}
+                highlights={trek.highlights}
+            />
+            <FAQSchema faqs={defaultFaqs} />
+
+            {/* Hero Section */}
+            <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center">
+                <div className="absolute inset-0">
+                    <Image
+                        src={trek.image}
+                        alt={trek.name}
+                        fill
+                        priority
+                        className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/30" />
+                </div>
+
+                <div className="relative z-10 container mx-auto px-4 text-center mt-20">
+                    <span className="inline-block px-4 py-1.5 rounded-full bg-green-600/90 text-white text-sm font-semibold mb-6 backdrop-blur-sm border border-green-400">
+                        Adventure Awaits
+                    </span>
+                    <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight max-w-4xl mx-auto drop-shadow-lg">
+                        {trek.name}
+                    </h1>
+                    <p className="text-xl text-green-50 max-w-2xl mx-auto drop-shadow-md lg:hidden">
+                        {trek.description}
+                    </p>
+                </div>
+            </section>
+
+            {/* Content Section */}
+            <section className="py-20 bg-gray-50 flex-1">
+                <div className="container mx-auto px-4">
+                    <div className="flex flex-col lg:flex-row gap-8 max-w-6xl mx-auto">
+
+                        {/* Main Content */}
+                        <div className="flex-1 space-y-8">
+                            <div className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
+                                <h2 className="text-3xl font-bold text-gray-900 mb-6">Overview</h2>
+                                <p className="text-gray-600 leading-relaxed text-lg">
+                                    {trek.description}
+                                </p>
+                            </div>
+
+                            <div className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
+                                <h2 className="text-2xl font-bold text-gray-900 mb-6">Trip Highlights</h2>
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    {trek.highlights.map((highlight, idx) => (
+                                        <div key={idx} className="flex items-start gap-3 p-4 rounded-xl bg-green-50/50">
+                                            <CheckCircle className="h-6 w-6 text-green-600 flex-shrink-0" />
+                                            <span className="font-medium text-gray-800">{highlight}</span>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+
+                            {/* FAQs for GEO Optimization */}
+                            <div className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
+                                <h2 className="text-2xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
+                                <div className="space-y-6">
+                                    {defaultFaqs.map((faq, idx) => (
+                                        <div key={idx} className="border-b border-gray-100 pb-4 last:border-0 last:pb-0">
+                                            <h3 className="font-bold text-gray-900 mb-2">{faq.question}</h3>
+                                            <p className="text-gray-600">{faq.answer}</p>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Sidebar Booking Card */}
+                        <div className="w-full lg:w-[400px]">
+                            <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100 sticky top-24">
+                                <div className="mb-6 pb-6 border-b border-gray-100">
+                                    <div className="flex items-center gap-2 mb-2">
+                                        <IndianRupee className="h-6 w-6 text-green-600" />
+                                        <span className="text-3xl font-bold text-gray-900">{trek.price.toLocaleString()}</span>
+                                        <span className="text-gray-500 font-medium ml-1">per person</span>
+                                    </div>
+                                </div>
+
+                                <div className="space-y-5 mb-8">
+                                    <div className="flex items-center gap-4 bg-gray-50 p-4 rounded-2xl">
+                                        <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+                                            <Clock className="h-5 w-5 text-green-600" />
+                                        </div>
+                                        <div>
+                                            <p className="text-sm text-gray-500 font-medium">Duration</p>
+                                            <p className="font-bold text-gray-900">{trek.duration}</p>
+                                        </div>
+                                    </div>
+
+                                    <div className="flex items-center gap-4 bg-gray-50 p-4 rounded-2xl">
+                                        <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+                                            <Mountain className="h-5 w-5 text-green-600" />
+                                        </div>
+                                        <div>
+                                            <p className="text-sm text-gray-500 font-medium">Trip Type</p>
+                                            <p className="font-bold text-gray-900">Guided Adventure</p>
+                                        </div>
+                                    </div>
+
+                                    <div className="flex items-center gap-4 bg-gray-50 p-4 rounded-2xl">
+                                        <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+                                            <MapPin className="h-5 w-5 text-green-600" />
+                                        </div>
+                                        <div>
+                                            <p className="text-sm text-gray-500 font-medium">Location</p>
+                                            <p className="font-bold text-gray-900">Maharashtra</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <Link
+                                    href={`/book?destination=${trek.id}`}
+                                    className="flex items-center justify-center gap-2 w-full py-4 bg-gradient-to-r from-green-600 to-emerald-600 text-white text-lg rounded-xl font-bold hover:from-green-500 hover:to-emerald-500 transition-all shadow-md hover:shadow-xl hover:-translate-y-0.5"
+                                >
+                                    Book Now <ArrowRight className="h-5 w-5" />
+                                </Link>
+                                <p className="text-center text-sm text-gray-500 mt-4 font-medium">Securely book in under 2 minutes.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </>
+    );
+}
