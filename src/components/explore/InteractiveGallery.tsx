@@ -93,16 +93,16 @@ export default function InteractiveGallery({ galleries }: InteractiveGalleryProp
                                             loading={imgIndex < 4 ? "eager" : "lazy"}
                                         />
 
-                                        {/* Hover Overlay */}
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                                        {/* Permanent Bottom Gradient for Readability */}
+                                        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
-                                        {/* Content on hover */}
-                                        <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none">
-                                            <div className="flex items-center gap-2 text-white mb-1">
-                                                <MapPin className="h-4 w-4 text-green-300 shrink-0" />
-                                                <span className="font-semibold text-sm truncate">{gallery.location}</span>
+                                        {/* Content - always visible, slightly animates on hover */}
+                                        <div className="absolute bottom-0 left-0 right-0 p-4 transform group-hover:-translate-y-1 transition-transform duration-300 pointer-events-none">
+                                            <div className="flex items-center gap-2 text-white/90 mb-1">
+                                                <MapPin className="h-4 w-4 text-green-400 shrink-0" />
+                                                <span className="font-semibold text-sm drop-shadow-sm truncate">{gallery.location}</span>
                                             </div>
-                                            <p className="text-white/75 text-xs truncate capitalize">{cleanName.replace(/[-_]/g, ' ')}</p>
+                                            <p className="text-white text-sm font-medium drop-shadow-sm truncate capitalize">{cleanName.replace(/[-_]/g, ' ')}</p>
                                         </div>
                                     </div>
                                 );
