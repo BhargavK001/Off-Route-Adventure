@@ -10,6 +10,7 @@
     "analyze": "set ANALYZE=true && next build"
   },
   "dependencies": {
+    "cloudinary": "^2.9.0",
     "lucide-react": "^0.562.0",
     "next": "16.1.1",
     "react": "19.2.3",

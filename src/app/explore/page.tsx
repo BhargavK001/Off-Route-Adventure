@@ -1,8 +1,10 @@
 import { Metadata } from "next";
-import { MapPin, Mountain, Waves, TreePine, Castle, ArrowRight } from "lucide-react";
-import { galleryImages } from "@/data/destinations";
+import { MapPin, Mountain, Waves, TreePine, Castle, ArrowRight, Camera } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { BreadcrumbSchema } from "@/components/JsonLd";
+import { getAllDestinationGalleries, type DestinationGallery } from "@/lib/cloudinary";
+import InteractiveGallery from "@/components/explore/InteractiveGallery";
 
 const BASE_URL = "https://www.offrouteadventure.in";
 
@@ -55,7 +57,16 @@ const categories = [
   { title: "Lakes & Camping", count: 3, icon: <TreePine className="h-6 w-6" />, color: "from-purple-500 to-pink-600" },
 ];
 
-export default function ExplorePage() {
+export default async function ExplorePage() {
+  let galleries: DestinationGallery[] = [];
+
+  try {
+    galleries = await getAllDestinationGalleries();
+    console.log("[EXPLORE] Fetched galleries:", galleries.length, "destinations, images per gallery:", galleries.map(g => `${g.folderName}:${g.images.length}`));
+  } catch (error) {
+    console.error("[EXPLORE] Failed to fetch galleries:", error);
+  }
+
   return (
     <>
       <BreadcrumbSchema
@@ -106,7 +117,7 @@ export default function ExplorePage() {
         </div>
       </section>
 
-      {/* Gallery Section */}
+      {/* Gallery Section - Cloudinary Images */}
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
@@ -120,30 +131,15 @@ export default function ExplorePage() {
               </span>
             </h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-            {galleryImages.map((image, index) => (
-              <div
-                key={index}
-                className="group relative overflow-hidden rounded-2xl bg-gray-100 aspect-[4/3] cursor-pointer shadow-sm hover:shadow-xl transition-shadow duration-300"
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center">
-                  <Mountain className="h-16 w-16 text-white/50" />
-                </div>
 
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
-                {/* Content */}
-                <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                  <div className="flex items-center gap-2 text-white mb-1">
-                    <MapPin className="h-4 w-4 text-green-300" />
-                    <span className="font-semibold text-sm">{image.location}</span>
-                  </div>
-                  <p className="text-white/75 text-xs">{image.alt}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+          {galleries.length === 0 ? (
+            <div className="text-center py-16 text-gray-500">
+              <Mountain className="h-16 w-16 mx-auto mb-4 text-gray-300" />
+              <p className="text-lg">Gallery loading... Check back soon!</p>
+            </div>
+          ) : (
+            <InteractiveGallery galleries={galleries} />
+          )}
         </div>
       </section>
 
