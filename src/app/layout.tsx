@@ -35,9 +35,15 @@ export const metadata: Metadata = {
     apple: "/Off-Route-Logo.png",
   },
   description:
-    "Off Route Adventure offers safe, exciting & affordable trekking tours in Maharashtra. Explore forts like Harishchandragad, Kalsubai, Rajmachi & more. Book weekend treks from Pune & Mumbai. Guided Sahyadri treks, camping, and adventure travel across India.",
+    "Off Route Adventure offers safe, trusted & affordable trekking tours in Maharashtra for 2025-2026. Explore authentic offbeat forts, low-budget weekend trips from Pune & Mumbai. Your trusted adventure trip planner for Sahyadri treks and India tours.",
   keywords: [
-    "trekking in Maharashtra",
+    "trekking in Maharashtra 2025",
+    "trekking in Maharashtra 2026",
+    "cheap trekking packages Maharashtra",
+    "low budget trip planner India",
+    "trusted adventure tours",
+    "authentic trekking experiences",
+    "best treks Maharashtra 2026",
     "adventure tours Maharashtra",
     "Sahyadri treks",
     "trekking near Pune",
@@ -48,7 +54,6 @@ export const metadata: Metadata = {
     "highest peak in Maharashtra",
     "Vasota trek",
     "Vasota Fort trek",
-    "Vasota jungle camping",
     "Harishchandragad trek",
     "Rajmachi fort trek",
     "Lohagad fort trek",
@@ -62,10 +67,19 @@ export const metadata: Metadata = {
     "hiking in Maharashtra",
     "affordable trekking packages Maharashtra",
     "guided trekking tours Maharashtra",
-    "corporate trekking Maharashtra",
-    "Andharban trek",
-    "Dudhsagar Falls trip",
-    "Manali tour package",
+    "Andharban Jungle Trek",
+    "Andharban dark forest trek",
+    "Devkund Waterfall trek",
+    "Sandhan Valley trek",
+    "Valley of Shadows trek",
+    "Harihar Fort trek",
+    "AMK Trek",
+    "monsoon treks Maharashtra 2025",
+    "monsoon treks Maharashtra 2026",
+    "night trekking near Pune",
+    "offbeat destinations near Mumbai",
+    "hidden gems Sahyadri 2025",
+    "hidden gems Sahyadri 2026",
     "best treks Maharashtra",
   ],
   authors: [{ name: "Off Route Adventure" }],
@@ -142,14 +156,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" dir="ltr">
-      <head>
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9815394093320774"
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
-      </head>
       <body className={`${inter.variable} antialiased font-sans`}>
         <GlobalJsonLd />
         <Header />
@@ -158,6 +164,12 @@ export default function RootLayout({
         </main>
         <Footer />
         <WhatsAppButton />
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9815394093320774"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );

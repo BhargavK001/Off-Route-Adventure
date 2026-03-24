@@ -17,34 +17,29 @@ const CtaSection = dynamic(() => import('@/components/home/CtaSection'), {
 
 const homepageFaqs = [
   {
-    question: "What types of treks does Off Route Adventure offer?",
+    question: "How can I plan a low-budget or cheap trekking trip in Maharashtra for 2025-2026?",
     answer:
-      "We offer day treks, night treks, multi-day expeditions, fort treks, waterfall treks, and mountain peak treks across Maharashtra and India. Our destinations include Harishchandragad, Kalsubai, Rajmachi, Lohagad, Bhimashankar, Andharban, and many more. We also organize camping trips at Pawna Lake and multi-day tours to Hampi, Manali, and Dudhsagar Falls.",
+      "Off Route Adventure is your go-to low-budget trip planner. We offer affordable day treks starting from ₹799 and weekend camping packages from ₹1,199. Our aim is to provide cheap yet high-quality adventure experiences without compromising on safety or authenticity.",
   },
   {
-    question: "Are the treks safe for beginners?",
+    question: "Why is Off Route Adventure considered a trusted and authentic trekking group?",
     answer:
-      "Yes! We have treks suitable for all fitness levels — from easy day trips to Sinhagad and Lohagad (rated beginner-friendly) to challenging treks like Harishchandragad and Kalsubai. Our certified trek leaders are trained in first aid and emergency response, and every trek is planned with safety as the top priority.",
+      "With years of experience and a team of certified trek leaders, we have built a reputation as a trusted adventure group in Pune and Mumbai. We focus on providing authentic Sahyadri experiences, taking you through off-route trails that capture the true essence of Maharashtra's heritage and nature.",
   },
   {
-    question: "How much do trekking packages cost?",
+    question: "What are the best offbeat treks to experience in 2026?",
     answer:
-      "Our packages start from just ₹799 for day trips like Sinhagad. Weekend treks and camping range from ₹999 to ₹1,799. Multi-day tours like Hampi (₹7,999), Golden Temple (₹8,999), and Manali (₹9,999) include transportation, meals, accommodation, and experienced trek leaders.",
+      "For 2026, we are expanding our 'Off-Route' catalog to include even more hidden gems. Treks like Andharban, Sandhan Valley, and the AMK expedition remain our top picks for enthusiasts seeking an authentic and uncrowded adventure. Early bookings for 2026 are already open!",
   },
   {
-    question: "Where is Off Route Adventure based?",
+    question: "Are your budget-friendly treks safe for beginners and solo travelers?",
     answer:
-      "Off Route Adventure is based in Pune, Maharashtra, India. We organize treks and tours primarily across Maharashtra's Sahyadri (Western Ghats) mountain range, with select trips to destinations across India like Manali, Amritsar, and Goa.",
+      "Yes! Being budget-friendly doesn't mean we cut corners on safety. Every 'cheap' trek we organize still includes experienced guides, first-aid support, and a trusted community environment, making it perfect for beginners and solo adventurers looking for an authentic group experience.",
   },
   {
-    question: "What is included in your trekking packages?",
+    question: "How do I book an affordable trek with a trusted planner?",
     answer:
-      "Our packages typically include transportation (as mentioned), experienced trek leader, first aid support, meals (where applicable), camping equipment (for camping trips), and entry fees and permits. Personal expenses, travel insurance, and personal trekking gear are not included.",
-  },
-  {
-    question: "How do I book a trek?",
-    answer:
-      "You can book a trek through our website by visiting the 'Book Now' page, or contact us directly via WhatsApp at +91 92704 28541. Our team will confirm your booking and share all trip details within 24 hours.",
+      "You can browse our upcoming schedule on the 'Plans' page. As a trusted trip planner, we ensure a transparent booking process. Simply click 'Book Now' or WhatsApp us at +91 92704 28541 to start your low-budget adventure today!",
   },
 ];
 
