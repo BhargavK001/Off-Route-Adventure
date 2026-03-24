@@ -24,7 +24,7 @@ interface BookingFormData {
 function BookingForm() {
   const searchParams = useSearchParams();
   const destinationParam = searchParams.get("destination") || "";
-  
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"success" | "error" | null>(null);
 
@@ -412,11 +412,15 @@ export default function BookPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-br from-green-900 via-green-800 to-green-700 text-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Book Your Adventure</h1>
-            <p className="text-xl text-green-100">
+      <section className="py-24 bg-gradient-to-br from-green-900 via-green-800 to-green-700 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(255,255,255,0.08),_transparent_60%)]" />
+        <div className="container mx-auto px-4 relative">
+          <div className="max-w-3xl mx-auto text-center">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-green-200 text-sm font-medium mb-6">
+              🎒 Reserve Your Spot
+            </span>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">Book Your <span className="text-green-300">Adventure</span></h1>
+            <p className="text-xl text-green-100 leading-relaxed">
               Fill in the details below to book your next adventure with us. Our team
               will contact you to confirm your booking.
             </p>

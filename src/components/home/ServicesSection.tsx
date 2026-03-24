@@ -7,6 +7,9 @@ import {
     Bus,
     Hotel,
     Map,
+    Shield,
+    Building,
+    UtensilsCrossed,
 } from "lucide-react";
 
 const iconMap: Record<string, React.ReactNode> = {
@@ -17,6 +20,9 @@ const iconMap: Record<string, React.ReactNode> = {
     Bus: <Bus className="h-8 w-8" />,
     Hotel: <Hotel className="h-8 w-8" />,
     Map: <Map className="h-8 w-8" />,
+    Shield: <Shield className="h-8 w-8" />,
+    Building: <Building className="h-8 w-8" />,
+    UtensilsCrossed: <UtensilsCrossed className="h-8 w-8" />,
 };
 
 export default function ServicesSection() {
