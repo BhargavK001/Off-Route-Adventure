@@ -23,36 +23,32 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     let customKeywords: string[] = [];
 
     if (trek.id === "vasota") {
-        customTitle = "Vasota Trek & Camping | Bamnoli Jungle Safari | Off Route Adventure";
-        customDesc = "Experience the thrilling Vasota trek and lakeside camping. Book your Bamnoli Vasota jungle trek from Pune and Mumbai with Off Route Adventure. Safe and guided.";
-        customKeywords = [
-            "Vasota trek",
-            "Vasota Fort trek",
-            "Vasota trek Pune",
-            "Bamnoli Vasota trek",
-            "Vasota trek camping",
-            "Koyna Wildlife Sanctuary trek",
-            "Vasota jungle trek",
-            "Vasota trek itinerary",
-        ];
+        customTitle = "Vasota Trek & Camping 2026 | Trusted Junkle Safari | Off Route Adventure";
+        customDesc = "Experience the thrilling Vasota trek and lakeside camping in 2025-2026. Book your authentic Bamnoli Vasota jungle trek. Safe, guided, and budget-friendly.";
+        customKeywords = ["Vasota trek 2026", "cheap Vasota trek", "authentic Vasota experience", "trusted trekker Pune", "Vasota jungle safari"];
     } else if (trek.id === "kalsubai") {
-        customTitle = "Kalsubai Trek – Highest Peak in Maharashtra | Off Route Adventure";
-        customDesc = "Conquer Kalsubai, the highest peak in Maharashtra. Book your Kalsubai day or night trek from Pune/Mumbai. Expert guides and safe trekking experience.";
-        customKeywords = [
-            "Kalsubai Trek",
-            "Kalsubai Peak",
-            "Highest peak in Maharashtra",
-            "Kalsubai night trek",
-            "Kalsubai trek difficulty",
-            "Best time for Kalsubai trek",
-            "Bari village Kalsubai",
-            "Kalsubai monsoon trek",
-        ];
+        customTitle = "Kalsubai Trek 2026 – Highest Peak in Maharashtra | Off Route Adventure";
+        customDesc = "Conquer Kalsubai in 2026. Book your trusted Kalsubai day or night trek. Authentic Sahyadri experience with expert guides at low-budget prices.";
+        customKeywords = ["Kalsubai Trek 2026", "cheap Kalsubai trek", "highest peak Maharashtra 2026", "trusted trekking group", "authentic kalsubai trek"];
+    } else if (trek.id === "andharban") {
+        customTitle = "Andharban Jungle Trek 2026 | Authentic Dark Forest | Off Route Adventure";
+        customDesc = "Walk through the dense dark forests of Andharban in 2026. Best low-budget monsoon trek in Maharashtra. Your trusted partner for authentic Sahyadri treks.";
+        customKeywords = ["Andharban trek 2026", "cheap Andharban trek", "authentic forest trek", "trusted adventure planner", "Andharban 2026"];
+    } else if (trek.id === "harishchandragad") {
+        customTitle = "Harishchandragad Trek 2026 | Trusted Camping | Off Route Adventure";
+        customDesc = "Trek to Harishchandragad in 2026. Witness Konkan Kada with an authentic and trusted trekking group. Affordable and safe weekend adventures.";
+        customKeywords = ["Harishchandragad 2026", "cheap Harishchandragad trek", "authentic Konkan Kada", "trusted camping group"];
+    } else if (trek.id === "rajmachi") {
+        customTitle = "Rajmachi Fort Trek 2026 | Cheap & Authentic | Off Route Adventure";
+        customDesc = "Explore Rajmachi in 2026. Night trekking and lakeside camping with a trusted trip planner. Low-budget and authentic Sahyadri experience.";
+        customKeywords = ["Rajmachi 2026", "cheap Rajmachi trek", "authentic Rajmachi camping", "trusted trek group Mumbai"];
     } else {
         customKeywords = [
-            `${trek.name} trek`,
-            `${trek.name} tour package`,
-            `trekking ${trek.name}`,
+            `${trek.name} trek 2026`,
+            `${trek.name} low budget`,
+            `cheap trekking ${trek.name}`,
+            `authentic ${trek.name} experience`,
+            `trusted trip planner ${trek.name}`,
         ];
     }
 
