@@ -1,44 +1,58 @@
 import { MetadataRoute } from "next";
+import { destinations } from "@/data/destinations";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://offrouteadventure.com";
+  const baseUrl = "https://www.offrouteadventure.in";
+  const lastModified = new Date();
 
-  return [
+  // Static routes
+  const staticRoutes: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
-      lastModified: new Date(),
+      lastModified,
       changeFrequency: "weekly",
       priority: 1,
     },
     {
       url: `${baseUrl}/about`,
-      lastModified: new Date(),
+      lastModified,
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
       url: `${baseUrl}/explore`,
-      lastModified: new Date(),
+      lastModified,
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
       url: `${baseUrl}/plans`,
-      lastModified: new Date(),
+      lastModified,
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
       url: `${baseUrl}/book`,
-      lastModified: new Date(),
+      lastModified,
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
       url: `${baseUrl}/contact`,
-      lastModified: new Date(),
+      lastModified,
       changeFrequency: "monthly",
       priority: 0.7,
     },
   ];
+
+  // Dynamic trek routes
+  const trekRoutes: MetadataRoute.Sitemap = destinations.map((trek) => ({
+    url: `${baseUrl}/treks/${trek.id}`,
+    lastModified,
+    changeFrequency: "weekly",
+    priority: 0.8,
+  }));
+
+  return [...staticRoutes, ...trekRoutes];
 }
+

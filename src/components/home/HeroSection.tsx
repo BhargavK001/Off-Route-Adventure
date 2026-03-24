@@ -1,28 +1,85 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Mountain, MapPin, Users, Star } from "lucide-react";
 
+const CALOUSEL_IMAGES = [
+    {
+        url: "/images/hero/hampi.webp",
+        alt: "Hampi UNESCO World Heritage Adventure - Off Route Adventure"
+    },
+    {
+        url: "/images/hero/kalsubai.webp",
+        alt: "Kalsubai Peak Trekking Maharashtra - Highest Peak In Maharashtra"
+    },
+    {
+        url: "/images/hero/manali.webp",
+        alt: "Manali Himalayan Mountain Expedition - Adventure Tours India"
+    },
+    {
+        url: "/images/hero/harihargad.webp",
+        alt: "Harihargad Fort Trek Sahyadri - Fort Trekking Maharashtra"
+    },
+    {
+        url: "/images/hero/kalu-waterfall.webp",
+        alt: "Kalu Waterfall Trek - Majestic Sahyadri Waterfall"
+    },
+];
+
 export default function HeroSection() {
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentImageIndex((prev) => (prev + 1) % CALOUSEL_IMAGES.length);
+        }, 6000); // Change image every 6 seconds
+
+        return () => clearInterval(interval);
+    }, []);
+
     return (
-        <section className="relative min-h-[92vh] flex items-center justify-center overflow-hidden">
-            {/* Background gradient layers */}
-            <div className="absolute inset-0 bg-gradient-to-br from-gray-950 via-green-950 to-gray-950" />
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(34,197,94,0.15),_transparent_60%)]" />
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(16,185,129,0.1),_transparent_60%)]" />
+        <section className="relative min-h-[92vh] flex items-center justify-center overflow-hidden bg-gray-950">
+            {/* Background Images Carousel */}
+            <div className="absolute inset-0 z-0">
+                {CALOUSEL_IMAGES.map((img, index) => (
+                    <div
+                        key={img.url}
+                        className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentImageIndex ? "opacity-100" : "opacity-0"
+                            }`}
+                    >
+                        <Image
+                            src={img.url}
+                            alt={img.alt}
+                            fill
+                            priority={index === 0}
+                            className="object-cover scale-105 animate-[heroZoom_20s_linear_infinite]"
+                        />
+                    </div>
+                ))}
+                {/* Dark Overlay for Readability */}
+                <div className="absolute inset-0 bg-black/45 backdrop-brightness-[0.85]" />
+            </div>
+
+            {/* Background gradient layers (additional depth) */}
+            <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-transparent to-black/60 pointer-events-none" />
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(34,197,94,0.1),_transparent_60%)]" />
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(16,185,129,0.05),_transparent_60%)]" />
 
             {/* Animated floating orbs */}
             <div className="absolute top-20 left-[10%] w-72 h-72 bg-green-500/10 rounded-full blur-3xl animate-pulse" />
             <div className="absolute bottom-20 right-[10%] w-96 h-96 bg-emerald-500/8 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }} />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-green-600/5 rounded-full blur-3xl" />
 
             {/* Mountain silhouette at bottom */}
-            <div className="absolute bottom-0 left-0 right-0">
-                <svg viewBox="0 0 1440 200" fill="none" className="w-full opacity-10">
+            <div className="absolute bottom-0 left-0 right-0 z-10 pointer-events-none">
+                <svg viewBox="0 0 1440 200" fill="none" className="w-full opacity-20">
                     <path d="M0 200L60 180L120 160L180 120L240 140L300 80L360 100L420 60L480 90L540 40L600 70L660 30L720 50L780 20L840 60L900 40L960 80L1020 50L1080 90L1140 60L1200 100L1260 70L1320 120L1380 90L1440 60V200H0Z" fill="currentColor" className="text-green-400" />
                 </svg>
             </div>
 
             {/* Content */}
-            <div className="relative z-10 container mx-auto px-4 text-center text-white">
+            <div className="relative z-20 container mx-auto px-4 text-center text-white">
                 {/* Badge */}
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20 backdrop-blur-sm mb-8 animate-[heroFadeUp_0.8s_ease-out_both]">
                     <Mountain className="h-4 w-4 text-green-400" />
@@ -30,7 +87,7 @@ export default function HeroSection() {
                 </div>
 
                 {/* Main heading */}
-                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight tracking-tight max-w-5xl mx-auto">
+                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight tracking-tight max-w-5xl mx-auto drop-shadow-2xl">
                     <span className="inline-block animate-[heroFadeUp_0.8s_ease-out_0.2s_both]">Beyond the Map,</span>
                     <br />
                     <span className="relative inline-block animate-[heroFadeUp_0.8s_ease-out_0.5s_both]">
@@ -51,7 +108,7 @@ export default function HeroSection() {
                 </h1>
 
                 {/* Subtitle */}
-                <p className="text-lg md:text-xl mb-10 text-gray-300 max-w-2xl mx-auto leading-relaxed animate-[heroFadeUp_0.8s_ease-out_0.7s_both]">
+                <p className="text-lg md:text-xl mb-10 text-gray-100 max-w-2xl mx-auto leading-relaxed animate-[heroFadeUp_0.8s_ease-out_0.7s_both] drop-shadow-lg">
                     Explore India&apos;s most breathtaking trails, forts, and hidden gems.
                     <br className="hidden md:block" />
                     Safe. Exciting. Affordable.
@@ -68,7 +125,7 @@ export default function HeroSection() {
                     </Link>
                     <Link
                         href="/plans"
-                        className="inline-flex items-center justify-center px-8 py-4 bg-white/5 backdrop-blur-sm text-white font-semibold rounded-full border border-white/15 hover:bg-white/10 hover:border-white/25 transition-all"
+                        className="inline-flex items-center justify-center px-8 py-4 bg-white/10 backdrop-blur-md text-white font-semibold rounded-full border border-white/20 hover:bg-white/20 hover:border-white/30 transition-all"
                     >
                         View All Plans
                     </Link>
@@ -76,38 +133,38 @@ export default function HeroSection() {
 
                 {/* Stats bar */}
                 <div className="flex flex-wrap justify-center gap-8 md:gap-12 animate-[heroFadeUp_0.8s_ease-out_1.1s_both]">
-                    <div className="flex items-center gap-2 text-gray-300">
-                        <div className="w-9 h-9 rounded-full bg-green-500/15 flex items-center justify-center">
+                    <div className="flex items-center gap-2 text-white/90">
+                        <div className="w-9 h-9 rounded-full bg-green-500/20 backdrop-blur-sm flex items-center justify-center">
                             <MapPin className="h-4 w-4 text-green-400" />
                         </div>
                         <div className="text-left">
-                            <p className="text-lg font-bold text-white">20+</p>
-                            <p className="text-xs text-gray-400">Destinations</p>
+                            <p className="text-lg font-bold">20+</p>
+                            <p className="text-xs text-white/60 font-medium">Destinations</p>
                         </div>
                     </div>
-                    <div className="flex items-center gap-2 text-gray-300">
-                        <div className="w-9 h-9 rounded-full bg-green-500/15 flex items-center justify-center">
+                    <div className="flex items-center gap-2 text-white/90">
+                        <div className="w-9 h-9 rounded-full bg-green-500/20 backdrop-blur-sm flex items-center justify-center">
                             <Users className="h-4 w-4 text-green-400" />
                         </div>
                         <div className="text-left">
-                            <p className="text-lg font-bold text-white">500+</p>
-                            <p className="text-xs text-gray-400">Happy Trekkers</p>
+                            <p className="text-lg font-bold">500+</p>
+                            <p className="text-xs text-white/60 font-medium">Happy Trekkers</p>
                         </div>
                     </div>
-                    <div className="flex items-center gap-2 text-gray-300">
-                        <div className="w-9 h-9 rounded-full bg-green-500/15 flex items-center justify-center">
+                    <div className="flex items-center gap-2 text-white/90">
+                        <div className="w-9 h-9 rounded-full bg-green-500/20 backdrop-blur-sm flex items-center justify-center">
                             <Star className="h-4 w-4 text-green-400" />
                         </div>
                         <div className="text-left">
-                            <p className="text-lg font-bold text-white">4.9</p>
-                            <p className="text-xs text-gray-400">Avg Rating</p>
+                            <p className="text-lg font-bold">4.9</p>
+                            <p className="text-xs text-white/60 font-medium">Avg Rating</p>
                         </div>
                     </div>
                 </div>
             </div>
 
             {/* Bottom fade */}
-            <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white via-white/50 to-transparent z-30" />
         </section>
     );
 }
