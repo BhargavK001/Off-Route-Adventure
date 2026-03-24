@@ -7,20 +7,24 @@ import { ArrowRight, Mountain, MapPin, Users, Star } from "lucide-react";
 
 const CALOUSEL_IMAGES = [
     {
-        url: "https://images.unsplash.com/photo-1594917409270-22c7104a8b7c?auto=format&fit=crop&q=80&w=2070",
+        url: "/images/hero/hampi.webp",
         alt: "Hampi UNESCO World Heritage Adventure - Off Route Adventure"
     },
     {
-        url: "https://images.unsplash.com/photo-1544198365-f5d60b6d8190?auto=format&fit=crop&q=80&w=2070",
+        url: "/images/hero/kalsubai.webp",
         alt: "Kalsubai Peak Trekking Maharashtra - Highest Peak In Maharashtra"
     },
     {
-        url: "https://images.unsplash.com/photo-1502429892517-f38997992751?auto=format&fit=crop&q=80&w=2070",
+        url: "/images/hero/manali.webp",
         alt: "Manali Himalayan Mountain Expedition - Adventure Tours India"
     },
     {
-        url: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=2070",
-        alt: "Harishchandragad Fort Trek Sahyadri - Fort Trekking Maharashtra"
+        url: "/images/hero/harihargad.webp",
+        alt: "Harihargad Fort Trek Sahyadri - Fort Trekking Maharashtra"
+    },
+    {
+        url: "/images/hero/kalu-waterfall.webp",
+        alt: "Kalu Waterfall Trek - Majestic Sahyadri Waterfall"
     },
 ];
 
