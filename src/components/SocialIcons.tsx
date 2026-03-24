@@ -28,6 +28,7 @@ export function WhatsAppColorIcon(props: React.SVGProps<SVGSVGElement> & { class
                 src="/WhatsApp-removebg-preview.png"
                 alt="WhatsApp"
                 fill
+                sizes="64px"
                 className="object-contain scale-[1.6]"
             />
         </div>
