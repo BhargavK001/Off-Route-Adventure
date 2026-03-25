@@ -136,9 +136,19 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="mt-14 pt-6 border-t border-gray-800/60 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-gray-500 text-xs">
-            &copy; {new Date().getFullYear()} {COMPANY_INFO.name}. All rights reserved.
-          </p>
+          <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8">
+            <p className="text-gray-500 text-xs">
+              &copy; {new Date().getFullYear()} {COMPANY_INFO.name}. All rights reserved.
+            </p>
+            <div className="flex items-center gap-4">
+              <Link href="/privacy-policy" className="text-gray-600 hover:text-green-500 text-xs transition-colors">
+                Privacy Policy
+              </Link>
+              <Link href="/terms" className="text-gray-600 hover:text-green-500 text-xs transition-colors">
+                Terms & Conditions
+              </Link>
+            </div>
+          </div>
           <p className="text-gray-600 text-xs">
             Crafted with ❤️ for adventure seekers
           </p>
