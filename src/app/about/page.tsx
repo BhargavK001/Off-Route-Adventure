@@ -674,17 +674,17 @@ export default function AboutPage() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
-              href="/contact"
+              href="/book"
               className="inline-flex items-center gap-2 px-8 py-4 bg-green-600 hover:bg-green-500 text-white font-semibold rounded-lg transition-all duration-300 hover:scale-105 shadow-lg shadow-green-900/40"
             >
-              Plan Your Trek
+              Book Now
               <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
-              href="/treks"
+              href="/plans"
               className="inline-flex items-center gap-2 px-8 py-4 border border-white/20 hover:border-green-500 text-white font-semibold rounded-lg transition-all duration-300 hover:bg-white/5"
             >
-              View All Treks
+              All Plans
               <ChevronRight className="h-4 w-4" />
             </Link>
           </div>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Mountain, Star, ArrowRight } from "lucide-react";
 import { destinations } from "@/data/destinations";
 
@@ -22,8 +23,18 @@ export default function DestinationsSection() {
                             key={destination.id}
                             className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all hover:-translate-y-1"
                         >
-                            <div className="h-48 bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center">
-                                <Mountain className="h-16 w-16 text-white/80" />
+                            <div className="h-48 relative bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center overflow-hidden">
+                                {destination.image && destination.image.startsWith('http') ? (
+                                    <Image
+                                        src={destination.image}
+                                        alt={destination.name}
+                                        fill
+                                        className={`object-cover ${destination.imagePosition || 'object-center'}`}
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                    />
+                                ) : (
+                                    <Mountain className="h-16 w-16 text-white/80" />
+                                )}
                             </div>
                             <div className="p-6">
                                 <div className="flex items-center justify-between mb-2">
