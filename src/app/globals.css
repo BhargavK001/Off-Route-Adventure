@@ -48,3 +48,13 @@ body {
     transform: scale(1.15);
   }
 }
+
+/* About page marquee */
+@keyframes marqueeScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
