@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { Mountain, Star, Clock, MapPin, CheckCircle, XCircle, ArrowRight } from "lucide-react";
 import { destinations } from "@/data/destinations";
 import { BreadcrumbSchema, TouristTripSchema } from "@/components/JsonLd";
@@ -135,11 +136,21 @@ export default function PlansPage() {
               >
                 {/* Image */}
                 <div className="h-44 bg-gradient-to-br from-green-500 to-emerald-700 flex items-center justify-center relative overflow-hidden">
-                  <Mountain className="h-14 w-14 text-white/60 group-hover:scale-110 transition-transform duration-300" />
-                  <div className="absolute top-3 right-3 px-3 py-1 bg-white/95 rounded-full text-sm font-bold text-green-700 shadow">
+                  {destination.image && destination.image.startsWith('http') ? (
+                    <Image
+                      src={destination.image}
+                      alt={destination.name}
+                      fill
+                      className={`object-cover ${destination.imagePosition || 'object-center'}`}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                    />
+                  ) : (
+                    <Mountain className="h-14 w-14 text-white/60 group-hover:scale-110 transition-transform duration-300" />
+                  )}
+                  <div className="absolute top-3 right-3 px-3 py-1 bg-white/95 rounded-full text-sm font-bold text-green-700 shadow z-10">
                     ₹{destination.price.toLocaleString()}
                   </div>
-                  <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-black/20 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-black/20 to-transparent z-10" />
                 </div>
 
                 {/* Content */}

@@ -16,8 +16,7 @@ export const destinations: Destination[] = [
     price: 7999,
     duration: "2 Days & 3 Nights",
     description: "Explore the UNESCO World Heritage Site with ancient temples and stunning boulder landscapes.",
-    image: "https://res.cloudinary.com/dlgjwovla/image/upload/v1774371180/trekbunnies-610758915_17891599806393127_6316690653748971678_n_zscyxh.jpg",
-    imagePosition: "object-[center_30%]",
+    image: "https://res.cloudinary.com/dlgjwovla/image/upload/v1774371179/trekbunnies-590931217_17891599800393127_8328662028608315857_n_it3wrh.jpg",
     highlights: ["Virupaksha Temple", "Vittala Temple", "Hampi Bazaar", "Sunset at Hemakuta Hill"],
   },
   {
@@ -35,7 +34,7 @@ export const destinations: Destination[] = [
     price: 1399,
     duration: "Trek",
     description: "Trek to one of the most challenging and scenic forts in Maharashtra.",
-    image: "https://res.cloudinary.com/dlgjwovla/image/upload/v1774371237/trekbunnies-625439032_17895024042393127_8147664468128934325_n_j0whzo.jpg",
+    image: "https://res.cloudinary.com/dlgjwovla/image/upload/v1774371185/IMG_20260319_234929_440_wlzryq.jpg",
     highlights: ["Konkan Kada", "Kedareshwar Cave", "Saptatirtha Pushkarini", "Night Camping"],
   },
   {
@@ -44,7 +43,7 @@ export const destinations: Destination[] = [
     price: 1399,
     duration: "Day Trek",
     description: "Conquer the highest peak in Maharashtra at 1646 meters.",
-    image: "https://res.cloudinary.com/dlgjwovla/image/upload/v1774371520/IMG-20251221-WA0113_uhwx33.jpg",
+    image: "https://res.cloudinary.com/dlgjwovla/image/upload/v1774371198/IMG-20260202-WA0122_iyqdzy.jpg",
     highlights: ["Highest Peak", "Sunrise View", "Iron Ladders", "Kalsubai Temple"],
   },
   {
@@ -53,8 +52,7 @@ export const destinations: Destination[] = [
     price: 1499,
     duration: "Forest Trek",
     description: "Walk through the dark dense forests of Sahyadri with breathtaking valley views.",
-    image: "https://res.cloudinary.com/dlgjwovla/image/upload/v1774371741/IMG_0535_gr8oga.jpg",
-    imagePosition: "object-[center_80%]",
+    image: "https://res.cloudinary.com/dlgjwovla/image/upload/v1774371663/IMG_8354_zgm9hw.jpg",
     highlights: ["Dense Forest", "Waterfall", "Valley Views", "Wildlife Spotting"],
   },
   {
@@ -63,7 +61,7 @@ export const destinations: Destination[] = [
     price: 1799,
     duration: "Fort & Camping",
     description: "Explore the historic Vasota Fort with camping under the stars.",
-    image: "https://res.cloudinary.com/dlgjwovla/image/upload/v1774371354/IMG-20251117-WA0420_uh5rkx.jpg",
+    image: "https://res.cloudinary.com/dlgjwovla/image/upload/v1774371363/IMG-20251221-WA0005_huxwpf.jpg",
     highlights: ["Boat Ride", "Fort Exploration", "Night Camping", "Jungle Safari"],
   },
   {
