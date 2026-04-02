@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     "corporate retreat adventure Pune",
   ],
   alternates: {
-    canonical: `${BASE_URL}/about`,
+    canonical: "/about",
   },
   openGraph: {
     title: "About Off Route Adventure – Pune's Trusted Trekking Company",

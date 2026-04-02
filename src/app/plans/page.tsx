@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     "adventure tour packages India",
   ],
   alternates: {
-    canonical: `${BASE_URL}/plans`,
+    canonical: "/plans",
   },
   openGraph: {
     title: "All Tour Packages – Treks & Camping from ₹799 | Off Route Adventure",

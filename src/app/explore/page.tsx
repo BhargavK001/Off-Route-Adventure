@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     "Sahyadri Western Ghats treks",
   ],
   alternates: {
-    canonical: `${BASE_URL}/explore`,
+    canonical: "/explore",
   },
   openGraph: {
     title: "Explore Trekking Destinations in Maharashtra | Off Route Adventure",
