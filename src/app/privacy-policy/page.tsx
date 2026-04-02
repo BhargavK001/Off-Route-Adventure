@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     title: "Privacy Policy | Off Route Adventure",
     description: "Learn how Off Route Adventure collects, uses, and protects your personal information. Our privacy policy explains our commitment to your data security.",
     alternates: {
-        canonical: `${BASE_URL}/privacy-policy`,
+        canonical: "/privacy-policy",
     },
 };
 

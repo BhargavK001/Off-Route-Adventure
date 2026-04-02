@@ -57,7 +57,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         description: customDesc,
         keywords: customKeywords,
         alternates: {
-            canonical: `${BASE_URL}/treks/${trek.id}`,
+            canonical: `/treks/${trek.id}`,
         },
         openGraph: {
             title: customTitle,
