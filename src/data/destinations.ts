@@ -5,6 +5,7 @@ export interface Destination {
   duration: string;
   description: string;
   image: string;
+  imagePosition?: string;
   highlights: string[];
 }
 
@@ -15,7 +16,7 @@ export const destinations: Destination[] = [
     price: 7999,
     duration: "2 Days & 3 Nights",
     description: "Explore the UNESCO World Heritage Site with ancient temples and stunning boulder landscapes.",
-    image: "/images/hampi.jpg",
+    image: "https://res.cloudinary.com/dlgjwovla/image/upload/v1774371179/trekbunnies-590931217_17891599800393127_8328662028608315857_n_it3wrh.jpg",
     highlights: ["Virupaksha Temple", "Vittala Temple", "Hampi Bazaar", "Sunset at Hemakuta Hill"],
   },
   {
@@ -33,7 +34,7 @@ export const destinations: Destination[] = [
     price: 1399,
     duration: "Trek",
     description: "Trek to one of the most challenging and scenic forts in Maharashtra.",
-    image: "/images/harishchandragad.jpg",
+    image: "https://res.cloudinary.com/dlgjwovla/image/upload/v1774371185/IMG_20260319_234929_440_wlzryq.jpg",
     highlights: ["Konkan Kada", "Kedareshwar Cave", "Saptatirtha Pushkarini", "Night Camping"],
   },
   {
@@ -42,7 +43,7 @@ export const destinations: Destination[] = [
     price: 1399,
     duration: "Day Trek",
     description: "Conquer the highest peak in Maharashtra at 1646 meters.",
-    image: "/images/kalsubai.jpg",
+    image: "https://res.cloudinary.com/dlgjwovla/image/upload/v1774371198/IMG-20260202-WA0122_iyqdzy.jpg",
     highlights: ["Highest Peak", "Sunrise View", "Iron Ladders", "Kalsubai Temple"],
   },
   {
@@ -51,7 +52,7 @@ export const destinations: Destination[] = [
     price: 1499,
     duration: "Forest Trek",
     description: "Walk through the dark dense forests of Sahyadri with breathtaking valley views.",
-    image: "/images/andharban.jpg",
+    image: "https://res.cloudinary.com/dlgjwovla/image/upload/v1774371663/IMG_8354_zgm9hw.jpg",
     highlights: ["Dense Forest", "Waterfall", "Valley Views", "Wildlife Spotting"],
   },
   {
@@ -60,7 +61,7 @@ export const destinations: Destination[] = [
     price: 1799,
     duration: "Fort & Camping",
     description: "Explore the historic Vasota Fort with camping under the stars.",
-    image: "/images/vasota.jpg",
+    image: "https://res.cloudinary.com/dlgjwovla/image/upload/v1774371363/IMG-20251221-WA0005_huxwpf.jpg",
     highlights: ["Boat Ride", "Fort Exploration", "Night Camping", "Jungle Safari"],
   },
   {

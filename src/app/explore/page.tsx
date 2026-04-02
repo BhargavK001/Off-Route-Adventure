@@ -75,7 +75,7 @@ export default async function ExplorePage() {
           { name: "Explore Destinations", href: "/explore" },
         ]}
       />
-      <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden bg-gradient-to-b from-green-50/50 to-white">
+      <section className="relative pt-12 pb-4 md:pt-16 md:pb-6 overflow-hidden bg-gradient-to-b from-green-50/50 to-white">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-green-500/5 rounded-full blur-[120px] pointer-events-none -translate-y-1/2 translate-x-1/3" />
 
         <div className="container mx-auto px-4 relative z-10">
@@ -131,9 +131,9 @@ export default async function ExplorePage() {
       </section>
 
       {/* Destination Categories */}
-      <section className="py-10 md:py-20 bg-white relative z-20">
+      <section className="pt-6 md:pt-8 pb-12 md:pb-16 bg-white relative z-20">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 max-w-6xl mx-auto">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 max-w-6xl mx-auto">
             <div className="text-center md:text-left">
               <h2 className="text-3xl font-bold text-gray-950 tracking-tight mb-3">Browse by Category</h2>
               <p className="text-gray-500">Find the perfect terrain for your next adventure.</p>
@@ -163,9 +163,9 @@ export default async function ExplorePage() {
       </section>
 
       {/* Gallery Section - Cloudinary Images */}
-      <section className="py-12 md:py-24 bg-gray-50">
+      <section className="py-12 md:py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10 md:mb-12">
             <span className="inline-block px-4 py-1.5 rounded-full bg-green-100/50 border border-green-200 text-green-700 text-sm font-semibold mb-4">
               Real Shots, Real Adventure
             </span>
