@@ -24,6 +24,8 @@
 .DS_Store
 *.pem
 .agent
+.agent/skills/Agentic-SEO-Skill/
+
 
 # debug
 npm-debug.log*
