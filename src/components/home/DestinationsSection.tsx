@@ -27,8 +27,9 @@ export default function DestinationsSection() {
                                 {destination.image && destination.image.startsWith('http') ? (
                                     <Image
                                         src={destination.image}
-                                        alt={destination.name}
+                                        alt={`${destination.name} Trek – Adventure Tour in Maharashtra | Off Route Adventure`}
                                         fill
+                                        priority={featuredDestinations.indexOf(destination) < 2}
                                         className={`object-cover ${destination.imagePosition || 'object-center'}`}
                                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                     />

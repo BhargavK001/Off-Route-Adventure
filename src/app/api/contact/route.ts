@@ -86,7 +86,7 @@ export async function POST(request: NextRequest) {
               <p style="margin: 4px 0 0 0; font-weight: 500;">The Off Route Adventure Team</p>
               <p style="margin: 12px 0 0 0; font-size: 14px; color: #6b7280;">
                 <em>Beyond the Map, Into the Wild</em><br />
-                <a href="https://offrouteadventure.in" style="color: #166534; text-decoration: none;">www.offrouteadventure.in</a>
+                <a href="https://www.offrouteadventure.in" style="color: #166534; text-decoration: none;">www.offrouteadventure.in</a>
               </p>
             </div>
           </div>

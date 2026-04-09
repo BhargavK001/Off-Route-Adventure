@@ -1,7 +1,14 @@
+import { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 import HeroSection from '@/components/home/HeroSection';
 import WhyChooseUsSection from '@/components/home/WhyChooseUsSection';
-import { BreadcrumbSchema, FAQSchema } from '@/components/JsonLd';
+import { BreadcrumbSchema } from '@/components/JsonLd';
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: '/',
+  },
+};
 
 // Dynamically import components that are below the fold
 // We use ssr: true (default) so Googlebot can still crawl and index the entire page content
@@ -47,7 +54,6 @@ export default function Home() {
   return (
     <>
       <BreadcrumbSchema items={[{ name: "Home", href: "/" }]} />
-      <FAQSchema faqs={homepageFaqs} />
       <HeroSection />
       <WhyChooseUsSection />
       <ServicesSection />

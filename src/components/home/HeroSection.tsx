@@ -54,6 +54,7 @@ export default function HeroSection() {
                             alt={img.alt}
                             fill
                             priority={index === 0}
+                            sizes="(max-width: 768px) 100vw, 100vw"
                             className="object-cover scale-105 animate-[heroZoom_20s_linear_infinite]"
                         />
                     </div>
@@ -88,6 +89,10 @@ export default function HeroSection() {
 
                 {/* Main heading */}
                 <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight tracking-tight max-w-5xl mx-auto drop-shadow-2xl">
+                    {/* SEO-optimized keyword injection while preserving the brand tagline */}
+                    <span className="block text-xl md:text-2xl lg:text-3xl text-green-400 mb-2 font-medium tracking-normal animate-[heroFadeUp_0.8s_ease-out_0.1s_both]">
+                        Trekking & Adventure in Maharashtra
+                    </span>
                     <span className="inline-block animate-[heroFadeUp_0.8s_ease-out_0.2s_both]">Beyond the Map,</span>
                     <br />
                     <span className="relative inline-block animate-[heroFadeUp_0.8s_ease-out_0.5s_both]">

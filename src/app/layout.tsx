@@ -92,9 +92,6 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  alternates: {
-    canonical: "/",
-  },
   openGraph: {
     title: "Off Route Adventure – Trekking in Maharashtra | Adventure Tours India",
     description:

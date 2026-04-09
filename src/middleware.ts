@@ -14,9 +14,10 @@ export function middleware(request: NextRequest) {
   const isLocalhost = host?.includes('localhost') || host?.includes('127.0.0.1');
   
   if (!isLocalhost && (protocol === 'http' || host !== preferredHost)) {
-    url.protocol = 'https';
-    url.host = preferredHost;
-    return NextResponse.redirect(url, 301);
+    const targetUrl = new URL(request.url);
+    targetUrl.protocol = 'https';
+    targetUrl.host = preferredHost;
+    return NextResponse.redirect(targetUrl.toString(), 301);
   }
 
   return NextResponse.next();

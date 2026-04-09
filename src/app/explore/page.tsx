@@ -102,22 +102,27 @@ export default async function ExplorePage() {
             {/* Right Hand Image Collage */}
             <div className="relative h-[350px] md:h-[450px] lg:h-[550px] w-full hidden sm:block">
               {(() => {
-                const heroImages = galleries.flatMap(g => g.images).slice(0, 3).map(img => img.public_id);
-                if (heroImages.length < 3) return null; // Fallback if no images
+                const heroImgs = galleries.flatMap(g => g.images).slice(0, 3);
+                if (heroImgs.length < 3) return null;
+
+                const getAlt = (img: { public_id: string }, idx: number) => {
+                  const name = img.public_id.split('/').pop()?.replace(/[_-]/g, ' ').replace(/\.[^.]+$/, '') || `Adventure destination ${idx + 1}`;
+                  return `Trekking destination in Maharashtra – ${name} | Off Route Adventure`;
+                };
 
                 return (
                   <>
                     {/* Image 1 - Main Center */}
                     <div className="absolute right-[5%] top-[10%] w-[55%] h-[65%] rounded-3xl overflow-hidden shadow-2xl z-20 border-4 border-white transform hover:rotate-2 hover:scale-[1.02] transition-all duration-500">
-                      <Image src={`https://res.cloudinary.com/dlgjwovla/image/upload/c_fill,f_auto,g_auto,q_auto,w_800/${heroImages[0]}`} alt="Destination 1" fill className="object-cover" priority sizes="(max-width: 1024px) 50vw, 33vw" />
+                      <Image src={`https://res.cloudinary.com/dlgjwovla/image/upload/c_fill,f_auto,g_auto,q_auto,w_800/${heroImgs[0].public_id}`} alt={getAlt(heroImgs[0], 0)} fill className="object-cover" priority sizes="(max-width: 1024px) 50vw, 33vw" />
                     </div>
                     {/* Image 2 - Top Left */}
                     <div className="absolute left-[5%] top-0 w-[45%] h-[55%] rounded-3xl overflow-hidden shadow-lg z-10 opacity-95 border-4 border-white transform -rotate-6 hover:rotate-0 hover:z-30 transition-all duration-500">
-                      <Image src={`https://res.cloudinary.com/dlgjwovla/image/upload/c_fill,f_auto,g_auto,q_auto,w_800/${heroImages[1]}`} alt="Destination 2" fill className="object-cover" sizes="(max-width: 1024px) 33vw, 25vw" />
+                      <Image src={`https://res.cloudinary.com/dlgjwovla/image/upload/c_fill,f_auto,g_auto,q_auto,w_800/${heroImgs[1].public_id}`} alt={getAlt(heroImgs[1], 1)} fill className="object-cover" sizes="(max-width: 1024px) 33vw, 25vw" />
                     </div>
                     {/* Image 3 - Bottom Left */}
                     <div className="absolute left-[15%] bottom-[5%] w-[50%] h-[55%] rounded-3xl overflow-hidden shadow-xl z-30 border-4 border-white transform rotate-3 hover:rotate-0 hover:scale-[1.02] transition-all duration-500">
-                      <Image src={`https://res.cloudinary.com/dlgjwovla/image/upload/c_fill,f_auto,g_auto,q_auto,w_800/${heroImages[2]}`} alt="Destination 3" fill className="object-cover" sizes="(max-width: 1024px) 33vw, 25vw" />
+                      <Image src={`https://res.cloudinary.com/dlgjwovla/image/upload/c_fill,f_auto,g_auto,q_auto,w_800/${heroImgs[2].public_id}`} alt={getAlt(heroImgs[2], 2)} fill className="object-cover" sizes="(max-width: 1024px) 33vw, 25vw" />
                     </div>
                   </>
                 );

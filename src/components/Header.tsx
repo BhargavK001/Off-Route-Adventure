@@ -20,6 +20,7 @@ export default function Header() {
               alt="Off Route Adventure Logo"
               width={50}
               height={50}
+              priority
               className="object-contain rounded-full"
             />
             <span className="text-xl font-bold text-gray-900">Off Route Adventure</span>
