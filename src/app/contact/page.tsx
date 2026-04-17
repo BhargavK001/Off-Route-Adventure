@@ -258,7 +258,7 @@ export default function ContactPage() {
   return (
     <div className="bg-white">
       {/* ── 1. HERO — THE DISPATCH CENTER ───────────────────── */}
-      <section className="relative overflow-hidden py-24 md:py-36 bg-black">
+      <section className="relative overflow-hidden py-16 md:py-24 bg-black">
         <div className="absolute inset-0">
           <motion.img
             initial={{ scale: 1.2, opacity: 0 }}
@@ -306,7 +306,7 @@ export default function ContactPage() {
               {...fadeInUp}
               transition={{ delay: 0.2, duration: 0.8 }}
               className="font-black text-white leading-[0.85] tracking-tight mb-8"
-              style={{ fontSize: "clamp(40px, 7vw, 85px)" }}
+              style={{ fontSize: "clamp(32px, 5.5vw, 64px)" }}
             >
               Start Your <br />
               <span className="text-green-500 italic">Off-Route</span> Journey.
@@ -314,7 +314,7 @@ export default function ContactPage() {
             <motion.p
               {...fadeInUp}
               transition={{ delay: 0.4 }}
-              className="text-gray-400 text-lg md:text-xl leading-relaxed max-w-xl font-medium"
+              className="text-gray-400 text-base md:text-lg leading-relaxed max-w-xl font-medium"
             >
               Have a question about a peak or a trail? Our veteran guides are standing by at the base camp.
             </motion.p>
@@ -323,9 +323,9 @@ export default function ContactPage() {
       </section>
 
       {/* ── 2. COMMS & FORM ─────────────────────────────────── */}
-      <section className="py-20 md:py-32" style={{ background: "#fafafa" }}>
-        <div className="container mx-auto px-6 md:px-10 max-w-7xl">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
+      <section className="py-14 md:py-20" style={{ background: "#fafafa" }}>
+        <div className="container mx-auto px-6 md:px-10 max-w-6xl">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
 
             {/* Comms Cards */}
             <motion.div
@@ -422,7 +422,7 @@ export default function ContactPage() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="lg:col-span-8 bg-white rounded-[40px] p-8 md:p-14 shadow-[0_30px_100px_-20px_rgba(0,0,0,0.05)] border border-gray-100"
+              className="lg:col-span-8 bg-white rounded-3xl p-6 md:p-10 shadow-[0_30px_100px_-20px_rgba(0,0,0,0.05)] border border-gray-100"
             >
               <SectionHeader index="01" title="Transmission Box" />
               <form onSubmit={contactForm.handleSubmit(onContactSubmit)} className="space-y-8">

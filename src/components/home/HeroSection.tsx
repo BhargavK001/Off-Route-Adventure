@@ -82,16 +82,16 @@ export default function HeroSection() {
             {/* Content */}
             <div className="relative z-20 container mx-auto px-4 text-center text-white">
                 {/* Badge */}
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20 backdrop-blur-sm mb-8 animate-[heroFadeUp_0.8s_ease-out_both]">
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-green-500/10 border border-green-500/20 backdrop-blur-sm mb-5 animate-[heroFadeUp_0.8s_ease-out_both]">
                     <Mountain className="h-4 w-4 text-green-400" />
                     <span className="text-green-300 text-sm font-medium">India&apos;s Adventure Awaits</span>
                 </div>
 
                 {/* Main heading */}
-                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight tracking-tight max-w-5xl mx-auto drop-shadow-2xl">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight tracking-tight max-w-5xl mx-auto drop-shadow-2xl">
                     {/* SEO-optimized keyword injection while preserving the brand tagline */}
-                    <span className="block text-xl md:text-2xl lg:text-3xl text-green-400 mb-2 font-medium tracking-normal animate-[heroFadeUp_0.8s_ease-out_0.1s_both]">
-                        Trekking & Adventure in Maharashtra
+                    <span className="block text-lg md:text-xl lg:text-2xl text-green-400 mb-1.5 font-medium tracking-normal animate-[heroFadeUp_0.8s_ease-out_0.1s_both]">
+                        Trekking &amp; Adventure in Maharashtra
                     </span>
                     <span className="inline-block animate-[heroFadeUp_0.8s_ease-out_0.2s_both]">Beyond the Map,</span>
                     <br />
@@ -113,55 +113,55 @@ export default function HeroSection() {
                 </h1>
 
                 {/* Subtitle */}
-                <p className="text-lg md:text-xl mb-10 text-gray-100 max-w-2xl mx-auto leading-relaxed animate-[heroFadeUp_0.8s_ease-out_0.7s_both] drop-shadow-lg">
+                <p className="text-base md:text-lg mb-7 text-gray-100 max-w-2xl mx-auto leading-relaxed animate-[heroFadeUp_0.8s_ease-out_0.7s_both] drop-shadow-lg">
                     Explore India&apos;s most breathtaking trails, forts, and hidden gems.
                     <br className="hidden md:block" />
                     Safe. Exciting. Affordable.
                 </p>
 
                 {/* CTA Buttons */}
-                <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-[heroFadeUp_0.8s_ease-out_0.9s_both]">
+                <div className="flex flex-col sm:flex-row gap-3 justify-center mb-10 animate-[heroFadeUp_0.8s_ease-out_0.9s_both]">
                     <Link
                         href="/book"
-                        className="group inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-green-500 to-emerald-600 text-white font-semibold rounded-full hover:from-green-400 hover:to-emerald-500 transition-all hover:scale-105 hover:shadow-lg hover:shadow-green-500/25"
+                        className="group inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white font-semibold rounded-full hover:from-green-400 hover:to-emerald-500 transition-all hover:scale-105 hover:shadow-lg hover:shadow-green-500/25 text-sm"
                     >
                         Book Your Adventure
-                        <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                        <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                     </Link>
                     <Link
                         href="/plans"
-                        className="inline-flex items-center justify-center px-8 py-4 bg-white/10 backdrop-blur-md text-white font-semibold rounded-full border border-white/20 hover:bg-white/20 hover:border-white/30 transition-all"
+                        className="inline-flex items-center justify-center px-6 py-3 bg-white/10 backdrop-blur-md text-white font-semibold rounded-full border border-white/20 hover:bg-white/20 hover:border-white/30 transition-all text-sm"
                     >
                         View All Plans
                     </Link>
                 </div>
 
                 {/* Stats bar */}
-                <div className="flex flex-wrap justify-center gap-8 md:gap-12 animate-[heroFadeUp_0.8s_ease-out_1.1s_both]">
+                <div className="flex flex-wrap justify-center gap-6 md:gap-10 animate-[heroFadeUp_0.8s_ease-out_1.1s_both]">
                     <div className="flex items-center gap-2 text-white/90">
-                        <div className="w-9 h-9 rounded-full bg-green-500/20 backdrop-blur-sm flex items-center justify-center">
-                            <MapPin className="h-4 w-4 text-green-400" />
+                        <div className="w-8 h-8 rounded-full bg-green-500/20 backdrop-blur-sm flex items-center justify-center">
+                            <MapPin className="h-3.5 w-3.5 text-green-400" />
                         </div>
                         <div className="text-left">
-                            <p className="text-lg font-bold">20+</p>
+                            <p className="text-base font-bold">20+</p>
                             <p className="text-xs text-white/60 font-medium">Destinations</p>
                         </div>
                     </div>
                     <div className="flex items-center gap-2 text-white/90">
-                        <div className="w-9 h-9 rounded-full bg-green-500/20 backdrop-blur-sm flex items-center justify-center">
-                            <Users className="h-4 w-4 text-green-400" />
+                        <div className="w-8 h-8 rounded-full bg-green-500/20 backdrop-blur-sm flex items-center justify-center">
+                            <Users className="h-3.5 w-3.5 text-green-400" />
                         </div>
                         <div className="text-left">
-                            <p className="text-lg font-bold">500+</p>
+                            <p className="text-base font-bold">500+</p>
                             <p className="text-xs text-white/60 font-medium">Happy Trekkers</p>
                         </div>
                     </div>
                     <div className="flex items-center gap-2 text-white/90">
-                        <div className="w-9 h-9 rounded-full bg-green-500/20 backdrop-blur-sm flex items-center justify-center">
-                            <Star className="h-4 w-4 text-green-400" />
+                        <div className="w-8 h-8 rounded-full bg-green-500/20 backdrop-blur-sm flex items-center justify-center">
+                            <Star className="h-3.5 w-3.5 text-green-400" />
                         </div>
                         <div className="text-left">
-                            <p className="text-lg font-bold">4.9</p>
+                            <p className="text-base font-bold">4.9</p>
                             <p className="text-xs text-white/60 font-medium">Avg Rating</p>
                         </div>
                     </div>
