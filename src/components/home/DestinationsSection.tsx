@@ -7,7 +7,7 @@ export default function DestinationsSection() {
     const featuredDestinations = destinations.slice(0, 6);
 
     return (
-        <section className="py-16 bg-gray-50">
+        <section className="py-12 bg-gray-50">
             <div className="container mx-auto px-4 max-w-6xl">
                 <div className="text-center mb-8">
                     <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
@@ -70,7 +70,7 @@ export default function DestinationsSection() {
                         </div>
                     ))}
                 </div>
-                <div className="text-center mt-8">
+                <div className="text-center mt-6">
                     <Link
                         href="/plans"
                         className="inline-flex items-center px-6 py-3 bg-green-600 text-white font-semibold rounded-full hover:bg-green-700 transition-all text-sm"

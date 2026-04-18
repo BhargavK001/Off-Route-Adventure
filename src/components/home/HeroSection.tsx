@@ -113,14 +113,14 @@ export default function HeroSection() {
                 </h1>
 
                 {/* Subtitle */}
-                <p className="text-base md:text-lg mb-7 text-gray-100 max-w-2xl mx-auto leading-relaxed animate-[heroFadeUp_0.8s_ease-out_0.7s_both] drop-shadow-lg">
+                <p className="text-base md:text-lg mb-5 text-gray-100 max-w-2xl mx-auto leading-relaxed animate-[heroFadeUp_0.8s_ease-out_0.7s_both] drop-shadow-lg">
                     Explore India&apos;s most breathtaking trails, forts, and hidden gems.
                     <br className="hidden md:block" />
                     Safe. Exciting. Affordable.
                 </p>
 
                 {/* CTA Buttons */}
-                <div className="flex flex-col sm:flex-row gap-3 justify-center mb-10 animate-[heroFadeUp_0.8s_ease-out_0.9s_both]">
+                <div className="flex flex-col sm:flex-row gap-3 justify-center mb-7 animate-[heroFadeUp_0.8s_ease-out_0.9s_both]">
                     <Link
                         href="/book"
                         className="group inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white font-semibold rounded-full hover:from-green-400 hover:to-emerald-500 transition-all hover:scale-105 hover:shadow-lg hover:shadow-green-500/25 text-sm"
@@ -137,7 +137,7 @@ export default function HeroSection() {
                 </div>
 
                 {/* Stats bar */}
-                <div className="flex flex-wrap justify-center gap-6 md:gap-10 animate-[heroFadeUp_0.8s_ease-out_1.1s_both]">
+                <div className="flex flex-wrap justify-center gap-5 md:gap-8 animate-[heroFadeUp_0.8s_ease-out_1.1s_both]">
                     <div className="flex items-center gap-2 text-white/90">
                         <div className="w-8 h-8 rounded-full bg-green-500/20 backdrop-blur-sm flex items-center justify-center">
                             <MapPin className="h-3.5 w-3.5 text-green-400" />

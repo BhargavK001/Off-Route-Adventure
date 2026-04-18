@@ -24,10 +24,10 @@ const iconMap: Record<string, React.ReactNode> = {
 
 export default function WhyChooseUsSection() {
     return (
-        <section className="py-16 bg-gray-50">
+        <section className="py-12 bg-gray-50">
             <div className="container mx-auto px-4 max-w-6xl">
                 {/* Header */}
-                <div className="text-center mb-10">
+                <div className="text-center mb-8">
                     <span className="inline-block px-3 py-1 rounded-full bg-green-100 text-green-700 text-xs font-semibold tracking-wide mb-3">
                         Our Promise
                     </span>

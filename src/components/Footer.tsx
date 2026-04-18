@@ -14,7 +14,7 @@ export default function Footer() {
       <div className="absolute top-0 right-0 w-96 h-96 bg-green-500/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
       <div className="absolute bottom-0 left-0 w-72 h-72 bg-emerald-500/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
 
-      <div className="relative container mx-auto px-4 max-w-6xl pt-10 pb-5">
+      <div className="relative container mx-auto px-4 max-w-6xl pt-8 pb-4">
         {/* Main footer grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[2fr_1fr_1.5fr_1.5fr] gap-8 lg:gap-6">
           {/* Brand Section */}
@@ -135,7 +135,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-8 pt-5 border-t border-gray-800/60 flex flex-col md:flex-row items-center justify-between gap-3">
+        <div className="mt-6 pt-4 border-t border-gray-800/60 flex flex-col md:flex-row items-center justify-between gap-3">
           <div className="flex flex-col md:flex-row items-center gap-3 md:gap-6">
             <p className="text-gray-500 text-xs">
               &copy; {new Date().getFullYear()} {COMPANY_INFO.name}. All rights reserved.

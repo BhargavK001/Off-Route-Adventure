@@ -21,9 +21,9 @@ const iconMap: Record<string, React.ReactNode> = {
 
 export default function ServicesSection() {
     return (
-        <section className="py-14">
+        <section className="py-10">
             <div className="container mx-auto px-4 max-w-6xl">
-                <div className="text-center mb-8">
+                <div className="text-center mb-6">
                     <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
                         Our Services
                     </h2>
