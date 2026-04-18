@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 import HeroSection from '@/components/home/HeroSection';
 import WhyChooseUsSection from '@/components/home/WhyChooseUsSection';
-import { BreadcrumbSchema } from '@/components/JsonLd';
+import { BreadcrumbSchema, FAQSchema } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   alternates: {
@@ -10,17 +10,10 @@ export const metadata: Metadata = {
   },
 };
 
-// Dynamically import components that are below the fold
-// We use ssr: true (default) so Googlebot can still crawl and index the entire page content
-const ServicesSection = dynamic(() => import('@/components/home/ServicesSection'), {
-  ssr: true
-});
-const DestinationsSection = dynamic(() => import('@/components/home/DestinationsSection'), {
-  ssr: true
-});
-const CtaSection = dynamic(() => import('@/components/home/CtaSection'), {
-  ssr: true
-});
+// Dynamically import below-the-fold components (ssr:true so Googlebot indexes them)
+const ServicesSection = dynamic(() => import('@/components/home/ServicesSection'), { ssr: true });
+const DestinationsSection = dynamic(() => import('@/components/home/DestinationsSection'), { ssr: true });
+const CtaSection = dynamic(() => import('@/components/home/CtaSection'), { ssr: true });
 
 const homepageFaqs = [
   {
@@ -53,15 +46,23 @@ const homepageFaqs = [
 export default function Home() {
   return (
     <>
+      {/* Structured Data (JSON-LD) */}
       <BreadcrumbSchema items={[{ name: "Home", href: "/" }]} />
+      <FAQSchema faqs={homepageFaqs} />
+
       <HeroSection />
       <WhyChooseUsSection />
       <ServicesSection />
       <DestinationsSection />
       <CtaSection />
 
-      {/* FAQ Section for SEO & GEO */}
-      <section className="py-14 bg-gray-50">
+      {/* FAQ Section – visible UI + microdata for redundancy */}
+      <section
+        className="py-10 bg-gray-50"
+        aria-label="Frequently asked questions about trekking with Off Route Adventure"
+        itemScope
+        itemType="https://schema.org/FAQPage"
+      >
         <div className="container mx-auto px-4 max-w-3xl">
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-8">
@@ -83,15 +84,28 @@ export default function Home() {
                 <details
                   key={index}
                   className="group bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden"
+                  itemScope
+                  itemType="https://schema.org/Question"
                 >
-                  <summary className="flex items-center justify-between cursor-pointer p-4 text-left font-semibold text-gray-900 hover:text-green-700 transition-colors text-sm">
+                  <summary
+                    className="flex items-center justify-between cursor-pointer p-4 text-left font-semibold text-gray-900 hover:text-green-700 transition-colors text-sm"
+                    itemProp="name"
+                  >
                     <span className="pr-4">{faq.question}</span>
-                    <span className="flex-shrink-0 w-5 h-5 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-xs font-bold group-open:rotate-45 transition-transform duration-200">
+                    <span
+                      className="flex-shrink-0 w-5 h-5 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-xs font-bold group-open:rotate-45 transition-transform duration-200"
+                      aria-hidden="true"
+                    >
                       +
                     </span>
                   </summary>
-                  <div className="px-4 pb-4 text-gray-600 leading-relaxed text-sm">
-                    {faq.answer}
+                  <div
+                    className="px-4 pb-4 text-gray-600 leading-relaxed text-sm"
+                    itemScope
+                    itemType="https://schema.org/Answer"
+                    itemProp="acceptedAnswer"
+                  >
+                    <p itemProp="text">{faq.answer}</p>
                   </div>
                 </details>
               ))}
@@ -102,4 +116,3 @@ export default function Home() {
     </>
   );
 }
-

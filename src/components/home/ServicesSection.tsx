@@ -10,18 +10,18 @@ import {
 } from "lucide-react";
 
 const iconMap: Record<string, React.ReactNode> = {
-    MapPin: <MapPin className="h-8 w-8" />,
-    Mountain: <Mountain className="h-8 w-8" />,
-    Zap: <Zap className="h-8 w-8" />,
-    Headphones: <Headphones className="h-8 w-8" />,
-    Bus: <Bus className="h-8 w-8" />,
-    Hotel: <Hotel className="h-8 w-8" />,
-    Map: <Map className="h-8 w-8" />,
+    MapPin: <MapPin className="h-5 w-5" aria-hidden="true" />,
+    Mountain: <Mountain className="h-5 w-5" aria-hidden="true" />,
+    Zap: <Zap className="h-5 w-5" aria-hidden="true" />,
+    Headphones: <Headphones className="h-5 w-5" aria-hidden="true" />,
+    Bus: <Bus className="h-5 w-5" aria-hidden="true" />,
+    Hotel: <Hotel className="h-5 w-5" aria-hidden="true" />,
+    Map: <Map className="h-5 w-5" aria-hidden="true" />,
 };
 
 export default function ServicesSection() {
     return (
-        <section className="py-10">
+        <section className="py-10" aria-label="Our travel services">
             <div className="container mx-auto px-4 max-w-6xl">
                 <div className="text-center mb-6">
                     <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
@@ -31,13 +31,14 @@ export default function ServicesSection() {
                         Comprehensive travel services to make your adventure seamless and memorable.
                     </p>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                     {SERVICES.map((service, index) => (
                         <div
                             key={index}
-                            className="flex items-start gap-3 p-4 bg-gray-50 rounded-xl hover:bg-green-50 transition-colors"
+                            className="flex items-start gap-3 p-4 bg-gray-50 rounded-xl hover:bg-green-50 transition-colors animate-fade-in-up"
+                            style={{ animationDelay: `${index * 60}ms` }}
                         >
-                            <div className="w-10 h-10 bg-green-600 rounded-lg flex items-center justify-center text-white flex-shrink-0">
+                            <div className="w-9 h-9 bg-green-600 rounded-lg flex items-center justify-center text-white flex-shrink-0" aria-hidden="true">
                                 {iconMap[service.icon] || <MapPin className="h-5 w-5" />}
                             </div>
                             <div>
