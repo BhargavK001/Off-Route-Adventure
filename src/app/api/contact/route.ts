@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 
-const TO_EMAIL = "bhargavk056@gmail.com";
+const TO_EMAIL = "off.route.adventure.11@gmail.com";
 
 export async function POST(request: NextRequest) {
   try {
