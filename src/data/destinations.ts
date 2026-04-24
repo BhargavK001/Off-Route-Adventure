@@ -25,7 +25,8 @@ export const destinations: Destination[] = [
     price: 1399,
     duration: "Day Trip",
     description: "Experience the majestic Kalu Waterfall surrounded by lush greenery.",
-    image: "/images/kalu-waterfall.jpg",
+    image: "https://res.cloudinary.com/dlgjwovla/image/upload/v1777031806/WhatsApp_Image_2026-04-17_at_11.11.58_PM_j95ksb.jpg",
+    imagePosition: "object-[center_70%]",
     highlights: ["Scenic Trek", "Waterfall View", "Natural Pool", "Photography"],
   },
   {
@@ -35,6 +36,7 @@ export const destinations: Destination[] = [
     duration: "Trek",
     description: "Trek to one of the most challenging and scenic forts in Maharashtra.",
     image: "https://res.cloudinary.com/dlgjwovla/image/upload/v1774371185/IMG_20260319_234929_440_wlzryq.jpg",
+    imagePosition: "object-center",
     highlights: ["Konkan Kada", "Kedareshwar Cave", "Saptatirtha Pushkarini", "Night Camping"],
   },
   {
@@ -70,7 +72,8 @@ export const destinations: Destination[] = [
     price: 8999,
     duration: "3 Days & 2 Nights",
     description: "Visit the spiritual center of Sikhism - the magnificent Golden Temple in Amritsar.",
-    image: "/images/golden-temple.jpg",
+    image: "https://res.cloudinary.com/dlgjwovla/image/upload/v1777033274/golden_temple_p2jm5w.jpg",
+    imagePosition: "object-[center_70%]",
     highlights: ["Golden Temple", "Jallianwala Bagh", "Wagah Border", "Langar Experience"],
   },
   {
@@ -79,7 +82,8 @@ export const destinations: Destination[] = [
     price: 9999,
     duration: "4 Days & 3 Nights",
     description: "Experience the beauty of Himachal Pradesh with snow-capped mountains and adventure activities.",
-    image: "/images/manali.jpg",
+    image: "https://res.cloudinary.com/dlgjwovla/image/upload/v1777033274/manali_tqpe5d.jpg",
+    imagePosition: "object-[center_70%]",
     highlights: ["Solang Valley", "Rohtang Pass", "Hadimba Temple", "River Rafting"],
   },
   {
@@ -88,7 +92,8 @@ export const destinations: Destination[] = [
     price: 1599,
     duration: "Day Trek",
     description: "Witness the spectacular cliff at Harishchandragad with panoramic Konkan views.",
-    image: "/images/konkankada.jpg",
+    image: "https://res.cloudinary.com/dlgjwovla/image/upload/f_auto,q_auto/v1777034026/IMG_5524.HEIC_vlyofb.heic",
+    imagePosition: "object-center",
     highlights: ["Cliff Edge", "Sunrise View", "Photography", "Camping"],
   },
   {
@@ -97,7 +102,8 @@ export const destinations: Destination[] = [
     price: 1299,
     duration: "Night Trek",
     description: "Night trek to the historic Rajmachi Fort with twin forts Shrivardhan and Manaranjan.",
-    image: "/images/rajmachi.jpg",
+    image: "https://res.cloudinary.com/dlgjwovla/image/upload/v1777033275/rajmachi_qblr1z.jpg",
+    imagePosition: "object-[center_70%]",
     highlights: ["Night Trek", "Twin Forts", "Firefly Spotting", "Village Stay"],
   },
   {
@@ -106,7 +112,8 @@ export const destinations: Destination[] = [
     price: 999,
     duration: "Day Trek",
     description: "Easy trek to the Iron Fort with stunning views of Pawna Lake.",
-    image: "/images/lohagad.jpg",
+    image: "https://res.cloudinary.com/dlgjwovla/image/upload/v1777033274/Lohagad_ng9fkb.jpg",
+    imagePosition: "object-[center_70%]",
     highlights: ["Historic Fort", "Pawna Lake View", "Vinchukata Point", "Easy Trek"],
   },
   {
@@ -115,7 +122,8 @@ export const destinations: Destination[] = [
     price: 1499,
     duration: "Trek",
     description: "Trek to the famous Jyotirlinga temple through dense forests.",
-    image: "/images/bhimashankar.jpg",
+    image: "https://res.cloudinary.com/dlgjwovla/image/upload/v1774587202/IMG-20260223-WA0219_qgpoij.jpg",
+    imagePosition: "object-bottom",
     highlights: ["Jyotirlinga Temple", "Wildlife Sanctuary", "Monsoon Beauty", "Gupt Bhimashankar"],
   },
   {
@@ -124,7 +132,8 @@ export const destinations: Destination[] = [
     price: 899,
     duration: "Day Trek",
     description: "Trek to the pyramid-shaped Tikona Fort with panoramic views.",
-    image: "/images/tikona.jpg",
+    image: "https://res.cloudinary.com/dlgjwovla/image/upload/v1777034677/Tikona_Fort_kfn90s.jpg",
+    imagePosition: "object-[center_70%]",
     highlights: ["Pyramid Shape", "Pawna Dam View", "Rock Cut Steps", "Historic Caves"],
   },
   {
@@ -133,7 +142,8 @@ export const destinations: Destination[] = [
     price: 799,
     duration: "Day Trip",
     description: "Visit the legendary Lion Fort near Pune with rich Maratha history.",
-    image: "/images/sinhagad.jpg",
+    image: "https://res.cloudinary.com/dlgjwovla/image/upload/v1777035147/Sinhagad_w8eqci.jpg",
+    imagePosition: "object-[center_70%]",
     highlights: ["Historic Fort", "Local Food", "Pune City View", "Tanaji Memorial"],
   },
   {
@@ -142,7 +152,8 @@ export const destinations: Destination[] = [
     price: 1199,
     duration: "Overnight",
     description: "Lakeside camping with bonfire and music under the stars.",
-    image: "/images/pawna-lake.jpg",
+    image: "https://res.cloudinary.com/dlgjwovla/image/upload/v1777033274/Pawna_Lake_Camping_bqejth.jpg",
+    imagePosition: "object-[center_70%]",
     highlights: ["Lakeside Tents", "Bonfire", "BBQ Dinner", "Sunrise View"],
   },
   {
@@ -151,7 +162,8 @@ export const destinations: Destination[] = [
     price: 4999,
     duration: "2 Days & 1 Night",
     description: "Visit India's fifth tallest waterfall with a thrilling jeep safari.",
-    image: "/images/dudhsagar.jpg",
+    image: "https://res.cloudinary.com/dlgjwovla/image/upload/c_crop,w_0.82,h_1.0,x_0.18,fl_relative,f_auto,q_auto/v1777035268/dudhsagar_q8xxmx.jpg",
+    imagePosition: "object-center",
     highlights: ["Waterfall View", "Jeep Safari", "Spice Plantation", "Goan Cuisine"],
   },
 ];
