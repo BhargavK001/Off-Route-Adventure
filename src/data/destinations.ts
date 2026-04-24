@@ -4,11 +4,11 @@ export interface Destination {
   price: number;
   duration: string;
   description: string;
-  detailedContent: string;
-  bestSeason: string;
-  difficulty: string;
+  detailedContent?: string;
+  bestSeason?: string;
+  difficulty?: string;
   altitude?: string;
-  whatToPack: string[];
+  whatToPack?: string[];
   image: string;
   imagePosition?: string;
   highlights: string[];
@@ -34,11 +34,8 @@ export const destinations: Destination[] = [
     price: 1399,
     duration: "Day Trip",
     description: "Experience the majestic Kalu Waterfall surrounded by lush greenery.",
-    detailedContent: "The Kalu Waterfall, nestled deep in the Sahyadri ranges near Malshej Ghat in Maharashtra, is one of the most spectacular monsoon waterfalls in the Western Ghats. Cascading from a height of over 100 feet through layers of basalt rock covered in vibrant green moss, Kalu Waterfall creates a breathtaking natural amphitheatre that feels almost untouched by modern tourism. Our Off Route Adventure day trip takes you on a scenic 2-hour trek through dense forests composed of teak, mango, and jamun trees, crossing multiple seasonal streams before arriving at the magnificent waterfall basin. The trail itself is a nature lover's paradise — you will encounter endemic Sahyadri wildflowers, colourful butterflies, and if you are lucky, the Malabar giant squirrel. The natural pool at the base of the waterfall is perfect for a refreshing dip after the hike. This trek is moderately easy and suitable for beginners, families, and photographers seeking to capture the raw beauty of Maharashtra's monsoon landscape. The package includes expert trail guides, safety equipment, transportation from Pune, breakfast, and a packed lunch. Kalu Waterfall is also an excellent alternative for trekkers who want to avoid the crowded routes to Bhandardara or Malshej during peak monsoon weekends.",
-    bestSeason: "July to September (Monsoon)",
-    difficulty: "Easy to Moderate",
-    whatToPack: ["Waterproof backpack", "Rain jacket or poncho", "Grip shoes (no slippers)", "Change of clothes", "Water bottle (2L)"],
-    image: "/images/hero/kalu-waterfall.webp",
+    image: "https://res.cloudinary.com/dlgjwovla/image/upload/v1777031806/WhatsApp_Image_2026-04-17_at_11.11.58_PM_j95ksb.jpg",
+    imagePosition: "object-[center_70%]",
     highlights: ["Scenic Trek", "Waterfall View", "Natural Pool", "Photography"],
   },
   {
@@ -53,6 +50,7 @@ export const destinations: Destination[] = [
     altitude: "1,424 m (4,672 ft)",
     whatToPack: ["Sturdy trekking shoes", "Warm jacket (winter)", "Headlamp/torch", "2L water + energy snacks", "Personal first-aid kit"],
     image: "https://res.cloudinary.com/dlgjwovla/image/upload/v1774371185/IMG_20260319_234929_440_wlzryq.jpg",
+    imagePosition: "object-center",
     highlights: ["Konkan Kada", "Kedareshwar Cave", "Saptatirtha Pushkarini", "Night Camping"],
   },
   {
@@ -102,11 +100,8 @@ export const destinations: Destination[] = [
     price: 8999,
     duration: "3 Days & 2 Nights",
     description: "Visit the spiritual center of Sikhism - the magnificent Golden Temple in Amritsar.",
-    detailedContent: "The Golden Temple, or Sri Harmandir Sahib, in Amritsar, Punjab, is one of the most sacred and visually stunning religious sites in the world. Our Off Route Adventure cultural tour package takes you on a deeply enriching 3-day journey to this spiritual marvel and the surrounding historical landmarks. The Golden Temple itself is a breathtaking architectural masterpiece — its upper floors are covered in 750 kg of pure gold, reflecting gloriously in the surrounding Amrit Sarovar (Pool of Nectar) that gives the city its name. Visitors from every faith and background are welcomed here, and you will experience the world's largest free community kitchen (Langar), where over 100,000 people are served fresh meals daily, regardless of caste, religion, or nationality. Beyond the Golden Temple, our itinerary includes a visit to Jallianwala Bagh — the memorial site of the tragic 1919 massacre that became a turning point in India's independence movement. The bullet marks still preserved in the walls serve as a powerful reminder of sacrifice and resilience. In the evening, you will witness the electrifying Wagah Border ceremony, where the flag-lowering ceremony between India and Pakistan draws thousands of patriotic spectators in one of the most dramatic daily rituals anywhere on Earth. The package includes comfortable AC train or bus transportation from Pune/Mumbai, hotel accommodation near the Golden Temple, guided tours with a knowledgeable local guide, all major meals including authentic Punjabi cuisine (amritsari kulcha, lassi, and more), and entry to all monuments. This is the perfect trip for families, spiritual seekers, and anyone who wants to experience the warmth and grandeur of Punjab.",
-    bestSeason: "October to March",
-    difficulty: "Easy (Cultural Tour)",
-    whatToPack: ["Head covering (required inside temple)", "Comfortable walking shoes", "Warm jacket (winters)", "Camera", "Respectful full-length clothing"],
-    image: "/images/golden-temple.jpg",
+    image: "https://res.cloudinary.com/dlgjwovla/image/upload/v1777033274/golden_temple_p2jm5w.jpg",
+    imagePosition: "object-[center_70%]",
     highlights: ["Golden Temple", "Jallianwala Bagh", "Wagah Border", "Langar Experience"],
   },
   {
@@ -115,12 +110,8 @@ export const destinations: Destination[] = [
     price: 9999,
     duration: "4 Days & 3 Nights",
     description: "Experience the beauty of Himachal Pradesh with snow-capped mountains and adventure activities.",
-    detailedContent: "Manali, nestled in the Kullu Valley of Himachal Pradesh at an altitude of 2,050 metres, is one of India's most beloved hill stations and adventure destinations. Our Off Route Adventure Manali package is designed for travellers who want more than just sightseeing — we take you on an immersive journey through snow-capped peaks, ancient temples, roaring rivers, and adrenaline-pumping adventure activities. The itinerary begins with a visit to the iconic Solang Valley, a paradise for adventure sports enthusiasts offering paragliding, zorbing, and skiing (seasonal). Next, we take you on the legendary drive to Rohtang Pass (or Atal Tunnel, depending on season), where you will stand at 3,978 metres surrounded by pristine snowfields and panoramic Himalayan views that stretch endlessly in every direction. The cultural side of Manali is equally captivating — you will explore the ancient Hadimba Temple, a 16th-century pagoda-style wooden temple dedicated to the goddess Hadimba set amidst towering cedar forests, and the charming Old Manali village with its cozy cafes, hippie markets, and laid-back Himalayan vibe. For the adventure hungry, our package includes an exhilarating river rafting session on the Beas River with Class II-III rapids that are perfect for both beginners and experienced rafters. The package covers comfortable Volvo bus transport from Delhi (or we can arrange from Pune/Mumbai), hotel accommodation with mountain views, all adventure activity bookings, guided tours, breakfast and dinner daily, and a dedicated trip coordinator throughout. Manali with Off Route Adventure is not just a vacation — it is an experience that combines natural beauty, cultural richness, and heart-pumping adventure in one unforgettable trip.",
-    bestSeason: "March to June (Summer) & December to February (Snow)",
-    difficulty: "Easy to Moderate",
-    altitude: "2,050 m (6,726 ft)",
-    whatToPack: ["Heavy winter jacket (Dec-Feb)", "Layered clothing", "Sunglasses & sunscreen", "Comfortable hiking shoes", "Power bank (cold drains batteries)"],
-    image: "/images/hero/manali.webp",
+    image: "https://res.cloudinary.com/dlgjwovla/image/upload/v1777033274/manali_tqpe5d.jpg",
+    imagePosition: "object-[center_70%]",
     highlights: ["Solang Valley", "Rohtang Pass", "Hadimba Temple", "River Rafting"],
   },
   {
@@ -129,12 +120,8 @@ export const destinations: Destination[] = [
     price: 1599,
     duration: "Day Trek",
     description: "Witness the spectacular cliff at Harishchandragad with panoramic Konkan views.",
-    detailedContent: "Konkankada is the crown jewel of Harishchandragad Fort and one of the most dramatic cliff faces in all of India. This massive overhanging concave rock face drops over 500 metres vertically into the Konkan region below, creating a natural amphitheatre of staggering proportions that has earned it comparisons to the Grand Canyon. On clear mornings, the cliff offers an uninterrupted view of the Konkan coastline stretching to the Arabian Sea, while during monsoon and winter, clouds roll in from below and engulf the cliff in a surreal dance of mist and light that photographers call 'the cloud waterfall effect.' Our Off Route Adventure Konkankada trek is a dedicated day trip focused specifically on reaching this legendary viewpoint via the Pachnai route, which is the most accessible path. The trek ascends through beautiful meadows dotted with wildflowers, passes by traditional Adivasi hamlets, and crosses the ancient Saptatirtha lake before reaching the summit plateau. The final approach to Konkankada itself is an exhilarating 15-minute walk across an exposed ridge with views opening up on both sides. We time our arrival for either golden hour sunset or early morning sunrise, depending on the batch. The package includes expert guides who share the rich Maratha history of the fort, safety ropes for the exposed sections, hot chai and meals at the campsite, and comfortable transportation from Pune. Konkankada is the single most iconic viewpoint in the Sahyadris and should be on every Maharashtra trekker's lifetime list.",
-    bestSeason: "September to February",
-    difficulty: "Moderate",
-    altitude: "1,424 m (4,672 ft)",
-    whatToPack: ["Wind-resistant jacket", "Trekking shoes with good grip", "Camera with wide-angle lens", "2L water", "Warm cap and gloves (winter)"],
-    image: "/images/konkankada.jpg",
+    image: "https://res.cloudinary.com/dlgjwovla/image/upload/f_auto,q_auto/v1777034026/IMG_5524.HEIC_vlyofb.heic",
+    imagePosition: "object-center",
     highlights: ["Cliff Edge", "Sunrise View", "Photography", "Camping"],
   },
   {
@@ -143,12 +130,8 @@ export const destinations: Destination[] = [
     price: 1299,
     duration: "Night Trek",
     description: "Night trek to the historic Rajmachi Fort with twin forts Shrivardhan and Manaranjan.",
-    detailedContent: "Rajmachi is one of the most popular and accessible night treks in Maharashtra, located in the Sahyadri ranges between Lonavala and Karjat. This historic fortification complex consists of two twin forts — Shrivardhan and Manaranjan — perched at an altitude of 2,710 feet and offering commanding views of the surrounding valleys, the Mumbai-Pune Expressway, and the dense forests of the Western Ghats. The fort was strategically important during the Maratha Empire, controlling the Borghat trade route between the Konkan coast and the Deccan Plateau. Our Off Route Adventure night trek starts from Karjat side (Kondivade village) at around 10 PM, ascending through a well-forested trail under starlit skies with only headlamps and moonlight to guide the way. The thrill of navigating the dark forest trail, hearing the nocturnal sounds of the jungle, and spotting fireflies during the pre-monsoon season makes Rajmachi an unforgettable sensory experience. Upon reaching the fort by early morning, you are rewarded with a spectacular sunrise over the Sahyadri hills. You will explore both forts — Shrivardhan has the remains of old temples and water cisterns, while Manaranjan offers panoramic views of Borghat. The descent route takes you through the picturesque Rajmachi village, known for its traditional Konkani homes, friendly locals, and seasonal waterfalls visible during monsoon. Our package includes night trek guides with flashlights, safety first-aid kit, hot tea and breakfast at the summit, and return transportation. Rajmachi is the perfect gateway trek for beginners looking to experience the magic of night trekking near Pune and Mumbai.",
-    bestSeason: "October to May (Night trek) | June to September (Monsoon day trek)",
-    difficulty: "Easy to Moderate",
-    altitude: "826 m (2,710 ft)",
-    whatToPack: ["Headlamp with fresh batteries", "Light jacket", "Sturdy shoes (no sandals)", "Snacks and 2L water", "Insect repellent"],
-    image: "/images/rajmachi.jpg",
+    image: "https://res.cloudinary.com/dlgjwovla/image/upload/v1777033275/rajmachi_qblr1z.jpg",
+    imagePosition: "object-[center_70%]",
     highlights: ["Night Trek", "Twin Forts", "Firefly Spotting", "Village Stay"],
   },
   {
@@ -157,12 +140,8 @@ export const destinations: Destination[] = [
     price: 999,
     duration: "Day Trek",
     description: "Easy trek to the Iron Fort with stunning views of Pawna Lake.",
-    detailedContent: "Lohagad, meaning 'Iron Fort' in Marathi, is one of the most accessible and historically significant hill forts in Maharashtra, located near Lonavala in the Pune district. Standing at an altitude of 1,033 metres (3,389 feet), this fort is a UNESCO tentative World Heritage Site and has a documented history spanning over 2,000 years — from the Satavahana dynasty in the 3rd century BC through the Mughal period and finally to Chhatrapati Shivaji Maharaj's Maratha Empire. Our Off Route Adventure Lohagad day trek is the perfect introduction to Sahyadri trekking for beginners, families, and first-timers. The well-maintained trail features a series of stone steps winding up through four main gates — Ganesh Darwaza, Narayan Darwaza, Hanuman Darwaza, and Maha Darwaza — each offering progressively more stunning views of the valleys below. The highlight of the fort is Vinchukata Point (Scorpion's Tail), a narrow ridge extending like a scorpion's tail from the main fort, offering 360-degree views of Pawna Lake, Visapur Fort, and the surrounding Sahyadri landscape. At the summit, you will find spacious plateaus with ancient water cisterns, the remains of granaries and officer quarters, and enough space to enjoy a picnic lunch with panoramic views. During monsoon (June-September), Lohagad transforms completely — dozens of waterfalls cascade down the fort walls, the entire landscape turns emerald green, and low hanging clouds create a magical misty atmosphere. The package includes guided tour with fort history narration, transportation from Pune, breakfast, and packed lunch. Lohagad is also an excellent starting point for the more strenuous Visapur Fort trek, which we offer as an add-on for those wanting a longer adventure.",
-    bestSeason: "Year-round (Monsoon is most scenic)",
-    difficulty: "Easy",
-    altitude: "1,033 m (3,389 ft)",
-    whatToPack: ["Comfortable walking shoes", "Water bottle (1.5L)", "Sunscreen and cap", "Light snacks", "Rain gear (monsoon)"],
-    image: "/images/lohagad.jpg",
+    image: "https://res.cloudinary.com/dlgjwovla/image/upload/v1777033274/Lohagad_ng9fkb.jpg",
+    imagePosition: "object-[center_70%]",
     highlights: ["Historic Fort", "Pawna Lake View", "Vinchukata Point", "Easy Trek"],
   },
   {
@@ -171,12 +150,8 @@ export const destinations: Destination[] = [
     price: 1499,
     duration: "Trek",
     description: "Trek to the famous Jyotirlinga temple through dense forests.",
-    detailedContent: "Bhimashankar, one of the twelve sacred Jyotirlinga shrines of Lord Shiva, is a hill fortress and wildlife sanctuary located in the Sahyadri range of Pune district at an altitude of 1,007 metres (3,304 feet). The Bhimashankar trek is a unique combination of spiritual pilgrimage, wildlife spotting, and challenging mountain trekking — making it one of the most well-rounded outdoor experiences in Maharashtra. Our Off Route Adventure trek takes you via the Shidi Ghat route (Ladder Route), which is the more adventurous and scenic path. The trail ascends through the Bhimashankar Wildlife Sanctuary, a protected region known for its population of the Indian Giant Squirrel (Shekru) — Maharashtra's state animal — along with barking deer, leopards, and over 100 species of birds. The forest terrain transitions from dry deciduous at the base to lush evergreen at higher elevations, creating a fascinating gradient of vegetation that botanists and nature lovers find captivating. The Shidi Ghat section features iron ladders bolted into rock faces, narrow ledges, and exposed sections that add genuine adventure to the climb. At the summit, you will visit the ancient Bhimashankar Temple, believed to have been built by Nana Phadnavis in the 18th century, housing one of the most revered Shiv Lingams in India. The temple compound also has ancient carvings and the source of the River Bhima, one of Maharashtra's major rivers. During monsoon, the trail becomes an absolute paradise — the Gupt Bhimashankar route unveils a hidden waterfall corridor, and the entire mountain is draped in clouds and vivid greenery. Our package includes experienced trek leaders, breakfast and lunch, safety equipment for ladder sections, and comfortable transport from Pune.",
-    bestSeason: "October to February (Post-monsoon & Winter)",
-    difficulty: "Moderate to Challenging",
-    altitude: "1,007 m (3,304 ft)",
-    whatToPack: ["High-grip trekking shoes", "Binoculars for birdwatching", "2L water + electrolyte powder", "Warm jacket (winter)", "Offering items for temple (optional)"],
-    image: "/images/bhimashankar.jpg",
+    image: "https://res.cloudinary.com/dlgjwovla/image/upload/v1774587202/IMG-20260223-WA0219_qgpoij.jpg",
+    imagePosition: "object-bottom",
     highlights: ["Jyotirlinga Temple", "Wildlife Sanctuary", "Monsoon Beauty", "Gupt Bhimashankar"],
   },
   {
@@ -185,12 +160,8 @@ export const destinations: Destination[] = [
     price: 899,
     duration: "Day Trek",
     description: "Trek to the pyramid-shaped Tikona Fort with panoramic views.",
-    detailedContent: "Tikona, meaning 'Triangle' in Hindi, is a pyramid-shaped hill fort located near Kamshet in the Maval taluka of Pune district, standing at an altitude of 1,066 metres (3,497 feet). Named for its distinctive triangular shape visible from miles around, Tikona is one of the most photogenic and beginner-friendly forts in the Sahyadri range. The fort's strategic importance dates back to the Maratha Empire, where it served as a watch-tower guarding the trade routes between the Deccan Plateau and the Konkan coast. Our Off Route Adventure Tikona day trek starts from Tikona Peth, a small hamlet at the base of the fort. The ascent is a well-defined trail that takes approximately 1-1.5 hours, passing through a forested path and then a series of rock-cut steps carved centuries ago by Maratha engineers. The trail passes through a massive entrance gate and the ruins of old guard rooms before opening up to the summit plateau. At the top, you are rewarded with extraordinary 360-degree views — Pawna Dam stretching like a blue jewel below, Tung Fort and Lohagad Fort visible on the horizon, and the Sahyadri ranges rolling away in every direction. The fort summit features ancient water cisterns still filled with clear water, the remains of Trimbakeshwar Mahadev Temple, and several caves that were once used as storage and shelter. Tikona is especially stunning during monsoon when Pawna Lake is at full capacity, the hillsides are carpeted in green, and dramatic cloud formations create an ever-changing backdrop. Our affordable package includes guided trek with historical commentary, transportation from Pune, and a hearty local breakfast. This is the ideal first trek for kids, families, and anyone new to the Sahyadri hiking scene.",
-    bestSeason: "Year-round (Monsoon & Post-monsoon best)",
-    difficulty: "Easy",
-    altitude: "1,066 m (3,497 ft)",
-    whatToPack: ["Comfortable walking shoes", "1.5L water", "Light snacks", "Cap and sunglasses", "Rain poncho (monsoon)"],
-    image: "/images/tikona.jpg",
+    image: "https://res.cloudinary.com/dlgjwovla/image/upload/v1777034677/Tikona_Fort_kfn90s.jpg",
+    imagePosition: "object-[center_70%]",
     highlights: ["Pyramid Shape", "Pawna Dam View", "Rock Cut Steps", "Historic Caves"],
   },
   {
@@ -199,12 +170,8 @@ export const destinations: Destination[] = [
     price: 799,
     duration: "Day Trip",
     description: "Visit the legendary Lion Fort near Pune with rich Maratha history.",
-    detailedContent: "Sinhagad, meaning 'Lion Fort,' is one of the most historically significant and easily accessible forts near Pune, perched at an altitude of 1,312 metres (4,304 feet) in the Sahyadri ranges. This fort is immortalized in Maratha history for the legendary Battle of Sinhagad in 1670, when the brave warrior Tanaji Malusare led a daring nighttime assault to recapture the fort from the Mughal-controlled Bijapur forces. Upon hearing of Tanaji's sacrifice in the victory, Chhatrapati Shivaji Maharaj reportedly said, 'The fort is won, but the lion is lost' — giving the fort its iconic name. Our Off Route Adventure Sinhagad day trip is designed as a relaxed heritage and nature excursion perfect for families, history buffs, and casual hikers. The drive from Pune takes only 30 minutes, and the trek from the base village of Sinhagad Ghat to the summit is a moderate 45-minute climb through a shaded forest path with multiple viewpoints along the way. At the summit, you will explore the Tanaji Memorial, the Rajiv Gandhi memorial, ancient fortification walls, the Konde Gate and Pune Gate entrances, several water tanks, and the tomb of Rajaram Maharaj. The fort plateau is famous for its local food stalls serving piping hot pithla-bhakri (gram flour curry with millet bread), zunka-bhakar, and thick curd buttermilk — a beloved weekend tradition for Pune residents. The views from Sinhagad are expansive — you can see Pune city stretching to the north, the Sahyadri ranges to the south, and the Khadakwasla and Panshet dams glistening in the valleys below. This package includes comfortable transportation, a local history guide, and breakfast — all at the most budget-friendly price in our entire catalog. Sinhagad is the perfect half-day escape from Pune city life.",
-    bestSeason: "Year-round (Monsoon is magical, Winter is pleasant)",
-    difficulty: "Easy",
-    altitude: "1,312 m (4,304 ft)",
-    whatToPack: ["Comfortable walking shoes", "Water bottle (1L)", "Cash for local food stalls", "Camera", "Sunscreen and cap"],
-    image: "/images/sinhagad.jpg",
+    image: "https://res.cloudinary.com/dlgjwovla/image/upload/v1777035147/Sinhagad_w8eqci.jpg",
+    imagePosition: "object-[center_70%]",
     highlights: ["Historic Fort", "Local Food", "Pune City View", "Tanaji Memorial"],
   },
   {
@@ -213,11 +180,8 @@ export const destinations: Destination[] = [
     price: 1199,
     duration: "Overnight",
     description: "Lakeside camping with bonfire and music under the stars.",
-    detailedContent: "Pawna Lake, formed by the Pawna Dam on the Pawna River near Lonavala in Pune district, is one of Maharashtra's most popular lakeside camping destinations. With the dramatic backdrop of Tikona Fort, Lohagad Fort, and Tung Fort rising from its shores, Pawna Lake offers a camping experience that feels like being inside a painting. Our Off Route Adventure Pawna Lake camping package is a fully curated overnight getaway designed for couples, friend groups, families, and corporate teams seeking to disconnect from city life and reconnect with nature. The experience begins in the late afternoon with a scenic drive from Pune (approximately 1.5 hours), arriving at our private campsite right on the lakefront just in time for sunset. As the sun dips behind the Sahyadri silhouette, our team lights the bonfire — the centerpiece of the evening — where you will enjoy live acoustic music, group games, and sharing stories under a brilliant canopy of stars far from Pune's light pollution. Dinner is a highlight — freshly prepared barbecue (veg and non-veg), local Maharashtrian thali, and unlimited chai and coffee. The tents are premium quality waterproof units with comfortable mattresses, pillows, and sleeping bags, ensuring a restful night despite being in the open wilderness. Wake up to a spectacular sunrise over the lake with the forts silhouetted on the horizon, followed by hot tea, poha, and a full Indian breakfast. Optional add-on activities include kayaking on the lake, a short trek to nearby Tikona Fort, nature walks along the dam, and photography sessions. Pawna Lake camping is available year-round, but monsoon and post-monsoon (July-November) is when the lake is at its fullest and the surrounding hills are at their greenest. This is the most accessible adventure experience we offer — no trekking fitness required, just a desire to spend a magical night under the stars.",
-    bestSeason: "Year-round (Jul-Nov most scenic)",
-    difficulty: "Easy (No trekking required)",
-    whatToPack: ["Warm hoodie/jacket (nights are cool)", "Insect repellent", "Personal toiletries", "Power bank", "Comfortable clothes and flip-flops"],
-    image: "/images/pawna-lake.jpg",
+    image: "https://res.cloudinary.com/dlgjwovla/image/upload/v1777033274/Pawna_Lake_Camping_bqejth.jpg",
+    imagePosition: "object-[center_70%]",
     highlights: ["Lakeside Tents", "Bonfire", "BBQ Dinner", "Sunrise View"],
   },
   {
@@ -226,11 +190,8 @@ export const destinations: Destination[] = [
     price: 4999,
     duration: "2 Days & 1 Night",
     description: "Visit India's fifth tallest waterfall with a thrilling jeep safari.",
-    detailedContent: "Dudhsagar Falls, meaning 'Sea of Milk,' is India's fifth-tallest waterfall at a staggering 310 metres (1,017 feet), located on the Mandovi River in the Bhagwan Mahavir Wildlife Sanctuary on the Goa-Karnataka border. This four-tiered cascade earned its name from the milky-white appearance of the water as it thunders down the steep mountain face, creating one of the most visually dramatic waterfalls in all of Asia. Our Off Route Adventure Dudhsagar package is a 2-day expedition that combines the raw power of nature with Goa's legendary hospitality. The journey begins with a scenic drive from Pune to Goa, followed by an early morning adventure the next day — a thrilling jeep safari through the dense forests of the Bhagwan Mahavir Sanctuary. The rough jungle road crosses multiple river streams (the jeep literally drives through rivers), passes through thick canopy cover home to black-faced langurs and Malabar giant squirrels, before arriving at the base pool of Dudhsagar Falls. The sight is truly awe-inspiring — four distinct tiers of water crashing down from nearly a thousand feet above, surrounded by pristine tropical forest. You can swim in the crystal-clear base pool while the fine spray of the waterfall keeps the entire area cool even in summer. After the waterfall visit, our itinerary includes a visit to a traditional Goan spice plantation where you can taste fresh cardamom, cinnamon, vanilla, and pepper straight from the plants, paired with a sumptuous Goan lunch (fish curry rice for non-vegetarians; kokum-based veg thali for vegetarians). The package includes transportation from Pune, one night hotel stay in Goa, jeep safari booking, sanctuary entry permits, all meals, spice plantation tour, and a dedicated trip coordinator. Dudhsagar is a bucket-list Indian destination and our most popular multi-day trip alongside Hampi and Manali.",
-    bestSeason: "June to September (Peak water flow) | November to January (Pleasant weather)",
-    difficulty: "Easy (Jeep Safari, minimal walking)",
-    whatToPack: ["Waterproof phone pouch", "Quick-dry clothing", "Swimwear (for base pool)", "Sunscreen", "Cash (limited ATMs in sanctuary area)"],
-    image: "/images/dudhsagar.jpg",
+    image: "https://res.cloudinary.com/dlgjwovla/image/upload/c_crop,w_0.82,h_1.0,x_0.18,fl_relative,f_auto,q_auto/v1777035268/dudhsagar_q8xxmx.jpg",
+    imagePosition: "object-center",
     highlights: ["Waterfall View", "Jeep Safari", "Spice Plantation", "Goan Cuisine"],
   },
 ];

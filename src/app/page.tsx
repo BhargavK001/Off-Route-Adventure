@@ -56,12 +56,10 @@ export default function Home() {
       <DestinationsSection />
       <CtaSection />
 
-      {/* FAQ Section – visible UI + microdata for redundancy */}
+      {/* FAQ Section */}
       <section
         className="py-10 bg-gray-50"
         aria-label="Frequently asked questions about trekking with Off Route Adventure"
-        itemScope
-        itemType="https://schema.org/FAQPage"
       >
         <div className="container mx-auto px-4 max-w-3xl">
           <div className="max-w-3xl mx-auto">
@@ -84,12 +82,9 @@ export default function Home() {
                 <details
                   key={index}
                   className="group bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden"
-                  itemScope
-                  itemType="https://schema.org/Question"
                 >
                   <summary
                     className="flex items-center justify-between cursor-pointer p-4 text-left font-semibold text-gray-900 hover:text-green-700 transition-colors text-sm"
-                    itemProp="name"
                   >
                     <span className="pr-4">{faq.question}</span>
                     <span
@@ -101,11 +96,8 @@ export default function Home() {
                   </summary>
                   <div
                     className="px-4 pb-4 text-gray-600 leading-relaxed text-sm"
-                    itemScope
-                    itemType="https://schema.org/Answer"
-                    itemProp="acceptedAnswer"
                   >
-                    <p itemProp="text">{faq.answer}</p>
+                    <p>{faq.answer}</p>
                   </div>
                 </details>
               ))}
