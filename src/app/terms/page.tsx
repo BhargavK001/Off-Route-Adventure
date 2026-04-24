@@ -131,7 +131,7 @@ export default function TermsConditions() {
                                 <p className="text-gray-700 leading-relaxed">
                                     If something in these terms isn&apos;t clear, just ask! We&apos;re trekkers, not lawyers, and we&apos;re here to make things simple.
                                 </p>
-                                <p className="text-gray-900 font-bold mt-4">Email: bhargavk056@gmail.com</p>
+                                <p className="text-gray-900 font-bold mt-4">Email: off.route.adventure.11@gmail.com</p>
                             </div>
 
                         </div>

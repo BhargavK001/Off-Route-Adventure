@@ -130,7 +130,7 @@ export default function PrivacyPolicy() {
                                 <p className="text-gray-700 leading-relaxed">
                                     If you have any questions about this Privacy Policy, please reach out to us. We&apos;re happy to clarify anything.
                                 </p>
-                                <p className="text-gray-900 font-bold mt-4">Email: bhargavk056@gmail.com</p>
+                                <p className="text-gray-900 font-bold mt-4">Email: off.route.adventure.11@gmail.com</p>
                             </div>
 
                         </div>

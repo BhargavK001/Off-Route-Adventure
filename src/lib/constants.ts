@@ -1,7 +1,7 @@
 export const COMPANY_INFO = {
   name: "Off Route Adventure",
   tagline: "Beyond the Map, Into the Wild",
-  email: "bhargavk056@gmail.com",
+  email: "off.route.adventure.11@gmail.com",
   phone: "9270428541",
   phoneFormatted: "+91 92704 28541",
   whatsappLink: "https://wa.me/919270428541?text=I'm%20interested%20in%20booking%20a%20trek",
