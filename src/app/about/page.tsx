@@ -244,90 +244,65 @@ export default function AboutPage() {
       />
 
       {/* ── 1. HERO ─────────────────────────────────────────── */}
-      <section
-        className="relative min-h-[92vh] flex flex-col justify-end overflow-hidden"
-      >
+      <section className="relative overflow-hidden bg-black flex flex-col">
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
             src="/images/hero/harihargad.webp"
             alt="Harihar Fort Trek"
-            className="w-full h-full object-cover opacity-80 grayscale-[40%]"
+            className="w-full h-full object-cover grayscale-[40%]"
           />
           <div
             className="absolute inset-0"
             style={{
-              background: "linear-gradient(to bottom, rgba(10,26,10,0.7) 0%, rgba(10,26,10,0.95) 100%)"
+              background: "linear-gradient(to bottom, rgba(0,0,0,0.85) 0%, rgba(10,10,10,1) 100%)"
             }}
           />
         </div>
 
         {/* Topo texture */}
-        <div className="absolute inset-0 text-green-900 opacity-20">
+        <div className="absolute inset-0 text-green-500/10 opacity-60">
           <TopoTexture />
         </div>
 
-        {/* Radial green glow — top right */}
-        <div
-          className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full pointer-events-none"
-          style={{
-            background:
-              "radial-gradient(ellipse at top right, rgba(21,128,61,0.22) 0%, transparent 68%)",
-          }}
-        />
+        {/* Hero Content Area */}
+        <div className="flex-1 py-16 md:py-24 relative flex items-center">
+          <div className="container mx-auto px-6 md:px-10 relative z-10 w-full">
+            <div className="max-w-4xl">
+              {/* Eyebrow */}
+              <div className="flex items-center gap-4 mb-8">
+                <span className="h-px w-12 bg-green-500" />
+                <span className="text-green-500 text-xs font-black uppercase tracking-[0.4em]">
+                  Pune, Maharashtra — Est. 2022
+                </span>
+              </div>
 
-        {/* Ghost background word */}
-        <span
-          aria-hidden="true"
-          className="absolute left-0 bottom-24 leading-none font-black tracking-tighter text-green-900 select-none pointer-events-none hidden md:block"
-          style={{ fontSize: "clamp(120px, 22vw, 320px)", opacity: 0.18 }}
-        >
-          ABOUT
-        </span>
+              {/* Headline */}
+              <h1 
+                className="font-black text-white leading-[0.85] tracking-tight mb-8"
+                style={{ fontSize: "clamp(32px, 5.5vw, 64px)" }}
+              >
+                We take you <br />
+                <span className="text-green-500 italic">Off Route.</span>
+              </h1>
 
-        {/* Content */}
-        <div className="relative z-10 container mx-auto px-6 md:px-10 pb-20 pt-32">
-          <div className="max-w-4xl">
-            {/* Eyebrow */}
-            <div className="flex items-center gap-3 mb-8">
-              <span className="h-px w-10 bg-green-500" />
-              <span className="text-green-400 text-xs font-semibold uppercase tracking-[0.2em]">
-                Pune, Maharashtra — Est. 2022
-              </span>
+              {/* Sub */}
+              <p className="text-gray-400 text-base md:text-lg leading-relaxed max-w-xl font-medium mb-8">
+                A trekking organization built by people who refused to follow the
+                tourist trail. We guide you through India&apos;s raw, unfiltered
+                landscapes — safely, affordably, unforgettably.
+              </p>
             </div>
-
-            {/* Headline */}
-            <h1 className="font-black text-white leading-[0.92] tracking-tight mb-8">
-              <span
-                className="block"
-                style={{ fontSize: "clamp(42px, 7vw, 100px)" }}
-              >
-                We take you
-              </span>
-              <span
-                className="block text-green-400"
-                style={{ fontSize: "clamp(42px, 7vw, 100px)" }}
-              >
-                Off Route.
-              </span>
-            </h1>
-
-            {/* Sub */}
-            <p className="text-green-200/80 text-lg md:text-xl leading-relaxed max-w-xl">
-              A trekking organization built by people who refused to follow the
-              tourist trail. We guide you through India&apos;s raw, unfiltered
-              landscapes — safely, affordably, unforgettably.
-            </p>
           </div>
         </div>
 
         {/* Marquee strip */}
         <div
           className="relative z-10 w-full overflow-hidden border-t border-b border-green-900/60 py-3"
-          style={{ background: "rgba(10,26,10,0.85)" }}
+          style={{ background: "rgba(10,10,10,0.85)" }}
         >
           <div
-            className="flex gap-12 whitespace-nowrap text-green-500 text-xs font-semibold uppercase tracking-widest"
+            className="flex gap-12 whitespace-nowrap text-green-500 text-xs font-black uppercase tracking-[0.3em]"
             style={{ animation: "marqueeScroll 28s linear infinite" }}
           >
             {[...Array(3)].map((_, ri) => (
