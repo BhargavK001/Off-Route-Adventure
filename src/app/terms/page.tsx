@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     title: "Terms and Conditions | Off Route Adventure",
     description: "Read the rules and guidelines for using the Off Route Adventure website and booking our treks and adventure tours.",
     alternates: {
-        canonical: `${BASE_URL}/terms`,
+        canonical: "/terms",
     },
 };
 
