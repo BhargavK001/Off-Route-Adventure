@@ -4,11 +4,11 @@ export interface Destination {
   price: number;
   duration: string;
   description: string;
-  detailedContent: string;
-  bestSeason: string;
-  difficulty: string;
+  detailedContent?: string;
+  bestSeason?: string;
+  difficulty?: string;
   altitude?: string;
-  whatToPack: string[];
+  whatToPack?: string[];
   image: string;
   imagePosition?: string;
   highlights: string[];

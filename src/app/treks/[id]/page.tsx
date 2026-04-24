@@ -176,9 +176,11 @@ export default async function TrekPage({ params }: PageProps) {
                                 <p className="text-gray-600 leading-relaxed text-lg mb-6">
                                     {trek.description}
                                 </p>
-                                <p className="text-gray-700 leading-relaxed text-base">
-                                    {trek.detailedContent}
-                                </p>
+                                {trek.detailedContent && (
+                                    <p className="text-gray-700 leading-relaxed text-base mt-4">
+                                        {trek.detailedContent}
+                                    </p>
+                                )}
                             </div>
 
                             {/* Trek Details Card */}
@@ -189,14 +191,14 @@ export default async function TrekPage({ params }: PageProps) {
                                         <Clock className="h-6 w-6 text-blue-600 flex-shrink-0 mt-0.5" />
                                         <div>
                                             <p className="text-sm text-gray-500 font-medium">Best Season</p>
-                                            <p className="font-semibold text-gray-800">{trek.bestSeason}</p>
+                                            <p className="font-semibold text-gray-800">{trek.bestSeason || "All Year Round"}</p>
                                         </div>
                                     </div>
                                     <div className="flex items-start gap-3 p-4 rounded-xl bg-amber-50/50">
                                         <Mountain className="h-6 w-6 text-amber-600 flex-shrink-0 mt-0.5" />
                                         <div>
                                             <p className="text-sm text-gray-500 font-medium">Difficulty Level</p>
-                                            <p className="font-semibold text-gray-800">{trek.difficulty}</p>
+                                            <p className="font-semibold text-gray-800">{trek.difficulty || "Moderate"}</p>
                                         </div>
                                     </div>
                                     {trek.altitude && (
@@ -219,17 +221,19 @@ export default async function TrekPage({ params }: PageProps) {
                             </div>
 
                             {/* What to Pack */}
-                            <div className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
-                                <h2 className="text-2xl font-bold text-gray-900 mb-6">What to Pack</h2>
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                                    {trek.whatToPack.map((item, idx) => (
-                                        <div key={idx} className="flex items-center gap-3 p-3 rounded-xl bg-gray-50">
-                                            <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0" />
-                                            <span className="text-gray-700">{item}</span>
-                                        </div>
-                                    ))}
+                            {trek.whatToPack && trek.whatToPack.length > 0 && (
+                                <div className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
+                                    <h2 className="text-2xl font-bold text-gray-900 mb-6">What to Pack</h2>
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                        {trek.whatToPack.map((item, idx) => (
+                                            <div key={idx} className="flex items-center gap-3 p-3 rounded-xl bg-gray-50">
+                                                <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0" />
+                                                <span className="text-gray-700">{item}</span>
+                                            </div>
+                                        ))}
+                                    </div>
                                 </div>
-                            </div>
+                            )}
 
                             <div className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
                                 <h2 className="text-2xl font-bold text-gray-900 mb-6">Trip Highlights</h2>
