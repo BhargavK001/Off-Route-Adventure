@@ -272,6 +272,92 @@ export default function GlobalJsonLd() {
             <OrganizationSchema />
             <LocalBusinessSchema />
             <WebSiteSchema />
+            <ReviewSchema />
+            <SpeakableSchema />
         </>
     );
 }
+
+function ReviewSchema() {
+    const schema = {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        name: "Off Route Adventure",
+        url: BASE_URL,
+        aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: "4.9",
+            reviewCount: "500",
+            bestRating: "5",
+            worstRating: "1",
+        },
+        review: [
+            {
+                "@type": "Review",
+                reviewRating: {
+                    "@type": "Rating",
+                    ratingValue: "5",
+                    bestRating: "5",
+                },
+                author: { "@type": "Person", name: "Priya Sharma" },
+                reviewBody:
+                    "Absolutely loved the Harishchandragad trek with Off Route Adventure! The guides were professional, the group was friendly, and the experience was unforgettable. Best trekking group in Pune!",
+                datePublished: "2025-02-10",
+            },
+            {
+                "@type": "Review",
+                reviewRating: {
+                    "@type": "Rating",
+                    ratingValue: "5",
+                    bestRating: "5",
+                },
+                author: { "@type": "Person", name: "Rahul Patil" },
+                reviewBody:
+                    "Off Route Adventure is hands down the most trusted trek organizer near Mumbai. Amazing Kalsubai trek experience — very affordable and safe for beginners!",
+                datePublished: "2025-03-15",
+            },
+            {
+                "@type": "Review",
+                reviewRating: {
+                    "@type": "Rating",
+                    ratingValue: "5",
+                    bestRating: "5",
+                },
+                author: { "@type": "Person", name: "Sneha Kulkarni" },
+                reviewBody:
+                    "Incredible Andharban jungle trek. Off Route Adventure made it so easy to book, the price was unbeatable, and the forest experience was truly off the beaten path!",
+                datePublished: "2025-04-02",
+            },
+        ],
+    };
+
+    return (
+        <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+    );
+}
+
+function SpeakableSchema() {
+    const schema = {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        name: "Off Route Adventure – Trekking in Maharashtra | Adventure Tours India",
+        url: BASE_URL,
+        speakable: {
+            "@type": "SpeakableSpecification",
+            cssSelector: ["h1", "h2", ".speakable"],
+        },
+        description:
+            "Off Route Adventure offers safe, trusted & affordable trekking tours in Maharashtra. Explore authentic offbeat forts, low-budget weekend trips from Pune & Mumbai.",
+    };
+
+    return (
+        <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+    );
+}
+

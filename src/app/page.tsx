@@ -1,19 +1,19 @@
+import { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 import HeroSection from '@/components/home/HeroSection';
 import WhyChooseUsSection from '@/components/home/WhyChooseUsSection';
 import { BreadcrumbSchema, FAQSchema } from '@/components/JsonLd';
 
-// Dynamically import components that are below the fold
-// We use ssr: true (default) so Googlebot can still crawl and index the entire page content
-const ServicesSection = dynamic(() => import('@/components/home/ServicesSection'), {
-  ssr: true
-});
-const DestinationsSection = dynamic(() => import('@/components/home/DestinationsSection'), {
-  ssr: true
-});
-const CtaSection = dynamic(() => import('@/components/home/CtaSection'), {
-  ssr: true
-});
+export const metadata: Metadata = {
+  alternates: {
+    canonical: '/',
+  },
+};
+
+// Dynamically import below-the-fold components (ssr:true so Googlebot indexes them)
+const ServicesSection = dynamic(() => import('@/components/home/ServicesSection'), { ssr: true });
+const DestinationsSection = dynamic(() => import('@/components/home/DestinationsSection'), { ssr: true });
+const CtaSection = dynamic(() => import('@/components/home/CtaSection'), { ssr: true });
 
 const homepageFaqs = [
   {
@@ -46,46 +46,66 @@ const homepageFaqs = [
 export default function Home() {
   return (
     <>
+      {/* Structured Data (JSON-LD) */}
       <BreadcrumbSchema items={[{ name: "Home", href: "/" }]} />
       <FAQSchema faqs={homepageFaqs} />
+
       <HeroSection />
       <WhyChooseUsSection />
       <ServicesSection />
       <DestinationsSection />
       <CtaSection />
 
-      {/* FAQ Section for SEO & GEO */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
+      {/* FAQ Section – visible UI + microdata for redundancy */}
+      <section
+        className="py-10 bg-gray-50"
+        aria-label="Frequently asked questions about trekking with Off Route Adventure"
+        itemScope
+        itemType="https://schema.org/FAQPage"
+      >
+        <div className="container mx-auto px-4 max-w-3xl">
           <div className="max-w-3xl mx-auto">
-            <div className="text-center mb-12">
-              <span className="inline-block px-4 py-1.5 rounded-full bg-green-100 text-green-700 text-sm font-semibold mb-4">
+            <div className="text-center mb-8">
+              <span className="inline-block px-3 py-1 rounded-full bg-green-100 text-green-700 text-xs font-semibold mb-3">
                 ❓ Common Questions
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3 tracking-tight">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2 tracking-tight">
                 Frequently Asked{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-500">
                   Questions
                 </span>
               </h2>
-              <p className="text-gray-500 text-lg">
+              <p className="text-gray-500 text-sm">
                 Everything you need to know before your adventure.
               </p>
             </div>
-            <div className="space-y-4">
+            <div className="space-y-3">
               {homepageFaqs.map((faq, index) => (
                 <details
                   key={index}
-                  className="group bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden"
+                  className="group bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden"
+                  itemScope
+                  itemType="https://schema.org/Question"
                 >
-                  <summary className="flex items-center justify-between cursor-pointer p-6 text-left font-semibold text-gray-900 hover:text-green-700 transition-colors">
+                  <summary
+                    className="flex items-center justify-between cursor-pointer p-4 text-left font-semibold text-gray-900 hover:text-green-700 transition-colors text-sm"
+                    itemProp="name"
+                  >
                     <span className="pr-4">{faq.question}</span>
-                    <span className="flex-shrink-0 w-6 h-6 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-sm font-bold group-open:rotate-45 transition-transform duration-200">
+                    <span
+                      className="flex-shrink-0 w-5 h-5 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-xs font-bold group-open:rotate-45 transition-transform duration-200"
+                      aria-hidden="true"
+                    >
                       +
                     </span>
                   </summary>
-                  <div className="px-6 pb-6 text-gray-600 leading-relaxed">
-                    {faq.answer}
+                  <div
+                    className="px-4 pb-4 text-gray-600 leading-relaxed text-sm"
+                    itemScope
+                    itemType="https://schema.org/Answer"
+                    itemProp="acceptedAnswer"
+                  >
+                    <p itemProp="text">{faq.answer}</p>
                   </div>
                 </details>
               ))}
@@ -96,4 +116,3 @@ export default function Home() {
     </>
   );
 }
-

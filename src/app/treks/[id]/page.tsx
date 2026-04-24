@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Clock, MapPin, IndianRupee, Mountain, ArrowRight, CheckCircle } from "lucide-react";
 import { destinations } from "@/data/destinations";
-import { BreadcrumbSchema, TouristTripSchema, FAQSchema } from "@/components/JsonLd";
+import { BreadcrumbSchema, TouristTripSchema } from "@/components/JsonLd";
 
 const BASE_URL = "https://www.offrouteadventure.in";
 
@@ -137,14 +137,13 @@ export default async function TrekPage({ params }: PageProps) {
                 duration={trek.duration}
                 highlights={trek.highlights}
             />
-            <FAQSchema faqs={defaultFaqs} />
 
             {/* Hero Section */}
             <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center">
                 <div className="absolute inset-0">
                     <Image
                         src={trek.image}
-                        alt={trek.name}
+                        alt={`${trek.name} Trek – Guided Adventure in Maharashtra | Off Route Adventure`}
                         fill
                         priority
                         className="object-cover"
@@ -174,9 +173,62 @@ export default async function TrekPage({ params }: PageProps) {
                         <div className="flex-1 space-y-8">
                             <div className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
                                 <h2 className="text-3xl font-bold text-gray-900 mb-6">Overview</h2>
-                                <p className="text-gray-600 leading-relaxed text-lg">
+                                <p className="text-gray-600 leading-relaxed text-lg mb-6">
                                     {trek.description}
                                 </p>
+                                <p className="text-gray-700 leading-relaxed text-base">
+                                    {trek.detailedContent}
+                                </p>
+                            </div>
+
+                            {/* Trek Details Card */}
+                            <div className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
+                                <h2 className="text-2xl font-bold text-gray-900 mb-6">Trek Details</h2>
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div className="flex items-start gap-3 p-4 rounded-xl bg-blue-50/50">
+                                        <Clock className="h-6 w-6 text-blue-600 flex-shrink-0 mt-0.5" />
+                                        <div>
+                                            <p className="text-sm text-gray-500 font-medium">Best Season</p>
+                                            <p className="font-semibold text-gray-800">{trek.bestSeason}</p>
+                                        </div>
+                                    </div>
+                                    <div className="flex items-start gap-3 p-4 rounded-xl bg-amber-50/50">
+                                        <Mountain className="h-6 w-6 text-amber-600 flex-shrink-0 mt-0.5" />
+                                        <div>
+                                            <p className="text-sm text-gray-500 font-medium">Difficulty Level</p>
+                                            <p className="font-semibold text-gray-800">{trek.difficulty}</p>
+                                        </div>
+                                    </div>
+                                    {trek.altitude && (
+                                        <div className="flex items-start gap-3 p-4 rounded-xl bg-green-50/50">
+                                            <MapPin className="h-6 w-6 text-green-600 flex-shrink-0 mt-0.5" />
+                                            <div>
+                                                <p className="text-sm text-gray-500 font-medium">Altitude</p>
+                                                <p className="font-semibold text-gray-800">{trek.altitude}</p>
+                                            </div>
+                                        </div>
+                                    )}
+                                    <div className="flex items-start gap-3 p-4 rounded-xl bg-emerald-50/50">
+                                        <IndianRupee className="h-6 w-6 text-emerald-600 flex-shrink-0 mt-0.5" />
+                                        <div>
+                                            <p className="text-sm text-gray-500 font-medium">Price</p>
+                                            <p className="font-semibold text-gray-800">₹{trek.price.toLocaleString()} per person</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* What to Pack */}
+                            <div className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
+                                <h2 className="text-2xl font-bold text-gray-900 mb-6">What to Pack</h2>
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                    {trek.whatToPack.map((item, idx) => (
+                                        <div key={idx} className="flex items-center gap-3 p-3 rounded-xl bg-gray-50">
+                                            <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0" />
+                                            <span className="text-gray-700">{item}</span>
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
 
                             <div className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
@@ -261,6 +313,71 @@ export default async function TrekPage({ params }: PageProps) {
                     </div>
                 </div>
             </section>
+
+            {/* Related Treks – Cross-linking to fix orphan pages */}
+            {(() => {
+                const relatedTreks = destinations
+                    .filter((d) => d.id !== trek.id)
+                    .sort(() => 0.5 - Math.random())
+                    .slice(0, 4);
+                return (
+                    <section className="py-16 bg-white">
+                        <div className="container mx-auto px-4">
+                            <div className="max-w-6xl mx-auto">
+                                <div className="text-center mb-10">
+                                    <span className="inline-block px-4 py-1.5 rounded-full bg-green-100 text-green-700 text-sm font-semibold mb-3">
+                                        More Adventures
+                                    </span>
+                                    <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
+                                        You May Also Like
+                                    </h2>
+                                </div>
+                                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                                    {relatedTreks.map((related) => (
+                                        <Link
+                                            key={related.id}
+                                            href={`/treks/${related.id}`}
+                                            className="group bg-gray-50 rounded-2xl overflow-hidden border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all"
+                                        >
+                                            <div className="h-40 relative">
+                                                <Image
+                                                    src={related.image}
+                                                    alt={`${related.name} Trek – Adventure in Maharashtra | Off Route Adventure`}
+                                                    fill
+                                                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                                                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                                                />
+                                            </div>
+                                            <div className="p-4">
+                                                <h3 className="font-bold text-gray-900 group-hover:text-green-600 transition-colors">
+                                                    {related.name}
+                                                </h3>
+                                                <div className="flex items-center justify-between mt-2">
+                                                    <span className="text-green-600 font-bold">
+                                                        ₹{related.price.toLocaleString()}
+                                                    </span>
+                                                    <span className="text-sm text-gray-500">
+                                                        {related.duration}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </Link>
+                                    ))}
+                                </div>
+                                <div className="text-center mt-8">
+                                    <Link
+                                        href="/plans"
+                                        className="inline-flex items-center px-6 py-3 bg-green-600 text-white font-semibold rounded-full hover:bg-green-700 transition-all"
+                                    >
+                                        View All Plans
+                                        <ArrowRight className="ml-2 h-4 w-4" />
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                );
+            })()}
         </>
     );
 }

@@ -3,7 +3,9 @@ import { destinations } from "@/data/destinations";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://www.offrouteadventure.in";
-  const lastModified = new Date();
+  // Hardcoded date to prevent Googlebot from throttling crawls.
+  // Update this manually when you make major content changes!
+  const lastModified = new Date("2026-04-13T00:00:00Z");
 
   // Static routes
   const staticRoutes: MetadataRoute.Sitemap = [

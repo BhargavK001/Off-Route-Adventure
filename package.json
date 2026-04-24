@@ -10,7 +10,10 @@
     "analyze": "set ANALYZE=true && next build"
   },
   "dependencies": {
+    "@types/canvas-confetti": "^1.9.0",
+    "canvas-confetti": "^1.9.4",
     "cloudinary": "^2.9.0",
+    "framer-motion": "^12.38.0",
     "lucide-react": "^0.562.0",
     "next": "16.1.1",
     "react": "19.2.3",

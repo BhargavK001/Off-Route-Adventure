@@ -12,55 +12,56 @@ import {
 import React from "react";
 
 const iconMap: Record<string, React.ReactNode> = {
-    Shield: <Shield className="h-7 w-7" />,
-    Wallet: <Wallet className="h-7 w-7" />,
-    Users: <Users className="h-7 w-7" />,
-    Building: <Building className="h-7 w-7" />,
-    MapPin: <MapPin className="h-7 w-7" />,
-    Mountain: <Mountain className="h-7 w-7" />,
-    Zap: <Zap className="h-7 w-7" />,
-    Headphones: <Headphones className="h-7 w-7" />,
+    Shield: <Shield className="h-6 w-6" aria-hidden="true" />,
+    Wallet: <Wallet className="h-6 w-6" aria-hidden="true" />,
+    Users: <Users className="h-6 w-6" aria-hidden="true" />,
+    Building: <Building className="h-6 w-6" aria-hidden="true" />,
+    MapPin: <MapPin className="h-6 w-6" aria-hidden="true" />,
+    Mountain: <Mountain className="h-6 w-6" aria-hidden="true" />,
+    Zap: <Zap className="h-6 w-6" aria-hidden="true" />,
+    Headphones: <Headphones className="h-6 w-6" aria-hidden="true" />,
 };
 
 export default function WhyChooseUsSection() {
     return (
-        <section className="py-24 bg-gray-50">
-            <div className="container mx-auto px-4">
+        <section className="py-12 bg-gray-50" aria-label="Why choose Off Route Adventure">
+            <div className="container mx-auto px-4 max-w-6xl">
                 {/* Header */}
-                <div className="text-center mb-14">
-                    <span className="inline-block px-4 py-1.5 rounded-full bg-green-100 text-green-700 text-sm font-semibold tracking-wide mb-4">
+                <div className="text-center mb-8">
+                    <span className="inline-block px-3 py-1 rounded-full bg-green-100 text-green-700 text-xs font-semibold tracking-wide mb-3">
                         Our Promise
                     </span>
-                    <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
+                    <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-3 tracking-tight">
                         Why Choose{" "}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-500">
                             Off Route?
                         </span>
                     </h2>
-                    <p className="text-gray-500 text-lg max-w-2xl mx-auto leading-relaxed">
+                    <p className="text-gray-500 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
                         We provide the best adventure experience with safety and affordability as our top priorities.
                     </p>
                 </div>
 
                 {/* Cards */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
                     {FEATURES.map((feature, index) => (
-                        <div
+                        <article
                             key={index}
-                            className="group bg-white p-7 rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                            className="group bg-white p-5 rounded-xl border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 animate-fade-in-up"
+                            style={{ animationDelay: `${index * 80}ms` }}
                         >
                             {/* Icon + number row */}
-                            <div className="flex items-center justify-between mb-5">
-                                <div className="w-14 h-14 bg-green-50 rounded-xl flex items-center justify-center text-green-600 group-hover:bg-green-100 group-hover:scale-110 transition-all duration-300">
-                                    {iconMap[feature.icon] || <Shield className="h-7 w-7" />}
+                            <div className="flex items-center justify-between mb-4">
+                                <div className="w-10 h-10 bg-green-50 rounded-lg flex items-center justify-center text-green-600 group-hover:bg-green-100 group-hover:scale-110 transition-all duration-300 flex-shrink-0">
+                                    {iconMap[feature.icon] || <Shield className="h-5 w-5" aria-hidden="true" />}
                                 </div>
-                                <span className="text-2xl font-black text-gray-100 group-hover:text-green-100 transition-colors select-none tabular-nums">
+                                <span className="text-xl font-black text-gray-100 group-hover:text-green-100 transition-colors select-none tabular-nums" aria-hidden="true">
                                     0{index + 1}
                                 </span>
                             </div>
 
                             {/* Text */}
-                            <h3 className="text-lg font-bold text-gray-900 mb-2">
+                            <h3 className="text-sm font-bold text-gray-900 mb-1.5">
                                 {feature.title}
                             </h3>
                             <p className="text-gray-500 text-sm leading-relaxed">
@@ -68,8 +69,8 @@ export default function WhyChooseUsSection() {
                             </p>
 
                             {/* Bottom accent line */}
-                            <div className="mt-5 h-0.5 w-0 group-hover:w-full bg-gradient-to-r from-green-400 to-emerald-500 rounded-full transition-all duration-500" />
-                        </div>
+                            <div className="mt-4 h-0.5 w-0 group-hover:w-full bg-gradient-to-r from-green-400 to-emerald-500 rounded-full transition-all duration-500" aria-hidden="true" />
+                        </article>
                     ))}
                 </div>
             </div>

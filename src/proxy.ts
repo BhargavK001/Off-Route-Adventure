@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const url = request.nextUrl.clone();
   const host = request.headers.get('host');
   const protocol = request.headers.get('x-forwarded-proto') || 'http';
@@ -14,9 +14,10 @@ export function middleware(request: NextRequest) {
   const isLocalhost = host?.includes('localhost') || host?.includes('127.0.0.1');
   
   if (!isLocalhost && (protocol === 'http' || host !== preferredHost)) {
-    url.protocol = 'https';
-    url.host = preferredHost;
-    return NextResponse.redirect(url, 301);
+    const targetUrl = new URL(request.url);
+    targetUrl.protocol = 'https';
+    targetUrl.host = preferredHost;
+    return NextResponse.redirect(targetUrl.toString(), 301);
   }
 
   return NextResponse.next();

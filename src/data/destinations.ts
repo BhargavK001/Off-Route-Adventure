@@ -4,6 +4,11 @@ export interface Destination {
   price: number;
   duration: string;
   description: string;
+  detailedContent: string;
+  bestSeason: string;
+  difficulty: string;
+  altitude?: string;
+  whatToPack: string[];
   image: string;
   imagePosition?: string;
   highlights: string[];
@@ -16,6 +21,10 @@ export const destinations: Destination[] = [
     price: 7999,
     duration: "2 Days & 3 Nights",
     description: "Explore the UNESCO World Heritage Site with ancient temples and stunning boulder landscapes.",
+    detailedContent: "Hampi, a UNESCO World Heritage Site located in the Bellary district of Karnataka, is one of India's most iconic historical destinations. Once the thriving capital of the Vijayanagara Empire in the 14th century, Hampi today stands as a mesmerizing open-air museum scattered across 26 square kilometres of dramatic boulder-strewn terrain along the banks of the Tungabhadra River. Our curated Off Route Adventure package takes you through the most breathtaking ruins, including the Virupaksha Temple — one of the oldest functioning temples in India — the intricately carved Vittala Temple with its legendary stone chariot and musical pillars, and the bustling Hampi Bazaar that once served as one of the richest trading hubs in the medieval world. Beyond the temples, you will explore the Royal Enclosure, the Lotus Mahal, the Elephant Stables, and the stunning Hemakuta Hill, which offers a panoramic sunset view that photographers and travellers treasure. This trip is ideal for history enthusiasts, photography lovers, and anyone seeking an affordable yet deeply enriching cultural adventure. The package includes comfortable transport from Pune, accommodation, guided tours, and meals — all at a budget-friendly price that makes heritage travel accessible to everyone.",
+    bestSeason: "October to March",
+    difficulty: "Easy",
+    whatToPack: ["Comfortable walking shoes", "Sunscreen & hat", "Water bottle (2L)", "Camera", "Light cotton clothing"],
     image: "https://res.cloudinary.com/dlgjwovla/image/upload/v1774371179/trekbunnies-590931217_17891599800393127_8328662028608315857_n_it3wrh.jpg",
     highlights: ["Virupaksha Temple", "Vittala Temple", "Hampi Bazaar", "Sunset at Hemakuta Hill"],
   },
@@ -35,6 +44,11 @@ export const destinations: Destination[] = [
     price: 1399,
     duration: "Trek",
     description: "Trek to one of the most challenging and scenic forts in Maharashtra.",
+    detailedContent: "Harishchandragad is one of the most legendary hill forts in the Sahyadri range of Maharashtra, standing at an altitude of 1,424 metres (4,672 feet) in the Ahmednagar district. Dating back to the 6th century, this fort has witnessed the rule of multiple dynasties including the Kalachuris, Mughals, and Marathas, making it a treasure trove of historical and archaeological significance. The crown jewel of Harishchandragad is Konkan Kada — a massive vertical cliff face that drops over 500 metres straight down, offering one of the most awe-inspiring views in all of Western India. On a clear day, you can see the vast Konkan coastline stretching endlessly below. Our Off Route Adventure trek package takes you via the Pachnai or Khireshwar route, passing through the ancient Kedareshwar Cave — home to a unique Shiva lingam surrounded by chest-deep water — and the sacred Saptatirtha Pushkarini lake at the summit. The trek is moderate to challenging, perfect for adventurers looking to push beyond easy day hikes. We include overnight camping under the stars on the fort plateau, expert trek leaders who know every historical detail of the fort, hot meals cooked at the campsite, and safe transportation. Harishchandragad is a must-do for any serious trekker in Maharashtra and is especially magical during the winter months when the morning mist rolls across Konkan Kada.",
+    bestSeason: "October to February",
+    difficulty: "Moderate to Challenging",
+    altitude: "1,424 m (4,672 ft)",
+    whatToPack: ["Sturdy trekking shoes", "Warm jacket (winter)", "Headlamp/torch", "2L water + energy snacks", "Personal first-aid kit"],
     image: "https://res.cloudinary.com/dlgjwovla/image/upload/v1774371185/IMG_20260319_234929_440_wlzryq.jpg",
     imagePosition: "object-center",
     highlights: ["Konkan Kada", "Kedareshwar Cave", "Saptatirtha Pushkarini", "Night Camping"],
@@ -45,6 +59,11 @@ export const destinations: Destination[] = [
     price: 1399,
     duration: "Day Trek",
     description: "Conquer the highest peak in Maharashtra at 1646 meters.",
+    detailedContent: "Kalsubai, standing tall at 1,646 metres (5,400 feet), is the highest peak in Maharashtra and one of the most sought-after treks in the Sahyadri mountain range. Located in the Ahmednagar district near the Bhandardara region, this summit offers a 360-degree panoramic view that includes the Bhandardara Dam, Arthur Lake, and on exceptionally clear days, you can spot the Mula and Pravara river valleys stretching to the horizon. The trek to Kalsubai is a well-marked trail starting from the base village of Bari, ascending through a series of iron ladders and rock patches that add an element of adventure to the climb. Despite being the highest peak, the trail is suitable for beginners with reasonable fitness levels, typically taking 2-3 hours to reach the summit. At the top, you will find the Kalsubai Temple, a small shrine dedicated to the goddess Kalsubai, revered by local Adivasi communities. Our Off Route Adventure package offers both sunrise and night trek options. The night trek version is particularly popular — starting at 2 AM to reach the summit for a spectacular sunrise that paints the entire Western Ghats in golden hues. The package includes experienced trek leaders, sturdy ladder assistance, meals (breakfast and lunch), transportation from Pune, and all necessary safety equipment. Kalsubai is the quintessential Maharashtra trek and belongs on every adventurer's bucket list.",
+    bestSeason: "September to February",
+    difficulty: "Moderate",
+    altitude: "1,646 m (5,400 ft)",
+    whatToPack: ["Trekking shoes with ankle support", "Warm layer (night trek)", "Headlamp with backup batteries", "2L water + glucose", "Light backpack (no heavy bags)"],
     image: "https://res.cloudinary.com/dlgjwovla/image/upload/v1774371198/IMG-20260202-WA0122_iyqdzy.jpg",
     highlights: ["Highest Peak", "Sunrise View", "Iron Ladders", "Kalsubai Temple"],
   },
@@ -54,6 +73,10 @@ export const destinations: Destination[] = [
     price: 1499,
     duration: "Forest Trek",
     description: "Walk through the dark dense forests of Sahyadri with breathtaking valley views.",
+    detailedContent: "Andharban, which literally translates to 'Dark Forest' in Marathi, is one of the most enchanting and atmospheric treks in Maharashtra's Sahyadri ranges. Located near Tamhini Ghat in the Pune district, this descending trek takes you through a dense tropical forest canopy so thick that sunlight barely reaches the forest floor, creating an ethereal, otherworldly ambiance that feels like walking through a living fairy tale. The 13-kilometre trail descends approximately 1,200 metres from the Pimpri Dam area down to the Bhira Dam in the Konkan region, passing through multiple ecological zones — from windswept grasslands at the start, into misty shola forests, past cascading seasonal waterfalls, and finally into lush tropical vegetation near the base. During monsoon, the trail transforms into a photographer's paradise with dozens of unnamed waterfalls, rare orchids, carnivorous sundew plants, Malabar pit vipers, and an extraordinary variety of mushrooms and ferns. Every turn reveals a new vista — from vertigo-inducing valley views to intimate close-ups of dripping moss on ancient tree bark. Our Off Route Adventure Andharban package is led by experienced naturalist guides who can identify endemic flora and fauna along the way. The trek is moderately challenging due to slippery terrain during monsoon and the continuous descent that tests knee endurance. We include safe transportation, hearty local Maharashtrian meals, trekking poles for support, and a post-trek celebration at Bhira Dam. Andharban is widely regarded as the most beautiful monsoon trek in Maharashtra — a must-experience for anyone who loves dense forests and wild, untamed nature.",
+    bestSeason: "June to October (Monsoon peak: July-August)",
+    difficulty: "Moderate",
+    whatToPack: ["Waterproof backpack cover", "Leech-proof socks", "Grip trekking shoes (mandatory)", "Rain poncho", "Change of dry clothes in waterproof bag"],
     image: "https://res.cloudinary.com/dlgjwovla/image/upload/v1774371663/IMG_8354_zgm9hw.jpg",
     highlights: ["Dense Forest", "Waterfall", "Valley Views", "Wildlife Spotting"],
   },
@@ -63,6 +86,11 @@ export const destinations: Destination[] = [
     price: 1799,
     duration: "Fort & Camping",
     description: "Explore the historic Vasota Fort with camping under the stars.",
+    detailedContent: "Vasota Fort, also known as Vyaghragad (Fort of the Tiger), is a remote and majestic hill fort situated within the Koyna Wildlife Sanctuary in the Satara district of Maharashtra. What makes Vasota truly unique among Sahyadri treks is the journey itself — the adventure begins with a scenic boat ride across the emerald-green Shivsagar Lake (the backwaters of Koyna Dam), followed by a jungle trek through one of Maharashtra's richest wildlife corridors. The Koyna Wildlife Sanctuary is home to leopards, Indian bison (gaur), barking deer, giant Malabar squirrels, and over 250 species of birds, making this trek a dual adventure of history and wildlife. The fort itself, standing at 1,171 metres, was a strategic stronghold during the Maratha Empire and offers spectacular views of the surrounding dense forests and the shimmering Shivsagar Lake below. At the summit, you will explore ancient water cisterns, crumbling bastions, and the remains of old temples that speak to centuries of history. Our Off Route Adventure package includes the boat ride from Bamnoli village, expert forest guides licensed by the forest department, camping equipment for an overnight stay on the fort, freshly cooked meals including local Maharashtrian cuisine, and safe return transport. The overnight camping experience at Vasota is legendary — sleeping under a canopy of stars with the sounds of the jungle all around you is an experience that stays with you for a lifetime. This trek is best suited for intermediate trekkers who want something beyond the usual Sahyadri forts.",
+    bestSeason: "October to May (Closed during monsoon by Forest Dept)",
+    difficulty: "Moderate",
+    altitude: "1,171 m (3,842 ft)",
+    whatToPack: ["Binoculars for birdwatching", "Insect repellent", "Warm sleeping layer", "Torch with extra batteries", "Personal dry snacks"],
     image: "https://res.cloudinary.com/dlgjwovla/image/upload/v1774371363/IMG-20251221-WA0005_huxwpf.jpg",
     highlights: ["Boat Ride", "Fort Exploration", "Night Camping", "Jungle Safari"],
   },
@@ -169,16 +197,16 @@ export const destinations: Destination[] = [
 ];
 
 export const galleryImages = [
-  { src: "/images/vasota.jpg", alt: "Vasota Fort", location: "Vasota" },
-  { src: "/images/golden-temple.jpg", alt: "Golden Temple", location: "Amritsar" },
-  { src: "/images/harishchandragad.jpg", alt: "Harishchandragad Fort", location: "Harishchandragad" },
-  { src: "/images/kalsubai.jpg", alt: "Kalsubai Peak", location: "Kalsubai" },
-  { src: "/images/andharban.jpg", alt: "Andharban Forest", location: "Andharban" },
-  { src: "/images/kalu-waterfall.jpg", alt: "Kalu Waterfall", location: "Kalu" },
-  { src: "/images/manali.jpg", alt: "Manali Mountains", location: "Manali" },
-  { src: "/images/konkankada.jpg", alt: "Konkankada Cliff", location: "Konkankada" },
-  { src: "/images/rajmachi.jpg", alt: "Rajmachi Fort", location: "Rajmachi" },
-  { src: "/images/lohagad.jpg", alt: "Lohagad Fort", location: "Lohagad" },
-  { src: "/images/bhimashankar.jpg", alt: "Bhimashankar Temple", location: "Bhimashankar" },
-  { src: "/images/pawna-lake.jpg", alt: "Pawna Lake Camping", location: "Pawna Lake" },
+  { src: "/images/vasota.jpg", alt: "Vasota Fort Trek Camping Maharashtra", location: "Vasota" },
+  { src: "/images/golden-temple.jpg", alt: "Golden Temple Amritsar Tour", location: "Amritsar" },
+  { src: "/images/harishchandragad.jpg", alt: "Harishchandragad Fort Konkan Kada Trek", location: "Harishchandragad" },
+  { src: "/images/kalsubai.jpg", alt: "Kalsubai Peak Highest Point Maharashtra", location: "Kalsubai" },
+  { src: "/images/andharban.jpg", alt: "Andharban Dark Forest Trek Sahyadri", location: "Andharban" },
+  { src: "/images/kalu-waterfall.jpg", alt: "Kalu Waterfall Trek Malshej Ghat", location: "Kalu" },
+  { src: "/images/manali.jpg", alt: "Manali Mountains Himalayan Adventure Tour", location: "Manali" },
+  { src: "/images/konkankada.jpg", alt: "Konkankada Cliff Harishchandragad Panoramic View", location: "Konkankada" },
+  { src: "/images/rajmachi.jpg", alt: "Rajmachi Fort Night Trek Lonavala", location: "Rajmachi" },
+  { src: "/images/lohagad.jpg", alt: "Lohagad Fort Trek Near Lonavala Pune", location: "Lohagad" },
+  { src: "/images/bhimashankar.jpg", alt: "Bhimashankar Jyotirlinga Temple Trek", location: "Bhimashankar" },
+  { src: "/images/pawna-lake.jpg", alt: "Pawna Lake Lakeside Camping Near Pune", location: "Pawna Lake" },
 ];
