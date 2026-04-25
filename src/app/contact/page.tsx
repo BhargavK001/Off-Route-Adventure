@@ -370,8 +370,8 @@ export default function ContactPage() {
                       href={item.href}
                       className="group flex items-start gap-6 p-7 rounded-[32px] bg-white border border-gray-100 hover:border-green-200 hover:shadow-[0_20px_50px_-10px_rgba(22,163,74,0.1)] transition-all duration-500"
                     >
-                      <div className="w-12 h-12 bg-gray-50 rounded-2xl flex items-center justify-center shrink-0 group-hover:bg-green-600 group-hover:rotate-6 transition-all duration-500">
-                        <item.icon className="h-5 w-5 text-green-600 group-hover:text-white" />
+                      <div className="w-12 h-12 bg-gray-50 rounded-2xl flex items-center justify-center shrink-0 group-hover:bg-green-700 group-hover:rotate-6 transition-all duration-500">
+                        <item.icon className="h-5 w-5 text-green-700 group-hover:text-white" />
                       </div>
                       <div>
                         <p className="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em] mb-1.5">{item.label}</p>
@@ -381,7 +381,7 @@ export default function ContactPage() {
                   ) : (
                     <div className="flex items-start gap-6 p-7 rounded-[32px] bg-white border border-gray-100">
                       <div className="w-12 h-12 bg-gray-50 rounded-2xl flex items-center justify-center shrink-0">
-                        <item.icon className="h-5 w-5 text-green-600" />
+                        <item.icon className="h-5 w-5 text-green-700" />
                       </div>
                       <div>
                         <p className="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em] mb-1.5">{item.label}</p>
@@ -482,7 +482,7 @@ export default function ContactPage() {
                       className="bg-green-50 border border-green-200 rounded-2xl p-5 flex items-center gap-4"
                     >
                       <div className="w-9 h-9 bg-green-100 rounded-full flex items-center justify-center shrink-0">
-                        <CheckCircle className="h-5 w-5 text-green-600" />
+                        <CheckCircle className="h-5 w-5 text-green-700" />
                       </div>
                       <span className="text-green-900 text-sm font-black uppercase tracking-wider">Signals Received! We&apos;ll get back to you soon.</span>
                     </motion.div>
@@ -494,7 +494,7 @@ export default function ContactPage() {
                   disabled={contactSubmitting}
                   whileHover={{ scale: 1.02, backgroundColor: "#059669" }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full h-16 flex items-center justify-center gap-4 bg-green-600 text-white font-black rounded-2xl transition-all shadow-xl shadow-green-600/20 disabled:opacity-60 text-sm uppercase tracking-[0.3em]"
+                  className="w-full h-16 flex items-center justify-center gap-4 bg-green-700 text-white font-black rounded-2xl transition-all shadow-xl shadow-green-600/20 disabled:opacity-60 text-sm uppercase tracking-[0.3em]"
                 >
                   {contactSubmitting ? (
                     <>
@@ -577,7 +577,7 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <p className="font-black text-white uppercase text-[9px] tracking-[0.2em]">{review.name}</p>
-                        <p className="text-green-600 text-[10px] uppercase font-black tracking-[0.3em] mt-1.5">
+                        <p className="text-green-700 text-[10px] uppercase font-black tracking-[0.3em] mt-1.5">
                           {review.destination}
                         </p>
                       </div>
@@ -633,7 +633,7 @@ export default function ContactPage() {
                       <motion.span
                         initial={{ opacity: 0, x: -10 }}
                         animate={{ opacity: 1, x: 0 }}
-                        className="text-green-600 font-black uppercase text-[10px] tracking-widest bg-green-50 px-4 py-2 rounded-full border border-green-100"
+                        className="text-green-700 font-black uppercase text-[10px] tracking-widest bg-green-50 px-4 py-2 rounded-full border border-green-100"
                       >
                         {selectedRating === 5 ? "Elite Expedition" : "Successful Summit"}
                       </motion.span>
@@ -661,7 +661,7 @@ export default function ContactPage() {
                   <motion.div
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
-                    className="bg-green-600 text-white rounded-[32px] p-8 text-center flex flex-col items-center gap-4 shadow-2xl shadow-green-600/40"
+                    className="bg-green-700 text-white rounded-[32px] p-8 text-center flex flex-col items-center gap-4 shadow-2xl shadow-green-600/40"
                   >
                     <CheckCircle className="h-10 w-10 text-white" />
                     <h3 className="font-black text-xl uppercase tracking-tighter">Transmission Secured!</h3>

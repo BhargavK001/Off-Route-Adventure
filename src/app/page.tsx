@@ -88,7 +88,7 @@ export default function Home() {
                   >
                     <span className="pr-4">{faq.question}</span>
                     <span
-                      className="flex-shrink-0 w-5 h-5 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-xs font-bold group-open:rotate-45 transition-transform duration-200"
+                      className="flex-shrink-0 w-5 h-5 bg-green-100 rounded-full flex items-center justify-center text-green-700 text-xs font-bold group-open:rotate-45 transition-transform duration-200"
                       aria-hidden="true"
                     >
                       +

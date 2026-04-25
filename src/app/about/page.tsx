@@ -346,7 +346,7 @@ export default function AboutPage() {
             <div className="md:col-span-7">
               <div className="flex items-center gap-3 mb-6">
                 <span className="h-px w-8 bg-green-500" />
-                <span className="text-green-600 text-xs font-semibold uppercase tracking-[0.18em]">
+                <span className="text-green-700 text-xs font-semibold uppercase tracking-[0.18em]">
                   Our Story
                 </span>
               </div>
@@ -357,7 +357,7 @@ export default function AboutPage() {
               >
                 Born from a passion
                 <br />
-                <span className="text-green-600">for the outdoors.</span>
+                <span className="text-green-700">for the outdoors.</span>
               </h2>
 
               <div
@@ -402,8 +402,8 @@ export default function AboutPage() {
             {/* Right: milestone timeline */}
             <div className="md:col-span-4">
               <div className="flex items-center gap-3 mb-6">
-                <Calendar className="h-4 w-4 text-green-600" />
-                <span className="text-green-600 text-xs font-semibold uppercase tracking-[0.18em]">
+                <Calendar className="h-4 w-4 text-green-700" />
+                <span className="text-green-700 text-xs font-semibold uppercase tracking-[0.18em]">
                   Milestones
                 </span>
               </div>
@@ -412,7 +412,7 @@ export default function AboutPage() {
                   <li key={i} className="pl-6 pb-7 last:pb-0 relative">
                     {/* Dot */}
                     <span className="absolute -left-[5px] top-1 w-2.5 h-2.5 rounded-full bg-green-500 border-2 border-white ring-1 ring-green-300" />
-                    <p className="text-xs font-black text-green-600 uppercase tracking-widest mb-0.5">
+                    <p className="text-xs font-black text-green-700 uppercase tracking-widest mb-0.5">
                       {m.year}
                     </p>
                     <p className="text-sm font-bold text-gray-900">{m.label}</p>
@@ -463,7 +463,7 @@ export default function AboutPage() {
             <div>
               <div className="flex items-center gap-3 mb-4">
                 <span className="h-px w-8 bg-green-500" />
-                <span className="text-green-600 text-xs font-semibold uppercase tracking-[0.18em]">
+                <span className="text-green-700 text-xs font-semibold uppercase tracking-[0.18em]">
                   What We Stand For
                 </span>
               </div>
@@ -495,7 +495,7 @@ export default function AboutPage() {
                       {value.index}
                     </span>
                     <div className="w-9 h-9 rounded-lg bg-green-50 group-hover:bg-green-900 flex items-center justify-center transition-colors duration-500">
-                      <Icon className="h-4 w-4 text-green-600 group-hover:text-green-400 transition-colors duration-500" />
+                      <Icon className="h-4 w-4 text-green-700 group-hover:text-green-400 transition-colors duration-500" />
                     </div>
                   </div>
                   {/* Divider */}
@@ -528,7 +528,7 @@ export default function AboutPage() {
                       {value.index}
                     </span>
                     <div className="w-9 h-9 rounded-lg bg-green-50 group-hover:bg-green-900 flex items-center justify-center transition-colors duration-500">
-                      <Icon className="h-4 w-4 text-green-600 group-hover:text-green-400 transition-colors duration-500" />
+                      <Icon className="h-4 w-4 text-green-700 group-hover:text-green-400 transition-colors duration-500" />
                     </div>
                   </div>
                   <div className="h-px bg-gray-100 group-hover:bg-green-900/60 transition-colors duration-500" />
@@ -553,7 +553,7 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Left: quote-style block */}
             <div>
-              <Compass className="h-10 w-10 text-green-600 mb-6" />
+              <Compass className="h-10 w-10 text-green-700 mb-6" />
               <blockquote className="text-gray-900 font-black leading-tight tracking-tight mb-6" style={{ fontSize: "clamp(26px, 3.2vw, 42px)" }}>
                 &ldquo;The best trails are the ones nobody told you about.&rdquo;
               </blockquote>
@@ -592,7 +592,7 @@ export default function AboutPage() {
                   key={label}
                   className="bg-white rounded-2xl p-5 border border-gray-100 hover:border-green-200 hover:shadow-md transition-all duration-300 group"
                 >
-                  <Icon className="h-5 w-5 text-green-600 mb-3 group-hover:scale-110 transition-transform duration-300" />
+                  <Icon className="h-5 w-5 text-green-700 mb-3 group-hover:scale-110 transition-transform duration-300" />
                   <p className="text-gray-900 text-sm font-bold leading-snug mb-1">
                     {label}
                   </p>
@@ -650,7 +650,7 @@ export default function AboutPage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/book"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-green-600 hover:bg-green-500 text-white font-semibold rounded-lg transition-all duration-300 hover:scale-105 shadow-lg shadow-green-900/40"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-green-700 hover:bg-green-500 text-white font-semibold rounded-lg transition-all duration-300 hover:scale-105 shadow-lg shadow-green-900/40"
             >
               Book Now
               <ArrowRight className="h-4 w-4" />

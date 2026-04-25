@@ -112,7 +112,7 @@ function TrustSidebar() {
       {/* Contact card */}
       <div className="rounded-2xl border border-gray-100 p-6 bg-white">
         <div className="flex items-center gap-3 mb-4">
-          <Phone className="h-4 w-4 text-green-600" />
+          <Phone className="h-4 w-4 text-green-700" />
           <span className="text-xs font-bold text-gray-900 uppercase tracking-[0.12em]">
             Need Help?
           </span>
@@ -125,7 +125,7 @@ function TrustSidebar() {
           href="https://wa.me/918421632688"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 text-sm font-semibold text-green-600 hover:text-green-700 transition-colors"
+          className="inline-flex items-center gap-2 text-sm font-semibold text-green-700 hover:text-green-700 transition-colors"
         >
           Chat on WhatsApp
           <ArrowRight className="h-3.5 w-3.5" />
@@ -404,7 +404,7 @@ function BookingForm() {
                 type="checkbox"
                 value={value}
                 {...register("specialConditions")}
-                className="w-4 h-4 mt-0.5 text-green-600 rounded border-gray-300 focus:ring-green-500 shrink-0"
+                className="w-4 h-4 mt-0.5 text-green-700 rounded border-gray-300 focus:ring-green-500 shrink-0"
               />
               <span className="text-sm text-gray-700 leading-snug group-hover:text-gray-900 transition-colors">
                 {label}
@@ -451,7 +451,7 @@ function BookingForm() {
             {...register("declaration", {
               required: "You must accept the declaration to proceed",
             })}
-            className="w-4 h-4 mt-1 text-green-600 rounded border-gray-300 focus:ring-green-500 shrink-0"
+            className="w-4 h-4 mt-1 text-green-700 rounded border-gray-300 focus:ring-green-500 shrink-0"
           />
           <span className="text-sm text-gray-700 leading-relaxed">
             I have read and agree to the declaration, terms, refund policy, and
@@ -467,7 +467,7 @@ function BookingForm() {
       {/* ── Status messages ── */}
       {submitStatus === "success" && (
         <div className="flex items-start gap-4 bg-green-50 border border-green-200 rounded-xl p-5">
-          <CheckCircle className="h-5 w-5 text-green-600 shrink-0 mt-0.5" />
+          <CheckCircle className="h-5 w-5 text-green-700 shrink-0 mt-0.5" />
           <div>
             <p className="font-semibold text-green-900 text-sm">
               Booking Request Submitted
@@ -498,7 +498,7 @@ function BookingForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full flex items-center justify-center gap-3 py-4 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-xl transition-all duration-300 hover:scale-[1.01] shadow-lg shadow-green-100 disabled:opacity-60 disabled:cursor-not-allowed disabled:scale-100 text-sm"
+        className="w-full flex items-center justify-center gap-3 py-4 bg-green-700 hover:bg-green-700 text-white font-semibold rounded-xl transition-all duration-300 hover:scale-[1.01] shadow-lg shadow-green-100 disabled:opacity-60 disabled:cursor-not-allowed disabled:scale-100 text-sm"
       >
         {isSubmitting ? (
           <>

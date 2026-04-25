@@ -20,8 +20,8 @@ export default function Header() {
               alt="Off Route Adventure – Trekking Tours Maharashtra"
               width={44}
               height={44}
+              sizes="44px"
               priority
-              unoptimized
               className="object-contain rounded-full"
             />
             <span className="text-xl font-bold text-gray-900">Off Route Adventure</span>
@@ -33,7 +33,7 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-gray-700 hover:text-green-600 transition-colors font-medium"
+                className="text-gray-700 hover:text-green-700 transition-colors font-medium"
               >
                 {link.label}
               </Link>
@@ -63,7 +63,7 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="min-h-[44px] flex items-center px-2 text-gray-700 hover:text-green-600 hover:bg-green-50 rounded-lg transition-colors font-medium"
+                className="min-h-[44px] flex items-center px-2 text-gray-700 hover:text-green-700 hover:bg-green-50 rounded-lg transition-colors font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {link.label}

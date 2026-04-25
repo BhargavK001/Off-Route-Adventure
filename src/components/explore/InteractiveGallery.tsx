@@ -58,7 +58,7 @@ export default function InteractiveGallery({ galleries }: InteractiveGalleryProp
                         {/* Destination Header */}
                         <div className="flex items-center gap-3 mb-6">
                             <div className="w-10 h-10 rounded-xl bg-green-100 flex items-center justify-center">
-                                <MapPin className="h-5 w-5 text-green-600" />
+                                <MapPin className="h-5 w-5 text-green-700" />
                             </div>
                             <div>
                                 <h3 className="text-2xl font-bold text-gray-900">

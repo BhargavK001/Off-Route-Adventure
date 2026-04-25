@@ -47,7 +47,7 @@ export default function TermsConditions() {
                             {/* Acceptance of Terms */}
                             <div className="prose prose-green max-w-none">
                                 <div className="flex items-center gap-3 mb-4">
-                                    <ClipboardCheck className="h-6 w-6 text-green-600" />
+                                    <ClipboardCheck className="h-6 w-6 text-green-700" />
                                     <h2 className="text-2xl font-bold text-gray-900 m-0">Acceptance of Terms</h2>
                                 </div>
                                 <p className="text-gray-700 leading-relaxed">
@@ -58,7 +58,7 @@ export default function TermsConditions() {
                             {/* Booking & Payments */}
                             <div className="bg-green-50 rounded-2xl p-8 border border-green-100">
                                 <div className="flex items-center gap-3 mb-4">
-                                    <FileText className="h-6 w-6 text-green-600" />
+                                    <FileText className="h-6 w-6 text-green-700" />
                                     <h2 className="text-2xl font-bold text-gray-900 m-0">Bookings & Payments</h2>
                                 </div>
                                 <div className="space-y-4">
@@ -76,7 +76,7 @@ export default function TermsConditions() {
                             {/* Cancellation & Refunds */}
                             <div className="prose prose-green max-w-none">
                                 <div className="flex items-center gap-3 mb-4">
-                                    <AlertCircle className="h-6 w-6 text-green-600" />
+                                    <AlertCircle className="h-6 w-6 text-green-700" />
                                     <h2 className="text-2xl font-bold text-gray-900 m-0">Cancellation & Refunds</h2>
                                 </div>
                                 <p className="text-gray-700 leading-relaxed">
@@ -92,7 +92,7 @@ export default function TermsConditions() {
                             {/* Health & Safety */}
                             <div className="prose prose-green max-w-none">
                                 <div className="flex items-center gap-3 mb-4">
-                                    <MapPin className="h-6 w-6 text-green-600" />
+                                    <MapPin className="h-6 w-6 text-green-700" />
                                     <h2 className="text-2xl font-bold text-gray-900 m-0">Health & Safety Liability</h2>
                                 </div>
                                 <p className="text-gray-700 leading-relaxed">
@@ -103,7 +103,7 @@ export default function TermsConditions() {
                             {/* Site Content */}
                             <div className="prose prose-green max-w-none">
                                 <div className="flex items-center gap-3 mb-4">
-                                    <Info className="h-6 w-6 text-green-600" />
+                                    <Info className="h-6 w-6 text-green-700" />
                                     <h2 className="text-2xl font-bold text-gray-900 m-0">Intellectual Property</h2>
                                 </div>
                                 <p className="text-gray-700 leading-relaxed">
@@ -114,7 +114,7 @@ export default function TermsConditions() {
                             {/* Changes to Terms */}
                             <div className="prose prose-green max-w-none">
                                 <div className="flex items-center gap-3 mb-4">
-                                    <Bell className="h-6 w-6 text-green-600" />
+                                    <Bell className="h-6 w-6 text-green-700" />
                                     <h2 className="text-2xl font-bold text-gray-900 m-0">Changes to These Terms</h2>
                                 </div>
                                 <p className="text-gray-700 leading-relaxed">
@@ -125,7 +125,7 @@ export default function TermsConditions() {
                             {/* Contact Us */}
                             <div className="prose prose-green max-w-none border-t border-gray-100 pt-12">
                                 <div className="flex items-center gap-3 mb-4">
-                                    <HelpCircle className="h-6 w-6 text-green-600" />
+                                    <HelpCircle className="h-6 w-6 text-green-700" />
                                     <h2 className="text-2xl font-bold text-gray-900 m-0">Need Clarification?</h2>
                                 </div>
                                 <p className="text-gray-700 leading-relaxed">

@@ -152,7 +152,7 @@ export default async function TrekPage({ params }: PageProps) {
                 </div>
 
                 <div className="relative z-10 container mx-auto px-4 text-center mt-20">
-                    <span className="inline-block px-4 py-1.5 rounded-full bg-green-600/90 text-white text-sm font-semibold mb-6 backdrop-blur-sm border border-green-400">
+                    <span className="inline-block px-4 py-1.5 rounded-full bg-green-700/90 text-white text-sm font-semibold mb-6 backdrop-blur-sm border border-green-400">
                         Adventure Awaits
                     </span>
                     <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight max-w-4xl mx-auto drop-shadow-lg">
@@ -203,7 +203,7 @@ export default async function TrekPage({ params }: PageProps) {
                                     </div>
                                     {trek.altitude && (
                                         <div className="flex items-start gap-3 p-4 rounded-xl bg-green-50/50">
-                                            <MapPin className="h-6 w-6 text-green-600 flex-shrink-0 mt-0.5" />
+                                            <MapPin className="h-6 w-6 text-green-700 flex-shrink-0 mt-0.5" />
                                             <div>
                                                 <p className="text-sm text-gray-500 font-medium">Altitude</p>
                                                 <p className="font-semibold text-gray-800">{trek.altitude}</p>
@@ -227,7 +227,7 @@ export default async function TrekPage({ params }: PageProps) {
                                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                         {trek.whatToPack.map((item, idx) => (
                                             <div key={idx} className="flex items-center gap-3 p-3 rounded-xl bg-gray-50">
-                                                <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0" />
+                                                <CheckCircle className="h-5 w-5 text-green-700 flex-shrink-0" />
                                                 <span className="text-gray-700">{item}</span>
                                             </div>
                                         ))}
@@ -240,7 +240,7 @@ export default async function TrekPage({ params }: PageProps) {
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     {trek.highlights.map((highlight, idx) => (
                                         <div key={idx} className="flex items-start gap-3 p-4 rounded-xl bg-green-50/50">
-                                            <CheckCircle className="h-6 w-6 text-green-600 flex-shrink-0" />
+                                            <CheckCircle className="h-6 w-6 text-green-700 flex-shrink-0" />
                                             <span className="font-medium text-gray-800">{highlight}</span>
                                         </div>
                                     ))}
@@ -266,7 +266,7 @@ export default async function TrekPage({ params }: PageProps) {
                             <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100 sticky top-24">
                                 <div className="mb-6 pb-6 border-b border-gray-100">
                                     <div className="flex items-center gap-2 mb-2">
-                                        <IndianRupee className="h-6 w-6 text-green-600" />
+                                        <IndianRupee className="h-6 w-6 text-green-700" />
                                         <span className="text-3xl font-bold text-gray-900">{trek.price.toLocaleString()}</span>
                                         <span className="text-gray-500 font-medium ml-1">per person</span>
                                     </div>
@@ -275,7 +275,7 @@ export default async function TrekPage({ params }: PageProps) {
                                 <div className="space-y-5 mb-8">
                                     <div className="flex items-center gap-4 bg-gray-50 p-4 rounded-2xl">
                                         <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
-                                            <Clock className="h-5 w-5 text-green-600" />
+                                            <Clock className="h-5 w-5 text-green-700" />
                                         </div>
                                         <div>
                                             <p className="text-sm text-gray-500 font-medium">Duration</p>
@@ -285,7 +285,7 @@ export default async function TrekPage({ params }: PageProps) {
 
                                     <div className="flex items-center gap-4 bg-gray-50 p-4 rounded-2xl">
                                         <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
-                                            <Mountain className="h-5 w-5 text-green-600" />
+                                            <Mountain className="h-5 w-5 text-green-700" />
                                         </div>
                                         <div>
                                             <p className="text-sm text-gray-500 font-medium">Trip Type</p>
@@ -295,7 +295,7 @@ export default async function TrekPage({ params }: PageProps) {
 
                                     <div className="flex items-center gap-4 bg-gray-50 p-4 rounded-2xl">
                                         <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
-                                            <MapPin className="h-5 w-5 text-green-600" />
+                                            <MapPin className="h-5 w-5 text-green-700" />
                                         </div>
                                         <div>
                                             <p className="text-sm text-gray-500 font-medium">Location</p>
@@ -353,11 +353,11 @@ export default async function TrekPage({ params }: PageProps) {
                                                 />
                                             </div>
                                             <div className="p-4">
-                                                <h3 className="font-bold text-gray-900 group-hover:text-green-600 transition-colors">
+                                                <h3 className="font-bold text-gray-900 group-hover:text-green-700 transition-colors">
                                                     {related.name}
                                                 </h3>
                                                 <div className="flex items-center justify-between mt-2">
-                                                    <span className="text-green-600 font-bold">
+                                                    <span className="text-green-700 font-bold">
                                                         ₹{related.price.toLocaleString()}
                                                     </span>
                                                     <span className="text-sm text-gray-500">
@@ -371,7 +371,7 @@ export default async function TrekPage({ params }: PageProps) {
                                 <div className="text-center mt-8">
                                     <Link
                                         href="/plans"
-                                        className="inline-flex items-center px-6 py-3 bg-green-600 text-white font-semibold rounded-full hover:bg-green-700 transition-all"
+                                        className="inline-flex items-center px-6 py-3 bg-green-700 text-white font-semibold rounded-full hover:bg-green-700 transition-all"
                                     >
                                         View All Plans
                                         <ArrowRight className="ml-2 h-4 w-4" />

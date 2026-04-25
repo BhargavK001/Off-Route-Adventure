@@ -53,7 +53,7 @@ export const metadata: Metadata = {
 const categories = [
   { title: "Forts & History", count: 8, icon: <Castle className="h-7 w-7" />, color: "text-amber-500", bg: "bg-amber-50" },
   { title: "Waterfalls", count: 3, icon: <Waves className="h-7 w-7" />, color: "text-blue-500", bg: "bg-blue-50" },
-  { title: "Mountains & Peaks", count: 4, icon: <Mountain className="h-7 w-7" />, color: "text-green-600", bg: "bg-green-50" },
+  { title: "Mountains & Peaks", count: 4, icon: <Mountain className="h-7 w-7" />, color: "text-green-700", bg: "bg-green-50" },
   { title: "Lakes & Camping", count: 3, icon: <TreePine className="h-7 w-7" />, color: "text-purple-500", bg: "bg-purple-50" },
 ];
 

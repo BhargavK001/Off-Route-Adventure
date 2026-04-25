@@ -38,7 +38,7 @@ export default function ServicesSection() {
                             className="flex items-start gap-3 p-4 bg-gray-50 rounded-xl hover:bg-green-50 transition-colors animate-fade-in-up"
                             style={{ animationDelay: `${index * 60}ms` }}
                         >
-                            <div className="w-9 h-9 bg-green-600 rounded-lg flex items-center justify-center text-white flex-shrink-0" aria-hidden="true">
+                            <div className="w-9 h-9 bg-green-700 rounded-lg flex items-center justify-center text-white flex-shrink-0" aria-hidden="true">
                                 {iconMap[service.icon] || <MapPin className="h-5 w-5" />}
                             </div>
                             <div>

@@ -48,7 +48,7 @@ export default function PlansContent({ destinations }: PlansContentProps) {
                 onClick={() => setActiveFilter(filter)}
                 className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${
                   activeFilter === filter
-                    ? "bg-green-600 text-white shadow-sm"
+                    ? "bg-green-700 text-white shadow-sm"
                     : "bg-gray-100 text-gray-600 hover:bg-gray-200"
                 }`}
               >
@@ -68,7 +68,7 @@ export default function PlansContent({ destinations }: PlansContentProps) {
               <p className="text-gray-500">We don&apos;t have any packages matching this filter right now.</p>
               <button 
                 onClick={() => setActiveFilter("All")}
-                className="mt-6 px-6 py-2 bg-green-600 text-white rounded-full font-medium hover:bg-green-700 transition"
+                className="mt-6 px-6 py-2 bg-green-700 text-white rounded-full font-medium hover:bg-green-700 transition"
               >
                 View All Packages
               </button>

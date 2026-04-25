@@ -47,7 +47,7 @@ export default function PrivacyPolicy() {
                             {/* Introduction */}
                             <div className="prose prose-green max-w-none">
                                 <div className="flex items-center gap-3 mb-4">
-                                    <Shield className="h-6 w-6 text-green-600" />
+                                    <Shield className="h-6 w-6 text-green-700" />
                                     <h2 className="text-2xl font-bold text-gray-900 m-0">Introduction</h2>
                                 </div>
                                 <p className="text-gray-700 leading-relaxed">
@@ -61,7 +61,7 @@ export default function PrivacyPolicy() {
                             {/* Information Collection */}
                             <div className="prose prose-green max-w-none">
                                 <div className="flex items-center gap-3 mb-4">
-                                    <Eye className="h-6 w-6 text-green-600" />
+                                    <Eye className="h-6 w-6 text-green-700" />
                                     <h2 className="text-2xl font-bold text-gray-900 m-0">Information We Collect</h2>
                                 </div>
                                 <p className="text-gray-700 leading-relaxed">
@@ -76,7 +76,7 @@ export default function PrivacyPolicy() {
                             {/* AdSense and Cookies */}
                             <div className="bg-green-50 rounded-2xl p-8 border border-green-100">
                                 <div className="flex items-center gap-3 mb-4">
-                                    <Bell className="h-6 w-6 text-green-600" />
+                                    <Bell className="h-6 w-6 text-green-700" />
                                     <h2 className="text-2xl font-bold text-gray-900 m-0">Cookies & Advertising</h2>
                                 </div>
                                 <p className="text-gray-700 leading-relaxed">
@@ -96,7 +96,7 @@ export default function PrivacyPolicy() {
                             {/* How We Use Info */}
                             <div className="prose prose-green max-w-none">
                                 <div className="flex items-center gap-3 mb-4">
-                                    <Globe className="h-6 w-6 text-green-600" />
+                                    <Globe className="h-6 w-6 text-green-700" />
                                     <h2 className="text-2xl font-bold text-gray-900 m-0">How We Use Your Data</h2>
                                 </div>
                                 <p className="text-gray-700 leading-relaxed">
@@ -113,7 +113,7 @@ export default function PrivacyPolicy() {
                             {/* Data Security */}
                             <div className="prose prose-green max-w-none">
                                 <div className="flex items-center gap-3 mb-4">
-                                    <Lock className="h-6 w-6 text-green-600" />
+                                    <Lock className="h-6 w-6 text-green-700" />
                                     <h2 className="text-2xl font-bold text-gray-900 m-0">Security of Your Data</h2>
                                 </div>
                                 <p className="text-gray-700 leading-relaxed">
@@ -124,7 +124,7 @@ export default function PrivacyPolicy() {
                             {/* Contact Us */}
                             <div className="prose prose-green max-w-none border-t border-gray-100 pt-12">
                                 <div className="flex items-center gap-3 mb-4">
-                                    <FileText className="h-6 w-6 text-green-600" />
+                                    <FileText className="h-6 w-6 text-green-700" />
                                     <h2 className="text-2xl font-bold text-gray-900 m-0">Questions?</h2>
                                 </div>
                                 <p className="text-gray-700 leading-relaxed">

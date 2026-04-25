@@ -52,7 +52,7 @@ export default function WhyChooseUsSection() {
                         >
                             {/* Icon + number row */}
                             <div className="flex items-center justify-between mb-4">
-                                <div className="w-10 h-10 bg-green-50 rounded-lg flex items-center justify-center text-green-600 group-hover:bg-green-100 group-hover:scale-110 transition-all duration-300 flex-shrink-0">
+                                <div className="w-10 h-10 bg-green-50 rounded-lg flex items-center justify-center text-green-700 group-hover:bg-green-100 group-hover:scale-110 transition-all duration-300 flex-shrink-0">
                                     {iconMap[feature.icon] || <Shield className="h-5 w-5" aria-hidden="true" />}
                                 </div>
                                 <span className="text-xl font-black text-gray-100 group-hover:text-green-100 transition-colors select-none tabular-nums" aria-hidden="true">

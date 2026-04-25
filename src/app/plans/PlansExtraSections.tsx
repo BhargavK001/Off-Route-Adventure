@@ -53,7 +53,7 @@ export default function PlansExtraSections() {
           >
             <div className="flex items-center justify-center gap-3 mb-4">
               <span className="h-px w-8 bg-green-500" />
-              <span className="text-green-600 text-[10px] md:text-xs font-semibold uppercase tracking-[0.18em]">
+              <span className="text-green-700 text-[10px] md:text-xs font-semibold uppercase tracking-[0.18em]">
                 Package Details
               </span>
               <span className="h-px w-8 bg-green-500" />
@@ -80,7 +80,7 @@ export default function PlansExtraSections() {
             {/* Included */}
             <motion.div variants={fadeUp} className="bg-white p-8 md:p-10">
               <div className="w-10 h-10 rounded-xl bg-green-50 flex items-center justify-center mb-6 border border-green-100">
-                <CheckCircle className="h-5 w-5 text-green-600" />
+                <CheckCircle className="h-5 w-5 text-green-700" />
               </div>
               <h3 className="font-bold text-gray-900 text-lg md:text-xl mb-6">
                 Included in package

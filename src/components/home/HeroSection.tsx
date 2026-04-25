@@ -113,7 +113,7 @@ export default function HeroSection() {
                                 Wild
                             </span>
                             <svg className="absolute -bottom-2 left-0 w-full animate-[heroDrawLine_1s_ease-out_1s_both]" viewBox="0 0 200 8" fill="none" aria-hidden="true">
-                                <path d="M2 6C50 2 150 2 198 6" stroke="url(#underline-gradient)" strokeWidth="3" strokeLinecap="round" className="[stroke-dasharray:200] [stroke-dashoffset:200] animate-[heroStrokeDraw_1s_ease-out_1s_forwards]" />
+                                <path d="M2 6C50 2 150 2 198 6" stroke="url(#underline-gradient)" strokeWidth="3" strokeLinecap="round" className="will-change-transform [stroke-dasharray:200] [stroke-dashoffset:200] animate-[heroStrokeDraw_1s_ease-out_1s_forwards]" />
                                 <defs>
                                     <linearGradient id="underline-gradient" x1="0" y1="0" x2="200" y2="0">
                                         <stop stopColor="#4ade80" />
@@ -153,7 +153,7 @@ export default function HeroSection() {
             {/* Separated Interactive Marquee Gallery */}
             <section className="bg-white py-12 overflow-hidden border-b border-gray-100">
                 <div className="text-center mb-6">
-                    <span className="text-sm font-bold text-green-600 tracking-wider uppercase">Explore the Trails</span>
+                    <span className="text-sm font-bold text-green-700 tracking-wider uppercase">Explore the Trails</span>
                 </div>
                 <div className="w-full relative marquee-container px-4">
                     {/* Fade edges */}
@@ -172,6 +172,7 @@ export default function HeroSection() {
                                     src={dest.image}
                                     alt={dest.name}
                                     fill
+                                    sizes="(max-width: 768px) 192px, 256px"
                                     className={`object-cover ${dest.imagePosition || 'object-center'} opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500`}
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex flex-col justify-end p-4">
