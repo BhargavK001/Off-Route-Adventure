@@ -373,9 +373,9 @@ export default function ContactPage() {
                       <div className="w-12 h-12 bg-gray-50 rounded-2xl flex items-center justify-center shrink-0 group-hover:bg-green-700 group-hover:rotate-6 transition-all duration-500">
                         <item.icon className="h-5 w-5 text-green-700 group-hover:text-white" />
                       </div>
-                      <div>
+                      <div className="flex-1 min-w-0">
                         <p className="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em] mb-1.5">{item.label}</p>
-                        <p className="text-gray-900 font-bold group-hover:text-green-700 transition-colors text-base tracking-tight">{item.value}</p>
+                        <p className="text-gray-900 font-bold group-hover:text-green-700 transition-colors text-base tracking-tight break-all">{item.value}</p>
                       </div>
                     </a>
                   ) : (
@@ -383,9 +383,9 @@ export default function ContactPage() {
                       <div className="w-12 h-12 bg-gray-50 rounded-2xl flex items-center justify-center shrink-0">
                         <item.icon className="h-5 w-5 text-green-700" />
                       </div>
-                      <div>
+                      <div className="flex-1 min-w-0">
                         <p className="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em] mb-1.5">{item.label}</p>
-                        <p className="text-gray-900 font-bold text-base tracking-tight">{item.value}</p>
+                        <p className="text-gray-900 font-bold text-base tracking-tight break-all">{item.value}</p>
                       </div>
                     </div>
                   )}
