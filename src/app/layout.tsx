@@ -161,7 +161,6 @@ export default function RootLayout({
         <link rel="preconnect" href="https://googleads.g.doubleclick.net" />
         <link rel="dns-prefetch" href="https://www.google.com" />
         <link rel="dns-prefetch" href="https://www.gstatic.com" />
-        <script src="https://quge5.com/88/tag.min.js" data-zone="233402" async data-cfasync="false"></script>
       </head>
       <body className={`${inter.variable} antialiased font-sans`}>
         <GlobalJsonLd />
