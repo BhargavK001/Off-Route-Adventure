@@ -56,12 +56,10 @@ export default function Home() {
       <DestinationsSection />
       <CtaSection />
 
-      {/* FAQ Section – visible UI + microdata for redundancy */}
+      {/* FAQ Section */}
       <section
         className="py-10 bg-gray-50"
         aria-label="Frequently asked questions about trekking with Off Route Adventure"
-        itemScope
-        itemType="https://schema.org/FAQPage"
       >
         <div className="container mx-auto px-4 max-w-3xl">
           <div className="max-w-3xl mx-auto">
@@ -84,16 +82,13 @@ export default function Home() {
                 <details
                   key={index}
                   className="group bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden"
-                  itemScope
-                  itemType="https://schema.org/Question"
                 >
                   <summary
                     className="flex items-center justify-between cursor-pointer p-4 text-left font-semibold text-gray-900 hover:text-green-700 transition-colors text-sm"
-                    itemProp="name"
                   >
                     <span className="pr-4">{faq.question}</span>
                     <span
-                      className="flex-shrink-0 w-5 h-5 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-xs font-bold group-open:rotate-45 transition-transform duration-200"
+                      className="flex-shrink-0 w-5 h-5 bg-green-100 rounded-full flex items-center justify-center text-green-700 text-xs font-bold group-open:rotate-45 transition-transform duration-200"
                       aria-hidden="true"
                     >
                       +
@@ -101,11 +96,8 @@ export default function Home() {
                   </summary>
                   <div
                     className="px-4 pb-4 text-gray-600 leading-relaxed text-sm"
-                    itemScope
-                    itemType="https://schema.org/Answer"
-                    itemProp="acceptedAnswer"
                   >
-                    <p itemProp="text">{faq.answer}</p>
+                    <p>{faq.answer}</p>
                   </div>
                 </details>
               ))}

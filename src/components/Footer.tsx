@@ -25,7 +25,7 @@ export default function Footer() {
                 alt="Off Route Adventure Logo"
                 width={40}
                 height={40}
-                unoptimized
+                sizes="40px"
                 className="object-contain rounded-full bg-white ring-2 ring-green-500/30"
               />
               <div>

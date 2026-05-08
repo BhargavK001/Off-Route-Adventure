@@ -54,7 +54,7 @@ export default function DestinationsSection() {
                                 </p>
                                 <div className="flex items-center justify-between">
                                     <div>
-                                        <span className="text-lg font-bold text-green-600">
+                                        <span className="text-lg font-bold text-green-700">
                                             ₹{destination.price.toLocaleString()}
                                         </span>
                                         <span className="text-gray-500 text-xs ml-1">
@@ -63,7 +63,7 @@ export default function DestinationsSection() {
                                     </div>
                                     <Link
                                         href={`/treks/${destination.id}`}
-                                        className="px-3 py-1.5 bg-green-600 text-white rounded-full text-xs font-medium hover:bg-green-700 transition-colors min-h-[36px] flex items-center"
+                                        className="px-3 py-1.5 bg-green-700 text-white rounded-full text-xs font-medium hover:bg-green-700 transition-colors min-h-[36px] flex items-center"
                                         aria-label={`View details for ${destination.name} trek`}
                                     >
                                         View Details
@@ -76,7 +76,7 @@ export default function DestinationsSection() {
                 <div className="text-center mt-6">
                     <Link
                         href="/plans"
-                        className="inline-flex items-center px-6 py-3 bg-green-600 text-white font-semibold rounded-full hover:bg-green-700 transition-all text-sm"
+                        className="inline-flex items-center px-6 py-3 bg-green-700 text-white font-semibold rounded-full hover:bg-green-700 transition-all text-sm"
                     >
                         View All Plans
                         <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />

@@ -35,7 +35,7 @@ export default function CookieConsent() {
 
                 <div className="relative">
                     <div className="flex items-start gap-4 mb-5">
-                        <div className="w-12 h-12 bg-green-100 rounded-2xl flex items-center justify-center flex-shrink-0 text-green-600">
+                        <div className="w-12 h-12 bg-green-100 rounded-2xl flex items-center justify-center flex-shrink-0 text-green-700">
                             <Cookie className="h-6 w-6" />
                         </div>
                         <div>
@@ -56,7 +56,7 @@ export default function CookieConsent() {
                     <div className="flex flex-col sm:flex-row items-center gap-3">
                         <button
                             onClick={acceptConsent}
-                            className="w-full sm:flex-1 py-3 px-6 bg-green-600 hover:bg-green-700 text-white text-sm font-bold rounded-2xl transition-all shadow-lg shadow-green-200 active:scale-95 flex items-center justify-center gap-2"
+                            className="w-full sm:flex-1 py-3 px-6 bg-green-700 hover:bg-green-700 text-white text-sm font-bold rounded-2xl transition-all shadow-lg shadow-green-200 active:scale-95 flex items-center justify-center gap-2"
                         >
                             <CheckCircle2 className="h-4 w-4" />
                             Accept All
