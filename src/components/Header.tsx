@@ -22,6 +22,7 @@ export default function Header() {
               height={44}
               sizes="44px"
               priority
+              unoptimized
               className="object-contain rounded-full"
             />
             <span className="text-xl font-bold text-gray-900">Off Route Adventure</span>
