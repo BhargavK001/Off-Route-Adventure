@@ -15,16 +15,18 @@ export default function Header() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 min-h-[44px]">
-            <Image
-              src="/Off-Route-Logo.png"
-              alt="Off Route Adventure – Trekking Tours Maharashtra"
-              width={44}
-              height={44}
-              sizes="44px"
-              priority
-              unoptimized
-              className="object-contain rounded-full"
-            />
+            <div className="w-[52px] h-[52px] rounded-full overflow-hidden flex-shrink-0">
+              <Image
+                src="/Off-Route-Logo.png"
+                alt="Off Route Adventure – Trekking Tours Maharashtra"
+                width={52}
+                height={52}
+                sizes="52px"
+                priority
+                unoptimized
+                className="object-contain"
+              />
+            </div>
             <span className="text-xl font-bold text-gray-900">Off Route Adventure</span>
           </Link>
 

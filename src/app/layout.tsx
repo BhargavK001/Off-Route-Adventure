@@ -32,9 +32,11 @@ export const metadata: Metadata = {
     template: "%s | Off Route Adventure",
   },
   icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
-    apple: "/favicon.svg",
+    icon: [
+      { url: "/icon.png", type: "image/png" },
+    ],
+    shortcut: "/icon.png",
+    apple: "/icon.png",
   },
   description:
     "Off Route Adventure offers safe, trusted & affordable trekking tours in Maharashtra for 2025-2026. Explore authentic offbeat forts, low-budget weekend trips from Pune & Mumbai. Your trusted adventure trip planner for Sahyadri treks and India tours.",
