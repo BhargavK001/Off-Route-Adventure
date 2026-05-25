@@ -20,15 +20,17 @@ export default function Footer() {
           {/* Brand Section */}
           <div className="space-y-3">
             <div className="flex items-center gap-3">
-              <Image
-                src="/Off-Route-Logo.png"
-                alt="Off Route Adventure Logo"
-                width={40}
-                height={40}
-                sizes="40px"
-                unoptimized
-                className="object-contain rounded-full bg-white ring-2 ring-green-500/30"
-              />
+              <div className="w-[52px] h-[52px] rounded-full overflow-hidden flex-shrink-0">
+                <Image
+                  src="/Off-Route-Logo.png"
+                  alt="Off Route Adventure Logo"
+                  width={52}
+                  height={52}
+                  sizes="52px"
+                  unoptimized
+                  className="object-contain"
+                />
+              </div>
               <div>
                 <span className="text-base font-bold tracking-tight">{COMPANY_INFO.name}</span>
                 <p className="text-xs text-green-400 font-medium">{COMPANY_INFO.tagline}</p>
