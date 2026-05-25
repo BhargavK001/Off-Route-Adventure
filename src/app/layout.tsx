@@ -17,6 +17,7 @@ const inter = Inter({
 });
 
 const BASE_URL = "https://www.offrouteadventure.in";
+const GOOGLE_ANALYTICS_ID = "G-ZG15P6SQME";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -173,6 +174,19 @@ export default function RootLayout({
         <Footer />
         <WhatsAppButton />
         <CookieConsent />
+        <Script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ANALYTICS_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){window.dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GOOGLE_ANALYTICS_ID}');
+          `}
+        </Script>
         {/* lazyOnload: defers ads until browser is idle — reduces TBT significantly */}
         <Script
           async
