@@ -1,12 +1,12 @@
 import { Metadata } from "next";
-import { MapPin, Mountain, Waves, TreePine, Castle, ArrowRight, Camera } from "lucide-react";
+import { MapPin, Mountain, Waves, TreePine, Castle, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { BreadcrumbSchema } from "@/components/JsonLd";
 import { getAllDestinationGalleries, type DestinationGallery } from "@/lib/cloudinary";
 import InteractiveGallery from "@/components/explore/InteractiveGallery";
 
-const BASE_URL = "https://www.offrouteadventure.in";
+const BASE_URL = "https://offrouteadventure.in";
 
 export const metadata: Metadata = {
   title: "Explore Destinations – Forts, Waterfalls & Mountains in Maharashtra",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     "Sahyadri Western Ghats treks",
   ],
   alternates: {
-    canonical: "/explore",
+    canonical: "https://offrouteadventure.in/explore",
   },
   openGraph: {
     title: "Explore Trekking Destinations in Maharashtra | Off Route Adventure",
@@ -54,7 +54,7 @@ const categories = [
   { title: "Forts & History", count: 8, icon: <Castle className="h-7 w-7" />, color: "text-amber-500", bg: "bg-amber-50" },
   { title: "Waterfalls", count: 3, icon: <Waves className="h-7 w-7" />, color: "text-blue-500", bg: "bg-blue-50" },
   { title: "Mountains & Peaks", count: 4, icon: <Mountain className="h-7 w-7" />, color: "text-green-700", bg: "bg-green-50" },
-  { title: "Lakes & Camping", count: 3, icon: <TreePine className="h-7 w-7" />, color: "text-purple-500", bg: "bg-purple-50" },
+  { title: "Lakes & Camping", count: 3, icon: <TreePine className="h-7 w-7" />, color: "text-teal-600", bg: "bg-teal-50" },
 ];
 
 export default async function ExplorePage() {
@@ -85,7 +85,7 @@ export default async function ExplorePage() {
             <div className="space-y-6 md:space-y-8 text-center lg:text-left">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-green-100 shadow-sm text-green-700 text-sm font-bold mx-auto lg:mx-0 tracking-wide">
                 <MapPin className="h-4 w-4" />
-                <span>Maharashtra's Best Kept Secrets</span>
+                <span>Maharashtra&apos;s Best Kept Secrets</span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 tracking-tight leading-[1.15]">
                 Every Trail Tells A <br className="hidden lg:block" />

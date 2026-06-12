@@ -15,6 +15,7 @@ import {
   Loader2,
 } from "lucide-react";
 import { destinations } from "@/data/destinations";
+import Image from "next/image";
 
 interface BookingFormData {
   fullName: string;
@@ -526,10 +527,13 @@ export default function BookPage() {
       >
         {/* Background Image */}
         <div className="absolute inset-0">
-          <img
+          <Image
             src="/images/hero/manali.webp"
-            alt="Manali Adventure"
-            className="w-full h-full object-cover opacity-80 grayscale-[30%]"
+            alt="Trekking expedition in Manali – Off Route Adventure"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover opacity-80 grayscale-[30%]"
           />
           <div
             className="absolute inset-0"

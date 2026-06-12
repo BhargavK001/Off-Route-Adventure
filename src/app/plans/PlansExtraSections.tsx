@@ -119,10 +119,12 @@ export default function PlansExtraSections() {
       {/* ── 4. CTA — CUSTOM PLANS ───────────────────────────── */}
       <section className="relative overflow-hidden bg-gray-950 text-white">
         <div className="absolute inset-0">
-          <img
+          <Image
             src="https://res.cloudinary.com/dlgjwovla/image/upload/v1774371185/IMG_20260319_234929_440_wlzryq.jpg"
-            alt="Custom trip background"
-            className="w-full h-full object-cover grayscale-[60%] opacity-20"
+            alt="Custom adventure trip planning background – Off Route Adventure"
+            fill
+            sizes="100vw"
+            className="object-cover grayscale-[60%] opacity-20"
           />
           <div
             className="absolute inset-0"

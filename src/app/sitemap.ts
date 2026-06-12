@@ -2,7 +2,7 @@ import { MetadataRoute } from "next";
 import { destinations } from "@/data/destinations";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://www.offrouteadventure.in";
+  const baseUrl = "https://offrouteadventure.in";
   // Hardcoded date to prevent Googlebot from throttling crawls.
   // Update this manually when you make major content changes!
   const lastModified = new Date("2026-04-25T00:00:00Z");
@@ -41,7 +41,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/contact`,
-      lastModified,
+      lastModified: new Date("2026-06-13T00:00:00Z"), // Updated to trigger search engine recrawl after reviews integration
       changeFrequency: "monthly",
       priority: 0.7,
     },

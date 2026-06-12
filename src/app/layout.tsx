@@ -16,7 +16,7 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
-const BASE_URL = "https://www.offrouteadventure.in";
+const BASE_URL = "https://offrouteadventure.in";
 const GOOGLE_ANALYTICS_ID = "G-ZG15P6SQME";
 
 export const viewport: Viewport = {

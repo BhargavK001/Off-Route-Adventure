@@ -2,13 +2,11 @@ import { Metadata } from "next";
 import { Shield, Lock, Eye, FileText, Bell, Globe } from "lucide-react";
 import { BreadcrumbSchema } from "@/components/JsonLd";
 
-const BASE_URL = "https://www.offrouteadventure.in";
-
 export const metadata: Metadata = {
     title: "Privacy Policy | Off Route Adventure",
     description: "Learn how Off Route Adventure collects, uses, and protects your personal information. Our privacy policy explains our commitment to your data security.",
     alternates: {
-        canonical: "/privacy-policy",
+        canonical: "https://offrouteadventure.in/privacy-policy",
     },
 };
 

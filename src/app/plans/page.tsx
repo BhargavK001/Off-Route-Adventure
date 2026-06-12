@@ -5,7 +5,7 @@ import { BreadcrumbSchema, TouristTripSchema } from "@/components/JsonLd";
 import PlansContent from "./PlansContent";
 import PlansExtraSections from "./PlansExtraSections";
 
-const BASE_URL = "https://www.offrouteadventure.in";
+const BASE_URL = "https://offrouteadventure.in";
 
 export const metadata: Metadata = {
   title: "All Tour Packages – Trekking & Camping Packages from ₹799",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     "adventure tour packages India",
   ],
   alternates: {
-    canonical: "/plans",
+    canonical: "https://offrouteadventure.in/plans",
   },
   openGraph: {
     title: "All Tour Packages – Treks & Camping from ₹799 | Off Route Adventure",

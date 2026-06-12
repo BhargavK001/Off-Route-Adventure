@@ -14,8 +14,8 @@ export default function robots(): MetadataRoute.Robots {
         disallow: "/api/",
       },
     ],
-    sitemap: "https://www.offrouteadventure.in/sitemap.xml",
-    host: "https://www.offrouteadventure.in",
+    sitemap: "https://offrouteadventure.in/sitemap.xml",
+    host: "https://offrouteadventure.in",
   };
 }
 
