@@ -41,78 +41,107 @@ const fadeUp: Variants = {
 export default function PlansExtraSections() {
   return (
     <>
-      {/* ── 3. PACKAGE INCLUSIONS ───────────────────────────── */}
-      <section className="pt-10 pb-16 md:pt-14 md:pb-24" style={{ background: "#f7f3ec" }}>
-        <div className="container mx-auto px-6 md:px-10 max-w-4xl">
-          <motion.div
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={fadeUp}
-            className="text-center mb-10 shadow-none"
-          >
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <span className="h-px w-8 bg-green-500" />
-              <span className="text-green-700 text-[10px] md:text-xs font-semibold uppercase tracking-[0.18em]">
-                Package Details
-              </span>
-              <span className="h-px w-8 bg-green-500" />
-            </div>
-            <h2
-              className="font-black text-gray-900 leading-tight tracking-tight mb-4"
-              style={{ fontSize: "clamp(24px, 3.5vw, 40px)" }}
-            >
-              What&apos;s Included
-            </h2>
-            <p className="text-gray-500 text-sm md:text-base max-w-lg mx-auto">
-              Everything you need for a safe and memorable adventure. No hidden
-              costs.
-            </p>
-          </motion.div>
+      <section className="pt-16 pb-20 md:pt-24 md:pb-32 bg-white relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-full bg-[#f7f3ec]/30 -z-10" />
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-green-500/5 rounded-full blur-[120px] pointer-events-none -translate-y-1/2 translate-x-1/3" />
+        
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+              
+              {/* Left Column - Sticky Heading */}
+              <div className="lg:col-span-5 lg:sticky lg:top-32">
+                <motion.div
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{ once: true, margin: "-100px" }}
+                  variants={fadeUp}
+                >
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-50 border border-green-100 text-green-700 text-sm font-bold tracking-wide mb-6">
+                    <span className="h-2 w-2 rounded-full bg-green-500" />
+                    Package Details
+                  </div>
+                  
+                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 tracking-tight leading-[1.15] mb-6">
+                    What's{" "}
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-500">
+                      Included
+                    </span>
+                  </h2>
+                  
+                  <p className="text-lg md:text-xl text-gray-600 leading-relaxed mb-8 max-w-md">
+                    Everything you need for a safe and memorable adventure. We believe in complete transparency with no hidden costs.
+                  </p>
 
-          <motion.div
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={staggerContainer}
-            className="grid md:grid-cols-2 gap-px bg-gray-200 border border-gray-200 rounded-[1.5rem] md:rounded-[2rem] overflow-hidden shadow-sm"
-          >
-            {/* Included */}
-            <motion.div variants={fadeUp} className="bg-white p-8 md:p-10">
-              <div className="w-10 h-10 rounded-xl bg-green-50 flex items-center justify-center mb-6 border border-green-100">
-                <CheckCircle className="h-5 w-5 text-green-700" />
+                  {/* Decorative Image */}
+                  <div className="hidden lg:block relative h-72 w-full rounded-3xl overflow-hidden shadow-2xl border-4 border-white transform -rotate-2 hover:rotate-0 transition-transform duration-500">
+                    <Image 
+                      src="https://res.cloudinary.com/dlgjwovla/image/upload/c_fill,f_auto,g_auto,q_auto,w_800/v1774371363/IMG-20251221-WA0005_huxwpf.jpg" 
+                      alt="Vasota Fort Trekking Gear" 
+                      fill 
+                      className="object-cover"
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-80" />
+                  </div>
+                </motion.div>
               </div>
-              <h3 className="font-bold text-gray-900 text-lg md:text-xl mb-6">
-                Included in package
-              </h3>
-              <ul className="space-y-4 text-sm md:text-base">
-                {included.map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-gray-700">
-                    <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
-                    <span className="font-medium leading-relaxed">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-            
-            {/* Not Included */}
-            <motion.div variants={fadeUp} className="bg-gray-50/80 p-8 md:p-10">
-              <div className="w-10 h-10 rounded-xl bg-red-50 flex items-center justify-center mb-6 border border-red-100">
-                <XCircle className="h-5 w-5 text-red-500" />
+
+              {/* Right Column - Inclusions/Exclusions */}
+              <div className="lg:col-span-7 space-y-6 md:space-y-8">
+                <motion.div
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{ once: true, margin: "-100px" }}
+                  variants={staggerContainer}
+                  className="space-y-6"
+                >
+                  {/* Included */}
+                  <motion.div variants={fadeUp} className="bg-white rounded-[2rem] p-8 md:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 relative overflow-hidden group hover:shadow-[0_8px_40px_rgb(0,0,0,0.08)] transition-all duration-300">
+                    <div className="absolute top-0 right-0 w-40 h-40 bg-green-50 rounded-full blur-[50px] -mr-20 -mt-20 pointer-events-none group-hover:bg-green-100 transition-colors duration-500" />
+                    
+                    <div className="flex items-center gap-5 mb-8 relative">
+                      <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center shadow-lg shadow-green-200/50 text-white transform group-hover:scale-110 transition-transform duration-500">
+                        <CheckCircle className="h-8 w-8" />
+                      </div>
+                      <h3 className="text-2xl md:text-3xl font-bold text-gray-900">Included in package</h3>
+                    </div>
+                    
+                    <ul className="grid sm:grid-cols-2 gap-y-6 gap-x-8 relative">
+                      {included.map((item, i) => (
+                        <li key={i} className="flex items-start gap-4">
+                          <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <CheckCircle className="h-3.5 w-3.5 text-green-700" />
+                          </div>
+                          <span className="font-semibold text-gray-700 leading-relaxed">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </motion.div>
+                  
+                  {/* Not Included */}
+                  <motion.div variants={fadeUp} className="bg-gray-50 rounded-[2rem] p-8 md:p-10 border border-gray-200 relative overflow-hidden group hover:bg-gray-100 transition-colors duration-300">
+                    <div className="flex items-center gap-5 mb-8">
+                      <div className="w-16 h-16 rounded-2xl bg-white border border-gray-200 flex items-center justify-center shadow-sm text-red-500 transform group-hover:scale-110 transition-transform duration-500">
+                        <XCircle className="h-8 w-8" />
+                      </div>
+                      <h3 className="text-2xl md:text-3xl font-bold text-gray-900">Not Included</h3>
+                    </div>
+                    
+                    <ul className="grid sm:grid-cols-2 gap-y-6 gap-x-8">
+                      {notIncluded.map((item, i) => (
+                        <li key={i} className="flex items-start gap-4 opacity-80">
+                          <XCircle className="h-5 w-5 text-gray-400 flex-shrink-0 mt-0.5" />
+                          <span className="text-gray-600 font-medium leading-relaxed">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </motion.div>
+                </motion.div>
               </div>
-              <h3 className="font-bold text-gray-900 text-lg md:text-xl mb-6">
-                Not Included
-              </h3>
-              <ul className="space-y-4 text-sm md:text-base">
-                {notIncluded.map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-gray-500">
-                    <XCircle className="h-4 w-4 text-red-300 mt-0.5 flex-shrink-0" />
-                    <span className="leading-relaxed">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          </motion.div>
+
+            </div>
+          </div>
         </div>
       </section>
 

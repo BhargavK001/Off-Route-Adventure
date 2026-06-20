@@ -44,8 +44,8 @@ export default function InteractiveGallery({ galleries }: InteractiveGalleryProp
 
         return {
             url: getOptimizedUrl(img.public_id, 1600), // Larger resolution for lightbox view 
-            alt: `${galleries[currentGalleryIndex].displayName} - ${cleanName || "Image"}`,
-            name: cleanName || galleries[currentGalleryIndex].displayName,
+            alt: `${galleries[currentGalleryIndex].displayName} Image`,
+            name: galleries[currentGalleryIndex].displayName,
         };
     }) || [];
 
@@ -86,7 +86,7 @@ export default function InteractiveGallery({ galleries }: InteractiveGalleryProp
                                     >
                                         <Image
                                             src={optimizedUrl}
-                                            alt={`${gallery.displayName} - ${cleanName}`}
+                                            alt={`${gallery.displayName} Image`}
                                             fill
                                             className="object-cover group-hover:scale-105 transition-transform duration-500"
                                             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
@@ -98,11 +98,10 @@ export default function InteractiveGallery({ galleries }: InteractiveGalleryProp
 
                                         {/* Content - always visible, slightly animates on hover */}
                                         <div className="absolute bottom-0 left-0 right-0 p-4 transform group-hover:-translate-y-1 transition-transform duration-300 pointer-events-none">
-                                            <div className="flex items-center gap-2 text-white/90 mb-1">
+                                            <div className="flex items-center gap-2 text-white/90">
                                                 <MapPin className="h-4 w-4 text-green-400 shrink-0" />
                                                 <span className="font-semibold text-sm drop-shadow-sm truncate">{gallery.location}</span>
                                             </div>
-                                            <p className="text-white text-sm font-medium drop-shadow-sm truncate capitalize">{cleanName.replace(/[-_]/g, ' ')}</p>
                                         </div>
                                     </div>
                                 );
