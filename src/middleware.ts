@@ -2,23 +2,6 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
 export default function middleware(request: NextRequest) {
-  const host = request.headers.get('host');
-  const protocol = request.headers.get('x-forwarded-proto') || 'http';
-
-  // Define the preferred host
-  const preferredHost = 'offrouteadventure.in';
-  
-  // 1. Enforce HTTPS (if not in local development)
-  // 2. Enforce non-www domain
-  const isLocalhost = host?.includes('localhost') || host?.includes('127.0.0.1');
-  
-  if (!isLocalhost && (protocol === 'http' || host !== preferredHost)) {
-    const targetUrl = new URL(request.url);
-    targetUrl.protocol = 'https';
-    targetUrl.host = preferredHost;
-    return NextResponse.redirect(targetUrl.toString(), 301);
-  }
-
   return NextResponse.next();
 }
 
