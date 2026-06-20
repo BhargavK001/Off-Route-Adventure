@@ -77,14 +77,14 @@ export default function HeroSection() {
                             />
                         </div>
                     ))}
-                    {/* Dark Overlay */}
-                    <div className="absolute inset-0 bg-black/45 backdrop-brightness-[0.85]" />
+                    {/* Dark Overlay – matches booking page green tint */}
+                    <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(10,26,10,0.65) 0%, rgba(10,26,10,0.88) 100%)" }} />
                 </div>
 
                 {/* Background gradient layers */}
-                <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-transparent to-black/60 pointer-events-none" aria-hidden="true" />
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(34,197,94,0.1),_transparent_60%)]" aria-hidden="true" />
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(16,185,129,0.05),_transparent_60%)]" aria-hidden="true" />
+                <div className="absolute inset-0 bg-gradient-to-br from-black/20 via-transparent to-black/20 pointer-events-none" aria-hidden="true" />
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(34,197,94,0.12),_transparent_60%)]" aria-hidden="true" />
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(16,185,129,0.08),_transparent_60%)]" aria-hidden="true" />
 
                 {/* Animated floating orbs */}
                 <div className="absolute top-20 left-[10%] w-72 h-72 bg-green-500/10 rounded-full blur-3xl animate-pulse" aria-hidden="true" />
