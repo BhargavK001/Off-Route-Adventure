@@ -5,7 +5,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://offrouteadventure.in";
   // Hardcoded date to prevent Googlebot from throttling crawls.
   // Update this manually when you make major content changes!
-  const lastModified = new Date("2026-04-25T00:00:00Z");
+  const lastModified = new Date("2026-06-20T00:00:00Z");
 
   // Static routes
   const staticRoutes: MetadataRoute.Sitemap = [
@@ -41,7 +41,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/contact`,
-      lastModified: new Date("2026-06-13T00:00:00Z"), // Updated to trigger search engine recrawl after reviews integration
+      lastModified,
       changeFrequency: "monthly",
       priority: 0.7,
     },
