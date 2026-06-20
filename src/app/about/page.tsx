@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import {
   Shield,
   Users,
@@ -17,7 +18,7 @@ import {
 import Link from "next/link";
 import { BreadcrumbSchema } from "@/components/JsonLd";
 
-const BASE_URL = "https://www.offrouteadventure.in";
+const BASE_URL = "https://offrouteadventure.in";
 
 export const metadata: Metadata = {
   title: "About Us – Trekking Company in Pune, Maharashtra",
@@ -33,7 +34,7 @@ export const metadata: Metadata = {
     "corporate retreat adventure Pune",
   ],
   alternates: {
-    canonical: "/about",
+    canonical: "https://offrouteadventure.in/about",
   },
   openGraph: {
     title: "About Off Route Adventure – Pune's Trusted Trekking Company",
@@ -247,10 +248,13 @@ export default function AboutPage() {
       <section className="relative overflow-hidden bg-black flex flex-col">
         {/* Background Image */}
         <div className="absolute inset-0">
-          <img
+          <Image
             src="/images/hero/harihargad.webp"
-            alt="Harihar Fort Trek"
-            className="w-full h-full object-cover grayscale-[40%]"
+            alt="Trekking at Harihar Fort in Maharashtra – Off Route Adventure"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover grayscale-[40%]"
           />
           <div
             className="absolute inset-0"

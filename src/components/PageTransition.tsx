@@ -17,6 +17,7 @@ export default function PageTransition({
 
     useEffect(() => {
         if (pathname !== previousPathname.current) {
+            // eslint-disable-next-line react-hooks/set-state-in-effect
             setTransitionStage("exit");
 
             const timeout = setTimeout(() => {

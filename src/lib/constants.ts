@@ -6,6 +6,9 @@ export const COMPANY_INFO = {
   phoneFormatted: "+91 92704 28541",
   whatsappLink: "https://wa.me/919270428541?text=I'm%20interested%20in%20booking%20a%20trek",
   instagram: "https://www.instagram.com/off_route_adventure?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+  // Google Business Profile constants (can be configured via environment variables)
+  googlePlaceId: process.env.NEXT_PUBLIC_GOOGLE_PLACE_ID || "",
+  googleReviewLink: process.env.NEXT_PUBLIC_GOOGLE_REVIEW_LINK || "https://g.page/r/CfPS447BUb4bEAI/review",
 };
 
 export const FEATURES = [

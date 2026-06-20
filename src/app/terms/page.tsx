@@ -2,13 +2,11 @@ import { Metadata } from "next";
 import { FileText, ClipboardCheck, Info, MapPin, AlertCircle, HelpCircle, Bell } from "lucide-react";
 import { BreadcrumbSchema } from "@/components/JsonLd";
 
-const BASE_URL = "https://www.offrouteadventure.in";
-
 export const metadata: Metadata = {
     title: "Terms and Conditions | Off Route Adventure",
     description: "Read the rules and guidelines for using the Off Route Adventure website and booking our treks and adventure tours.",
     alternates: {
-        canonical: "/terms",
+        canonical: "https://offrouteadventure.in/terms",
     },
 };
 

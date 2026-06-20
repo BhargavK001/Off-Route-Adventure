@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { motion, AnimatePresence } from "framer-motion";
 import confetti from "canvas-confetti";
@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { InstagramColorIcon, WhatsAppColorIcon } from "@/components/SocialIcons";
 import { COMPANY_INFO } from "@/lib/constants";
+import Image from "next/image";
 
 interface ContactFormData {
   name: string;
@@ -168,6 +169,33 @@ export default function ContactPage() {
   const [reviewStatus, setReviewStatus] = useState<"success" | "error" | null>(null);
   const [selectedRating, setSelectedRating] = useState(0);
 
+  const [reviewsList, setReviewsList] = useState<any[]>(testimonials);
+  const [isLoadingReviews, setIsLoadingReviews] = useState(true);
+  const [googleRating, setGoogleRating] = useState<number | null>(null);
+  const [googleTotalReviews, setGoogleTotalReviews] = useState<number | null>(null);
+
+  useEffect(() => {
+    async function fetchGoogleReviews() {
+      try {
+        const response = await fetch("/api/reviews");
+        if (response.ok) {
+          const data = await response.json();
+          // If fallback is true, Google API credentials are not set, so we use local testimonials
+          if (data.success && data.reviews && data.reviews.length > 0) {
+            setReviewsList(data.reviews);
+            if (data.rating) setGoogleRating(data.rating);
+            if (data.totalReviews) setGoogleTotalReviews(data.totalReviews);
+          }
+        }
+      } catch (err) {
+        console.error("Failed to load Google reviews", err);
+      } finally {
+        setIsLoadingReviews(false);
+      }
+    }
+    fetchGoogleReviews();
+  }, []);
+
   const contactForm = useForm<ContactFormData>();
   const reviewForm = useForm<ReviewFormData>();
 
@@ -246,7 +274,7 @@ export default function ContactPage() {
     initial: { opacity: 0, y: 30 },
     whileInView: { opacity: 1, y: 0 },
     viewport: { once: true },
-    transition: { duration: 0.6, ease: "easeOut" as any }
+    transition: { duration: 0.6, ease: "easeOut" as const }
   };
 
   const stagger = {
@@ -260,14 +288,21 @@ export default function ContactPage() {
       {/* ── 1. HERO — THE DISPATCH CENTER ───────────────────── */}
       <section className="relative overflow-hidden py-16 md:py-24 bg-black">
         <div className="absolute inset-0">
-          <motion.img
+          <motion.div
             initial={{ scale: 1.2, opacity: 0 }}
             animate={{ scale: 1, opacity: 0.6 }}
-            transition={{ duration: 0.8, ease: "easeOut" as any }}
-            src="/images/hero/hampi.webp"
-            alt="Hampi Expedition"
-            className="w-full h-full object-cover grayscale-[30%]"
-          />
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="w-full h-full absolute inset-0"
+          >
+            <Image
+              src="/images/hero/hampi.webp"
+              alt="Hampi Expedition trekking ruins – Off Route Adventure"
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover grayscale-[30%]"
+            />
+          </motion.div>
           <div
             className="absolute inset-0"
             style={{
@@ -535,57 +570,143 @@ export default function ContactPage() {
               Voices from <br />
               <span className="text-green-500 italic">The Wilderness.</span>
             </motion.h2>
+            
+            {googleRating ? (
+              <motion.div
+                {...fadeInUp}
+                transition={{ delay: 0.3 }}
+                className="flex flex-col items-center gap-2 mt-4"
+              >
+                <div className="flex items-center gap-2 text-white text-sm justify-center">
+                  <div className="flex text-yellow-400">
+                    {[...Array(5)].map((_, i) => (
+                      <Star
+                        key={i}
+                        className={`h-4 w-4 ${
+                          i < Math.floor(googleRating) ? "text-yellow-400 fill-current" : "text-zinc-600"
+                        }`}
+                      />
+                    ))}
+                  </div>
+                  <span className="font-bold text-yellow-400">{googleRating} / 5</span>
+                  <span className="text-zinc-400">({googleTotalReviews} Google reviews)</span>
+                </div>
+                <a
+                  href={COMPANY_INFO.googleReviewLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-2 text-xs font-black text-green-400 uppercase tracking-widest hover:text-green-300 transition-colors flex items-center gap-1.5 justify-center"
+                >
+                  Write a Review on Google <ArrowRight className="h-3 w-3" />
+                </a>
+              </motion.div>
+            ) : (
+              <motion.div
+                {...fadeInUp}
+                transition={{ delay: 0.3 }}
+                className="flex justify-center mt-4"
+              >
+                <a
+                  href={COMPANY_INFO.googleReviewLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-green-950/40 text-green-400 hover:bg-green-900/40 hover:text-green-300 border border-green-900/50 text-[10px] font-black uppercase tracking-[0.2em] rounded-full transition-all"
+                >
+                  Write a Google Review
+                  <ArrowRight className="h-3 w-3" />
+                </a>
+              </motion.div>
+            )}
           </div>
 
           {/* Scrolling Carousel */}
           <div className="relative mb-12">
-            <motion.div
-              initial={{ x: 100, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              className="flex gap-6 overflow-x-auto pb-10 no-scrollbar snap-x snap-mandatory px-4 md:px-0"
-            >
-              {testimonials.map((review, index) => (
-                <motion.div
-                  key={index}
-                  whileHover={{ scale: 1.02 }}
-                  className="flex-none w-[280px] md:w-[350px] snap-center bg-zinc-900/50 backdrop-blur-sm rounded-2xl p-6 border border-white/5 relative group/card"
-                >
-                  <Quote className="absolute -top-4 -right-4 h-16 w-16 text-white/5 rotate-12 transition-transform group-hover/card:scale-110" />
-
-                  <div className="relative z-10 flex flex-col h-full justify-between">
-                    <div>
-                      <div className="flex gap-1 mb-6">
-                        {[...Array(5)].map((_, i) => (
-                          <Star
-                            key={i}
-                            className={`h-3.5 w-3.5 ${i < review.rating
-                              ? "text-green-500 fill-current"
-                              : "text-zinc-800 fill-current"
-                              }`}
-                          />
-                        ))}
-                      </div>
-                      <p className="text-zinc-300 text-base font-medium mb-6 leading-relaxed tracking-tight">
-                        &ldquo;{review.feedback}&rdquo;
-                      </p>
+            {isLoadingReviews ? (
+              <div className="flex gap-6 overflow-x-auto pb-10 no-scrollbar snap-x snap-mandatory px-4 md:px-0">
+                {[...Array(3)].map((_, i) => (
+                  <div
+                    key={i}
+                    className="flex-none w-[280px] md:w-[350px] snap-center bg-zinc-900/50 backdrop-blur-sm rounded-2xl p-6 border border-white/5 relative animate-pulse"
+                  >
+                    <div className="flex gap-1 mb-6">
+                      {[...Array(5)].map((_, starIndex) => (
+                        <div key={starIndex} className="h-3.5 w-3.5 bg-zinc-800 rounded-full" />
+                      ))}
                     </div>
-
+                    <div className="h-4 bg-zinc-800 rounded w-5/6 mb-3" />
+                    <div className="h-4 bg-zinc-800 rounded w-3/4 mb-6" />
                     <div className="flex items-center gap-3 pt-6 border-t border-white/10">
-                      <div className="w-10 h-10 rounded-xl bg-green-900/20 text-green-500 flex items-center justify-center text-xs font-black border border-green-500/20">
-                        {review.name.charAt(0)}
-                      </div>
-                      <div>
-                        <p className="font-black text-white uppercase text-[9px] tracking-[0.2em]">{review.name}</p>
-                        <p className="text-green-700 text-[10px] uppercase font-black tracking-[0.3em] mt-1.5">
-                          {review.destination}
-                        </p>
+                      <div className="w-10 h-10 rounded-xl bg-zinc-800" />
+                      <div className="flex-1">
+                        <div className="h-3 bg-zinc-800 rounded w-1/3 mb-2" />
+                        <div className="h-2 bg-zinc-800 rounded w-1/4" />
                       </div>
                     </div>
                   </div>
-                </motion.div>
-              ))}
-            </motion.div>
+                ))}
+              </div>
+            ) : (
+              <motion.div
+                initial={{ x: 100, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                className="flex gap-6 overflow-x-auto pb-10 no-scrollbar snap-x snap-mandatory px-4 md:px-0"
+              >
+                {reviewsList.map((review, index) => (
+                  <motion.div
+                    key={index}
+                    whileHover={{ scale: 1.02 }}
+                    className="flex-none w-[280px] md:w-[350px] snap-center bg-zinc-900/50 backdrop-blur-sm rounded-2xl p-6 border border-white/5 relative group/card"
+                  >
+                    <Quote className="absolute -top-4 -right-4 h-16 w-16 text-white/5 rotate-12 transition-transform group-hover/card:scale-110" />
+
+                    <div className="relative z-10 flex flex-col h-full justify-between">
+                      <div>
+                        <div className="flex gap-1 mb-6">
+                          {[...Array(5)].map((_, i) => (
+                            <Star
+                              key={i}
+                              className={`h-3.5 w-3.5 ${i < review.rating
+                                ? "text-green-500 fill-current"
+                                : "text-zinc-800 fill-current"
+                                }`}
+                            />
+                          ))}
+                        </div>
+                        <p className="text-zinc-300 text-base font-medium mb-6 leading-relaxed tracking-tight line-clamp-5">
+                          &ldquo;{review.feedback}&rdquo;
+                        </p>
+                      </div>
+
+                      <div className="flex items-center gap-3 pt-6 border-t border-white/10">
+                        {review.profilePhoto ? (
+                          <div className="relative w-10 h-10 rounded-xl overflow-hidden border border-green-500/20">
+                            <Image
+                              src={review.profilePhoto}
+                              alt={review.name}
+                              fill
+                              sizes="40px"
+                              className="object-cover"
+                              unoptimized
+                            />
+                          </div>
+                        ) : (
+                          <div className="w-10 h-10 rounded-xl bg-green-900/20 text-green-500 flex items-center justify-center text-xs font-black border border-green-500/20">
+                            {review.name.charAt(0)}
+                          </div>
+                        )}
+                        <div>
+                          <p className="font-black text-white uppercase text-[9px] tracking-[0.2em]">{review.name}</p>
+                          <p className="text-green-700 text-[10px] uppercase font-black tracking-[0.3em] mt-1.5">
+                            {review.destination}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </motion.div>
+            )}
           </div>
 
           {/* Rating Form */}
@@ -665,7 +786,16 @@ export default function ContactPage() {
                   >
                     <CheckCircle className="h-10 w-10 text-white" />
                     <h3 className="font-black text-xl uppercase tracking-tighter">Transmission Secured!</h3>
-                    <p className="text-green-50 text-xs font-medium opacity-90">Thank you for helping us chart the unknown. Stay wild.</p>
+                    <p className="text-green-50 text-xs font-medium opacity-90 mb-2">Thank you for helping us chart the unknown. Stay wild.</p>
+                    <a
+                      href={COMPANY_INFO.googleReviewLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-6 py-3 bg-white text-green-800 hover:bg-gray-100 font-black text-xs uppercase tracking-wider rounded-xl transition-all shadow-md"
+                    >
+                      Share on Google Reviews
+                      <ArrowRight className="h-4 w-4" />
+                    </a>
                   </motion.div>
                 )}
               </AnimatePresence>

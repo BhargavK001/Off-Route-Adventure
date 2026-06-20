@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 
-const BASE_URL = "https://www.offrouteadventure.in";
+const BASE_URL = "https://offrouteadventure.in";
 
 export const metadata: Metadata = {
     title: "Contact Us – Get in Touch with Off Route Adventure",
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
         "trekking group booking Maharashtra",
     ],
     alternates: {
-        canonical: `${BASE_URL}/contact`,
+        canonical: "https://offrouteadventure.in/contact",
     },
     openGraph: {
         title: "Contact Off Route Adventure – Pune, Maharashtra",

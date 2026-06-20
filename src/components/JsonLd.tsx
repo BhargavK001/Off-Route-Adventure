@@ -1,6 +1,6 @@
 import { COMPANY_INFO } from "@/lib/constants";
 
-const BASE_URL = "https://www.offrouteadventure.in";
+const BASE_URL = "https://offrouteadventure.in";
 
 function OrganizationSchema() {
     const schema = {

@@ -6,7 +6,7 @@ import { BreadcrumbSchema, FAQSchema } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   alternates: {
-    canonical: '/',
+    canonical: 'https://offrouteadventure.in',
   },
 };
 

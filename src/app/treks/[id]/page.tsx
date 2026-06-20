@@ -6,7 +6,7 @@ import { Clock, MapPin, IndianRupee, Mountain, ArrowRight, CheckCircle } from "l
 import { destinations } from "@/data/destinations";
 import { BreadcrumbSchema, TouristTripSchema } from "@/components/JsonLd";
 
-const BASE_URL = "https://www.offrouteadventure.in";
+const BASE_URL = "https://offrouteadventure.in";
 
 interface PageProps {
     params: Promise<{ id: string }>;
@@ -57,7 +57,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         description: customDesc,
         keywords: customKeywords,
         alternates: {
-            canonical: `/treks/${trek.id}`,
+            canonical: `${BASE_URL}/treks/${trek.id}`,
         },
         openGraph: {
             title: customTitle,
@@ -320,10 +320,12 @@ export default async function TrekPage({ params }: PageProps) {
 
             {/* Related Treks – Cross-linking to fix orphan pages */}
             {(() => {
-                const relatedTreks = destinations
-                    .filter((d) => d.id !== trek.id)
-                    .sort(() => 0.5 - Math.random())
-                    .slice(0, 4);
+                const currentIndex = destinations.findIndex((d) => d.id === trek.id);
+                const filtered = destinations.filter((d) => d.id !== trek.id);
+                const relatedTreks = [
+                    ...filtered.slice(currentIndex % filtered.length),
+                    ...filtered.slice(0, currentIndex % filtered.length)
+                ].slice(0, 4);
                 return (
                     <section className="py-16 bg-white">
                         <div className="container mx-auto px-4">

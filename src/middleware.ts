@@ -1,16 +1,15 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
-export function proxy(request: NextRequest) {
-  const url = request.nextUrl.clone();
+export default function middleware(request: NextRequest) {
   const host = request.headers.get('host');
   const protocol = request.headers.get('x-forwarded-proto') || 'http';
 
   // Define the preferred host
-  const preferredHost = 'www.offrouteadventure.in';
+  const preferredHost = 'offrouteadventure.in';
   
   // 1. Enforce HTTPS (if not in local development)
-  // 2. Enforce 'www' subdomain
+  // 2. Enforce non-www domain
   const isLocalhost = host?.includes('localhost') || host?.includes('127.0.0.1');
   
   if (!isLocalhost && (protocol === 'http' || host !== preferredHost)) {
